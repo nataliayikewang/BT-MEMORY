@@ -1,3 +1,6 @@
+## LaTeX Workshop / latexmk output directory
+out/
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

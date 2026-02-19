@@ -1,0 +1,42 @@
+{
+  // LaTeX Workshop: build on save
+  "latex-workshop.latex.autoBuild.run": "onSave",
+
+  // Use latexmk with pdflatex (same engine as Overleaf's default)
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ],
+      "env": {}
+    }
+  ],
+
+  // Single recipe that mirrors Overleaf's default build
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (pdflatex)",
+      "tools": ["latexmk"]
+    }
+  ],
+
+  // Place build artefacts in a dedicated folder to keep the tree clean
+  "latex-workshop.latex.outDir": "%DIR%/out",
+
+  // Forward / inverse SyncTeX between the editor and the PDF viewer
+  "latex-workshop.synctex.afterBuild.enabled": true,
+
+  // Show the built-in PDF viewer in a side panel
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  // Warn but do not fail the build on LaTeX warnings
+  "latex-workshop.message.warning.show": true,
+  "latex-workshop.message.badbox.show": false
+}
