@@ -1,0 +1,118 @@
+%% ============================================================
+%%  BT-MEMORY – TFG Memory
+%%  Main document entry point
+%%  Compatible with both Overleaf and VS Code (LaTeX Workshop)
+%% ============================================================
+\documentclass[12pt, a4paper]{report}
+
+%% ── Encoding & language ────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}   % change to [spanish] if needed
+
+%% ── Typography ─────────────────────────────────────────────
+\usepackage{lmodern}
+\usepackage{microtype}
+
+%% ── Page layout ────────────────────────────────────────────
+\usepackage[
+  top=2.5cm, bottom=2.5cm,
+  left=3cm,  right=2.5cm
+]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+%% ── Graphics & colours ─────────────────────────────────────
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\graphicspath{{figures/}}
+
+%% ── Math ───────────────────────────────────────────────────
+\usepackage{amsmath, amssymb, amsthm}
+
+%% ── Tables ─────────────────────────────────────────────────
+\usepackage{booktabs}
+\usepackage{longtable}
+
+%% ── Code listings ──────────────────────────────────────────
+\usepackage{listings}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny\color{gray}
+}
+
+%% ── Bibliography ───────────────────────────────────────────
+\usepackage[
+  backend=biber,
+  style=ieee
+]{biblatex}
+\addbibresource{bibliography.bib}
+
+%% ── Hyperlinks (load last) ──────────────────────────────────
+\usepackage[
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=blue,
+  urlcolor=blue,
+  pdfauthor={Author Name},
+  pdftitle={BT-MEMORY – TFG Memory}
+]{hyperref}
+
+%% ============================================================
+\begin{document}
+
+%% ── Title page ──────────────────────────────────────────────
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\Huge\bfseries BT-MEMORY\par}
+  \vspace{0.5cm}
+  {\Large TFG Memory\par}
+  \vspace{2cm}
+  {\large Author Name\par}
+  \vfill
+  {\large \today\par}
+\end{titlepage}
+
+%% ── Front matter ────────────────────────────────────────────
+\pagenumbering{roman}
+\tableofcontents
+\listoffigures
+\listoftables
+\cleardoublepage
+
+%% ── Main matter ─────────────────────────────────────────────
+\pagenumbering{arabic}
+
+\chapter{Introduction}
+\label{chap:introduction}
+
+Write your introduction here.
+
+\chapter{Background}
+\label{chap:background}
+
+Write the background / state of the art here.
+
+\chapter{Methodology}
+\label{chap:methodology}
+
+Describe your methodology here.
+
+\chapter{Results}
+\label{chap:results}
+
+Present your results here.
+
+\chapter{Conclusions}
+\label{chap:conclusions}
+
+Summarise your conclusions and future work here.
+
+%% ── Bibliography ────────────────────────────────────────────
+\printbibliography[heading=bibintoc]
+
+\end{document}
