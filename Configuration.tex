@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{enumitem}
+
+\usepackage{hyperref}
+
+\usepackage[
+    backend=biber,
+    style=numeric,
+    url=true,
+    doi=false,
+    eprint=false,
+    giveninits=true,
+    maxbibnames=99
+]{biblatex}
+
+\addbibresource{References/references.bib}
+
+% Make URLs clickable and nicely formatted
+\usepackage{xurl}
+\hypersetup{
+    colorlinks=true,
+    citecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\renewcommand{\thesection}{\arabic{section}}

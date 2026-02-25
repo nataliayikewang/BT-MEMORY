@@ -1,28 +1,37 @@
-\documentclass[12pt]{report} % 'report' is good for theses
-
-\usepackage[utf8]{inputenc}
-\usepackage{graphicx}
-\usepackage{amsmath}
-\usepackage{hyperref}
-
-\title{My Thesis Title}
-\author{Your Name}
-\date{\today}
+% !TeX root = main.tex
+\input{Configuration}
 
 \begin{document}
 
-\maketitle
+% Cover page
+\input{Cover/main.tex}
 
-\begin{abstract}
-This is the abstract of my thesis.
-\end{abstract}
-
+% Table of contents
 \tableofcontents
+\newpage
 
-\chapter{Introduction}
-This is the introduction.
+% List of figures
+\listoffigures
+\thispagestyle{empty} 
+\newpage
 
-\chapter{Background}
-This is the background section.
+% List of tables
+\listoftables 
+\newpage
+
+% Introduction 
+\input{Context/main.tex}
+
+%Justification
+\input{Justification/main.tex}
+
+%Scope
+\input{Scope/main.tex}
+
+%Methodology
+\input{Methodology/main.tex}
+
+%References 
+\printbibliography 
 
 \end{document}

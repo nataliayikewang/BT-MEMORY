@@ -1,0 +1,72 @@
+\subsection{Market Analysis}
+
+The market already offers millions of available expenses 
+management applications. However, in this section only the 
+most recognized and competent examples are pointed out. 
+Analyzing today's market solutions helps identify market gaps 
+while leading the ongoing application to meet industry standards 
+and prioritize the most crucial features.
+
+Evidently, the following competent platforms mentioned are assumed 
+to include the basic features of a simplified expense management 
+process. This includes centralized expense data, digital expense 
+management and reporting, streamlined information submissions, and 
+secure login access through the company's employee account. 
+
+To delve deeper into the main differences between available potential 
+market offerings, consider Table 1, which shows a comparative 
+overview of these platforms. Green cells indicate features that the 
+application offers, while red cells indicate features that it does not. 
+In the last row, the cost of each example is presented in detail.
+
+%Comparative Analysis of Leading Expense Management Solutions (own creation)
+
+\begin{table}[H]
+\centering
+\small
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|p{4cm}|>{\centering\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{2.2cm}|>{\centering\arraybackslash}p{2.2cm}|}
+\hline
+\cellcolor{orange!45}\textbf{Feature} & \cellcolor{orange!25}\textbf{SAP Concur} & \cellcolor{orange!25}\textbf{Zoho Expense} & \cellcolor{orange!25}\textbf{Expensify} & \cellcolor{orange!25}\textbf{Payhawk} \\ \hline
+\cellcolor{orange!25} AI-powered data extraction & \cellcolor{green!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  \\ \hline
+\cellcolor{orange!25} OCR technology & \cellcolor{green!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  \\ \hline
+\cellcolor{orange!25} Intuitive UI & \cellcolor{red!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  \\ \hline
+\cellcolor{orange!25} Limit employee's spending & \cellcolor{red!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  \\ \hline
+\cellcolor{orange!25} Approval processes customized & \cellcolor{red!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  \\ \hline
+\cellcolor{orange!25} Global reimbursements & \cellcolor{red!25}  & \cellcolor{red!25}  & \cellcolor{green!25}  & \cellcolor{green!25} \\ \hline
+\cellcolor{orange!25} Virtual cards & \cellcolor{red!25}  & \cellcolor{red!25}  & \cellcolor{green!25}  & \cellcolor{green!25}  \\ \hline
+\cellcolor{orange!25} Automated VAT extraction & \cellcolor{red!25}  & \cellcolor{red!25}  & \cellcolor{red!25}  & \cellcolor{green!25}  \\ \hline
+\cellcolor{cyan!35} Cost & \cellcolor{cyan!25}High & \cellcolor{cyan!25}Subscription-based & \cellcolor{cyan!25}Cost-per-use & \cellcolor{cyan!25}Subscription-based \\ \hline
+\end{tabular}
+\caption{Comparative Analysis of Leading Expense Management Solutions (own creation)}
+\end{table}
+As demonstrated in this table, all options share two common features: 
+AI-powered data extraction and OCR technology. Both are indispensable 
+for automated expense management. The AI model serves as an automatic 
+extraction tool for selecting the relevant information from receipts, 
+while the OCR technology automatically converts a text-content image 
+into a machine-readable text\cite{ocr-technology}.
+
+In this project, incorporating an AI model is essential to simplify 
+expense data extraction. The final product will include this tool, 
+as discussed previously in Section 1.1.4. Nevertheless, since it is
+only a web-app (not a mobile-app), it is not considered to include
+the possibility to allow end-users to upload receipts via a camera, 
+integrating OCR technology is unnecessary and so, will not be 
+included in the final implementation.
+
+However, going back to Table 1, there are evident differences in 
+target markets and secondary features. For instance, SAP Concur 
+dominates the large enterprise sector\cite{sap-concur} but is criticized for 
+its non-intuitive user interface and high-cost plans \cite{sap-concur-vs-zoho}. In contrast, 
+Zoho Expense and Expensify target small businesses with more 
+user-friendly interfaces, more affordable pricing, and additional 
+features not included in SAP Concur\cite{zoho-expense}\cite{expensify}. The last example introduces 
+Payhawk, which includes a new feature that has not been offered by the 
+previous platforms yet: automated receipts VAT extraction\cite{payhawk}. 
+
+Despite their strengths, this analysis clearly reveals common areas 
+for improvement. An interesting feature for FSP and similar companies 
+would be real-time email notifications—such as alerting employees when 
+an expense report has been rejected or approved, and notifying approvers 
+when a report is submitted and pending review.
