@@ -1,9 +1,19 @@
 \documentclass[12pt,a4paper]{report}
 
 \usepackage[utf8]{inputenc}
-\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[
+    a4paper,
+    top=3.5cm,
+    bottom=3.5cm,    
+    left=2.5cm,
+    right=2.5cm,
+    headheight=50pt,
+    headsep=20pt
+]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
 \usepackage{parskip}
 \usepackage[hidelinks]{hyperref}
 \usepackage{float}
@@ -17,22 +27,74 @@
 \usepackage[
     backend=biber,
     style=numeric,
+    sorting=none,
     url=true,
     doi=false,
     eprint=false,
-    giveninits=true,
-    maxbibnames=99
+    natbib=true
 ]{biblatex}
 
 \addbibresource{References/references.bib}
+
+% Automatically add bibliography to TOC
+\defbibheading{bibintoc}[References]{%
+  \section*{#1}%
+  \addcontentsline{toc}{section}{#1}}
+
 
 % Make URLs clickable and nicely formatted
 \usepackage{xurl}
 \hypersetup{
     colorlinks=true,
-    citecolor=blue,
-    linkcolor=blue,
-    urlcolor=blue
+    citecolor=blue,   % citations stay blue
+    linkcolor=black,  % internal links (ToC, refs) become black
+    urlcolor=blue     % URLs stay blue
+}
+
+%Bold section titles
+\usepackage{tocloft}
+
+% Make section entries bold in TOC
+\renewcommand{\cftsecfont}{\bfseries}      % Section number + title bold
+\renewcommand{\cftsecpagefont}{\bfseries}  % Page number bold
+
+% Page numbering in footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear all headers and footers
+\fancyfoot[C]{\thepage} % Page number in center of footer
+\renewcommand{\headrulewidth}{0pt} % Remove header line
+\renewcommand{\footrulewidth}{0pt} % Remove footer line
+
+% Redefine plain style (used on chapter opening pages) to also show page numbers
+\fancypagestyle{plain}{%
+  \fancyhf{} % Clear all headers and footers
+  \fancyfoot[C]{\thepage} % Page number in center of footer
+  \renewcommand{\headrulewidth}{0pt} % Remove header line
+  \renewcommand{\footrulewidth}{0pt} % Remove footer line
+}
+
+% Custom command for figure/table source
+\usepackage{caption}
+\newcommand{\source}[1]{%
+  \vspace{0.3cm}
+  {\captionfont Source: #1}
 }
 
 \renewcommand{\thesection}{\arabic{section}}
+
+%header and footer configuration
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{} % clear all header and footer fields
+
+% HEADER
+\fancyhead[C]{\small Expenses Reporting Tool for an IT Consultancy}
+
+% FOOTER
+\fancyfoot[C]{\thepage}
+
+% Header and footer lines
+\renewcommand{\headrulewidth}{0.4pt} % line under header
+\renewcommand{\footrulewidth}{0.4pt} % line above footer

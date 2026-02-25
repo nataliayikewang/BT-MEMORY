@@ -1,1 +1,14 @@
 https://www.overleaf.com/project/67add2ad58cc4c99c0cad75b
+OPTION 1:
+latexmk -pdf main.tex
+
+OPTION 2:
+Auto-compile on save: Just press Ctrl+S
+Manual build: Press Ctrl+Alt+B
+The extension will use latexmk by default (fastest)
+manual sequence (if needed)
+pdflatex -interaction=nonstopmode main.tex
+biber main
+pdflatex -interaction=nonstopmode main.tex
+pdflatex -interaction=nonstopmode main.tex
+

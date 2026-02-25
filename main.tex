@@ -6,18 +6,25 @@
 % Cover page
 \input{Cover/main.tex}
 
+\clearpage
+\pagenumbering{gobble} % removes page numbering completely
+
 % Table of contents
 \tableofcontents
-\newpage
+\clearpage
 
-% List of figures
+%List of figures
 \listoffigures
-\thispagestyle{empty} 
+\clearpage
+
+%List of tables
+\listoftables
+\clearpage
 \newpage
 
-% List of tables
-\listoftables 
-\newpage
+% Start numbering here
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 % Introduction 
 \input{Context/main.tex}
@@ -31,7 +38,8 @@
 %Methodology
 \input{Methodology/main.tex}
 
+\newpage
 %References 
-\printbibliography 
+\printbibliography[heading=bibintoc]
 
 \end{document}
