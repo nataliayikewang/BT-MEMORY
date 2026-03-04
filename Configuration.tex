@@ -1,5 +1,8 @@
 \documentclass[12pt,a4paper]{report}
 
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
 \usepackage[utf8]{inputenc}
 \usepackage[
     a4paper,
@@ -12,15 +15,23 @@
 ]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
+\numberwithin{figure}{subsection}
+\numberwithin{table}{subsection}
 \usepackage{parskip}
 \usepackage[hidelinks]{hyperref}
 \usepackage{float}
 \usepackage[table]{xcolor}
 \usepackage{array}
+\usepackage{tabularx}
 \usepackage[table]{xcolor}
 \usepackage{enumitem}
+\usepackage{ltxtable} 
+\usepackage{filecontents}
+
+\usepackage{longtable}
+
+\renewcommand{\arraystretch}{1.5} % Ajusta altura de filas
+\setlength{\arrayrulewidth}{0.8pt}
 
 \usepackage{hyperref}
 

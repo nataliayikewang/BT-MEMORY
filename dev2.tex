@@ -1,0 +1,33 @@
+% !TeX root = dev2.tex
+\input{Configuration}
+
+\begin{document}
+
+% Cover page
+\input{Cover/main.tex}
+
+\clearpage
+\pagenumbering{gobble} % removes page numbering completely
+
+% Table of contents
+\tableofcontents
+\clearpage
+
+%List of figures
+\listoffigures
+\clearpage
+
+%List of tables 
+\listoftables
+\clearpage
+\newpage
+
+% Start numbering here
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\setcounter{section}{4}
+
+% Introduction 
+\input{TemporalPlanning/main.tex}
+
+\end{document} 
