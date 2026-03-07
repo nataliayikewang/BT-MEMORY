@@ -1,0 +1,53 @@
+Task ID	Name				Total hours	Hours per Role					Cost  (€)
+						PM	D	T	SA	TW	
+PS	Project Starting				50	80	0	0	0	0	2309.333333
+PS1	Context and Scope				20	20					577.3333333
+PS2	Temporal Planning				10	20					577.3333333
+PS3	Budget and Sustainability				10	20					577.3333333
+PS4	Initial Documentation				10	20					577.3333333
+PM	Project Management				153	59	112	0	0	41	4783.733333
+PM1	Agile Ceremonies				51	51	51				2485.4
+PM2	Thesis Director Review Meetings				8	8	8				389.8666667
+PM3	Git Repository Documentation				40		40				794.6666667
+PM4	User Manual Documentation				2		1			1	40.73333333
+PM5	Product Backlog Update				8		8				158.9333333
+PM6	Final Thesis Documentation				20					20	417.3333333
+PM7	Final Demonstration Video				4		4				79.46666667
+PM8	Bachelor’s Thesis Defense				20					20	417.3333333
+DT	Design				16	0	0	0	16	0	445.8666667
+DT1	Use Case Diagram				2				2		55.73333333
+DT2	Conceptual Model Diagram				4				4		111.4666667
+DT3	Technology Stack Decision				2				2		55.73333333
+DT4	Logic and Physic Architecture Design				4				4		111.4666667
+DT5	UI mockups Design				2				2		55.73333333
+DT6	Security Design				2				2		55.73333333
+Dev	Development				36	0	31	5	0	0	705.4933333
+Dev0	Self-learning and study of unfamiliar technologies				8		8				158.9333333
+Dev1	Environment Configuration				2		2				39.73333333
+Dev2	Product Deployment				8		8				158.9333333
+Dev3	Unit and Integration Testing				10		5	5			188.96
+Dev4	Logging and Monitoring				8		8				158.9333333
+FBD	Frontend and Backend Development 				128	0	128	0	0	0	2542.933333
+FBD1	Expense Uploads				16		16				317.8666667
+FBD2	Uploaded Expenses Real-time Dashboard				4		4				79.46666667
+FBD3	AI-Extracted Expense Data Review and Correction				20		20				397.3333333
+FBD4	Uploaded Expenses Deletion				4		4				79.46666667
+FBD5	Expense Reports View, Creation, Edit, Submission, and Deletion				20		20				397.3333333
+FBD6	Company Email User Authentication				8		8				158.9333333
+FBD7	Role-based User Access				16		16				317.8666667
+FBD8	Submitted Report Approval and Rejection				8		8				158.9333333
+FBD9	Employee Spending Limit Configuration				8		8				158.9333333
+FBD10	Submitted and Reviewed Expenses Record Visualization				4		4				79.46666667
+FBD11	Email Notification Service Integration				20		20				397.3333333
+BD	Backend Development				120	0	120	0	0	0	2384
+BD1	RESTful API Backend Logic Implementation				20		20				397.3333333
+BD2	Azure SQL Database Integration and Manipulation				20		20				397.3333333
+BD3	Azure Blob Storage Integration				8		8				158.9333333
+BD4	Microsoft Document Intelligence AI Model Integration				20		20				397.3333333
+BD5	Automated AI-driven Data Extraction Pipeline				20		20				397.3333333
+BD6	Azure SignalR Real-time Notification Service Integration				16		16				317.8666667
+BD7	Microsoft Entra ID User Authentication Integration				16		16				317.8666667
+FD	Frontend Development				10	0	10	0	0	0	198.6666667
+FD1	Expenses Search and Filter				8		8				158.9333333
+FD2	Reports Search				2		2				39.73333333
+Total (Project Hours / Personnel Budget)					513	139	401	5	16	41	13370.02667
