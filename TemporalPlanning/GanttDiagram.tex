@@ -1,62 +1,23 @@
 \subsection{Gantt Diagram}
 
-A Gantt diagram is attached at the end of this section. Continuous 
-arrows represent Finish-Start (FS) dependencies between tasks, while 
-dashed arrows represent Finish-Finish (FF) dependencies. FS dependencies 
-indicate that successor tasks cannot start until their predecessor tasks 
-are completed. FF dependencies show that successor tasks cannot finish 
-until their predecessor tasks are completed.
+A Gantt diagram is attached at the end of this section. Continuous arrows represent Finish-Start (FS) dependencies between tasks, while dashed arrows represent Finish-Finish (FF) dependencies. FS dependencies indicate that successor tasks cannot start until their predecessor tasks are completed. FF dependencies show that successor tasks cannot finish until their predecessor tasks are completed.
 
-\newpage
+Referring to Diagram \ref{fig:gantt-diagram} , the project timeline spans 121 days. Considering the 502  total estimated hours, this equates to approximately 4 hours of work per day. Consequently, the weekly workload is 28 hours, matching the weekly effort allocated in the Gantt diagram.
 
-Referring to Diagram \ref{fig:gantt-diagram} , the project timeline spans 121 days. 
-Considering the 502  total estimated hours, this equates to 
-approximately 4 hours of work per day. Consequently, the weekly workload 
-is 28 hours, matching the weekly effort allocated in the Gantt diagram.
-
-Since the Agile Methodology is selected for this application 
-development, each week in the Gantt diagram represents one sprint. 
-To perform the Agile ceremonies described in Section 4.1, daily Scrums 
-(15 minutes each) are scheduled every 2 days, resulting in 3 meetings 
-per week that happen on every Monday, Wednesday, and Friday. Sprint 
-planning, review, and retrospective require 45 minutes each. Thus, 
-Agile ceremonies total 3 hours per week, which equals 51 hours over 
-17 weeks. Agile's iterative meeting structure leads the \textbf{PM1} task to 
-span the entire Gantt diagram timeline. 
+Since the Agile Methodology is selected for this application development, each week in the Gantt diagram represents one sprint. To perform the Agile ceremonies described in Section 4.1, daily Scrums (15 minutes each) are scheduled every 2 days, resulting in 3 meetings per week that happen on every Monday, Wednesday, and Friday. Sprint planning, review, and retrospective require 45 minutes each. Thus, Agile ceremonies total 3 hours per week, which equals 51 hours over 17 weeks. Agile's iterative meeting structure leads the \textbf{PM1} task to span the entire Gantt diagram timeline. 
 
 Other project management tasks follow the same pattern:
 
-\begin{itemize}
-    \item \textbf{PM2} remains undetermined due to undefined thesis director 
-    meetings, representing iterative appointments throughout the 
-    project lifetime.
-    \item \textbf{PM3}, which depends on \textbf{Dev1} (beginning once the repository 
-    is created), spans most of the project duration to satisfy objective 
-    SG7 from Section 3.1, as clean code requires ongoing, extensive 
-    documentation.
-    \item \textbf{PM5} starts after \textbf{PS2} (temporal planning) is completed and 
-    continues during the full application development, as the product backlog requires 
-    constant updates whenever new features or tasks are added.
-    \item \textbf{PM6} runs over the project stage to ensure consistency with final 
-    deliverables.
+\begin{itemize}[noitemsep]  
+    \item \textbf{PM2} remains undetermined due to undefined thesis director meetings, representing iterative appointments throughout the project lifetime.
+    \item \textbf{PM3}, which depends on \textbf{Dev1} (beginning once the repository is created), spans most of the project duration to satisfy objective SG7 from Section 3.1, as clean code requires ongoing, extensive documentation.
+    \item \textbf{PM5} starts after \textbf{PS2} (temporal planning) is completed and continues during the full application development, as the product backlog requires constant updates whenever new features or tasks are added.
+    \item \textbf{PM6} runs over the project stage to ensure consistency with final deliverables.
 \end{itemize}
 
-Following the project management tasks, the testing phase presents 
-its own challenges: Given the complexity of testing, which often 
-requires updates when new implementations are added, the \textbf{Dev3} task 
-is scheduled for the final development phase due to time constraints. 
-Maintaining passing tests throughout development demands a considerable 
-amount of time. However, all new features are manually tested multiple 
-times before integrating them into the main source code.
+\newpage
 
-Certain development tasks also demand additional time allocation. For 
-example, \textbf{FBD1}, \textbf{FBD3}, and \textbf{FBD11}. \textbf{FBD1} is the first coding task; \textbf{FBD3} 
-requires extensive coordination with frontend and backend; \textbf{FBD11} marks 
-the author's first experience implementing email notifications. As a 
-result, extra time is allocated due to likely challenges. \textbf{Backend 
-Development} tasks similarly incur additional time costs. Finally, 
-\textbf{FBD7} requires prior database employee hierarchy configuration, adding 
-further time overhead.
+Certain development tasks also demand additional time allocation. For example, \textbf{FBD1}, \textbf{FBD3}, and \textbf{FBD11}. \textbf{FBD1} is the first coding task; \textbf{FBD3} requires extensive coordination with frontend and backend; \textbf{FBD11} marks the author's first experience implementing email notifications. As a result, extra time is allocated due to likely challenges. \textbf{Backend Development} tasks similarly incur additional time costs. Finally, \textbf{FBD7} requires prior database employee hierarchy configuration, adding further time overhead.
 
 %Gantt diagram from Images/GanttDiagram.png
 \begin{figure}[H]
@@ -65,4 +26,3 @@ further time overhead.
     \caption{Gantt Diagram (own creation)} 
     \label{fig:gantt-diagram} 
 \end{figure}    
-\newpage

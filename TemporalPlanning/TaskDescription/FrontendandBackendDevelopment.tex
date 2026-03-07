@@ -1,119 +1,64 @@
 \subsubsection{Frontend and Backend Development}
 
-Since this is a full-stack web application, the implementation 
-encompasses both frontend and backend components. The frontend primarily 
-handles the user interface (UI) and user experience (UX), encompassing 
-all visual elements and user interactions of the application. The 
-backend focuses on the core business logic, it handles more complex 
-operations that are hidden in the frontend part and interacts with 
-external services. The backend is implemented as a RESTful API that 
-is called by the frontend when required.
+As a full-stack web application, the implementation is divided into two main areas. The frontend is responsible for the user interface (UI) and user experience (UX). The backend implements the complex implementations hidden in the frontend and integrates external services via a RESTful API.
 
 \textbf{FBD1. Expense Uploads}
 
-Provide a visual interface in the frontend for users to drag-and-drop 
-or upload receipts. The backend will later handle database updates to 
-register the new ticket and make it accessible on future logins.
+Provide a visual interface in the frontend for users to drag-and-drop or upload receipts. The backend will later handle database updates to register the new ticket. In this way, uploaded expenses will be accessible on future logins.
 
 \textbf{FBD2. Uploaded Expenses Real-time Dashboard}
 
-Call the backend API from the frontend app for receiving all the previous 
-uploaded receipts of the corresponding authenticated user. The backend 
-is accountable for retrieving this information properly. Within this 
-dashboard the current status of the expense is displayed, the possible 
-statuses are:
+Call the backend API from the frontend app for receiving all the previous uploaded receipts of the corresponding authenticated user. The frontend dashboard will display each expense and its real-time processing status, which can be: 
 
-\begin{itemize}[leftmargin=0.5cm,label={}]
-    \item \textbf{Processing}
+\begin{itemize}[leftmargin=0.5cm,noitemsep]
+    \item \textbf{Processing:} The expense is still being processed by the AI model.
 
-    \item The expense is still being processed by the AI model.
+    \item \textbf{Pending Review:} The AI model has successfully analyzed the expense, the uploader can now review it.
 
-    \item \textbf{Pending Review}
+    \item \textbf{Completed:} The user has reviewed and completed all required information. The expense is ready for being included in a new or existing report.
 
-    \item The AI model has successfully analyzed the expense, the uploader can 
-    now review it.
-
-    \newpage
-
-    \item \textbf{Completed}
-
-    \item The user has reviewed and completed all required information. The expense 
-    is ready for being included in a new or existing report.
-
-    \item \textbf{Failed} 
-
-    \item The AI couldn't extract data from the receipt (either due to 
-    unavailability or unrecognized format).
+    \item \textbf{Failed:} The AI couldn't extract data from the receipt (either due to unavailability or unrecognized format).
 
 \end{itemize}
 
+\newpage 
+
 \textbf{FBD3. AI-Extracted Expense Data Review and Correction}
 
-Let employees review AI-processed expenses and fill in the missing 
-required information in the frontend UI. Once the user wants to save 
-the new expense information, the backend will then update the 
-database with the corrected data.
+Let employees correct the AI-extracted expense data and fill in the missing required information in the frontend UI. Once the user wants to save the new expense information, the backend will then update the database with the corrected data.
 
 \textbf{FBD4. Uploaded Expenses Deletion}
 
-Allow employees to delete any uploaded receipt, regardless of its 
-current status. The frontend provides visual tools to delete one or 
-multiple expenses. After the user confirms the deletion, the backend 
-marks them as deleted in the database.
+Allow employees to delete any uploaded receipt, regardless of its current status. The frontend provides visual tools to delete one or multiple expenses. After the user confirms the deletion, the backend marks them as deleted in the database.
 
 \textbf{FBD5. Expense Reports View, Creation, Edit, Submission, and Deletion}
 
-Allow employees to create reports from uploaded, AI-processed, and 
-reviewed expenses. They can edit the report details, 
-submit for approval, or delete unsubmitted reports using the 
-frontend UI. The backend updates the database status based on 
-user actions.
+Allow employees to create reports from uploaded, AI-processed, and reviewed expenses. They can edit the report details, submit for approval, or delete unsubmitted reports using the frontend UI. The backend updates the database status based on user actions.
 
 
 \textbf{FBD6. Company Email User Authentication}
 
-Grant employees login access using their company email account through the frontend login page.
-The backend, which is integrated with Microsoft Entra ID,  verifies 
-the user access. On first login, the backend creates a new user profile; on 
-return visits, it retrieves the user's relevant data (e.g. previous uploaded expenses).
+Grant employees login access using their company email account through the frontend login page. The backend, which is integrated with Microsoft Entra ID,  verifies the user access. On first login, the backend creates a new user profile; on return visits, it retrieves the user's relevant data (e.g. previous uploaded expenses).
 
 \textbf{FBD7.  Role-based User Access}
 
-Assign the corresponding role to the logged-in user, either 
-regular employee or administrator. Administrators have 
-additional features unavailable to regular employees. 
+Assign the corresponding role to the logged-in user, either regular employee or administrator. Administrators have additional features unavailable to regular employees. 
 
-When a user logs into the frontend app, the backend processes the user 
-information to assign the appropriate role, enabling the frontend to 
-display only the functionalities specific to that role.
+When a user logs into the frontend app, the backend retrieves their corresponding role, enabling the frontend to display only the functionalities specific to that role.
 
 
 \textbf{FBD8. Submitted Report Approval and Rejection}
 
-Enable administrative users to view the reports submitted by 
-employees that are under their supervision, in order to aprove or 
-reject the corresponding reimbursement budgets. The administrator 
-handles the frontend view for handling this functionality, while 
-the backend updates the internal database accordingly.
+Enable administrators to view reports submitted by their supervised employees for approval or rejection of reimbursement budgets. The frontend handles the interface, while the backend updates the database accordingly.
 
-\newpage
 \textbf{FBD9. Employee Spending Limit Configuration}
 
-Provide administrative users the ability to set spending limits for 
-employees under their supervision. The frontend handles the visual 
-logic of this functionality, while the backend registers the new 
-employee limit in the database.
+Provide administrative users the ability to set spending limits for employees under their supervision through the frontend UI. The backend is accountable for registering the new employee expense limit.
 
 \textbf{FBD10. Submitted  and Reviewed Expenses Records Visualization}
 
-Enable users to view their submitted reports record with its 
-corresponding current status. Administrator are also able to see 
-their reviewed reports record, including their approval or rejection 
-decision. To do that, the frontend calls the backend API to retrieve the 
-accurate information and displays it to the user through a visual dashboard.
+Enable users to view their submitted reports record with its corresponding current status. Administrators are also able to see their reviewed reports record, including their approval or rejection decision. To do that, the frontend calls the backend API to retrieve the accurate information and displays it to the user through a visual dashboard.
 
 \textbf{FBD11. Email Notification Service Integration}
 
-Send email notifications to the approver when there are new submitted reports pending to review, 
-or to the employee when their report is approved or rejected. The backend 
-handles all email notifications triggered by frontend actions.
+Send email notifications to the approver when there are new submitted reports pending to review, or to the employee when their report is approved or rejected. The backend handles all email notifications triggered by frontend actions.

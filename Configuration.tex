@@ -3,11 +3,25 @@
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 
+%reduce margen entre lineas
+
+\usepackage{setspace}
+\setstretch{1.1} % Reduce el interlineado. 1.5 es doble espacio, 1.2 es común. 1.1 es más compacto pero legible.
+
+\usepackage{titlesec}
+% Reduce el espacio después de los títulos de sección y subsección
+\titlespacing*{\section}{0pt}{1.5ex plus 1ex minus .2ex}{0.8ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.2ex plus 1ex minus .2ex}{0.6ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{2ex plus 1ex minus .2ex}{0.5ex plus .2ex}
+% Ajustar tamaño de fuente de subsubsection para que sea igual al texto normal
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+%reduce margen entre lineas
+
 \usepackage[utf8]{inputenc}
 \usepackage[
     a4paper,
-    top=3.5cm,
-    bottom=3.5cm,    
+    top=2.5cm,
+    bottom=2.5cm,    
     left=2.5cm,
     right=2.5cm,
     headheight=50pt,
@@ -18,13 +32,16 @@
 \numberwithin{figure}{subsection}
 \numberwithin{table}{subsection}
 \usepackage{parskip}
+\setlength{\parskip}{0.4em} % Reduce el espacio entre párrafos (default ~0.5-1em)
 \usepackage[hidelinks]{hyperref}
 \usepackage{float}
 \usepackage[table]{xcolor}
 \usepackage{array}
+\usepackage{amssymb}
 \usepackage{tabularx}
 \usepackage[table]{xcolor}
 \usepackage{enumitem}
+\setlist{topsep=0pt, partopsep=0pt, itemsep=0.2em} % Elimina espacio antes/después de listas
 \usepackage{ltxtable} 
 \usepackage{filecontents}
 
@@ -87,6 +104,7 @@
 
 % Custom command for figure/table source
 \usepackage{caption}
+\setlength{\belowcaptionskip}{0.3em} % Reduce margen después de captions
 \newcommand{\source}[1]{%
   \vspace{0.3cm}
   {\captionfont Source: #1}

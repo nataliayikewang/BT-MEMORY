@@ -1,72 +1,84 @@
 \subsection{Summary of Tasks and Resources}
 
+% Define custom colors for the rows
+\definecolor{rowblue}{HTML}{EBF5FF}
+\definecolor{rowgreen}{HTML}{E6F4EA}
+\definecolor{rowyellow}{HTML}{FFF9E6}
+\definecolor{roworange}{HTML}{FFF4E6}
+\definecolor{rowviolet}{HTML}{F3E8FF}
+\definecolor{rowred}{HTML}{FFEBEB}
+\definecolor{rowcyan}{HTML}{E0FFFF} 
 
-\begin{longtable}{|>{\centering\arraybackslash}p{1.2cm}|>{\raggedright\arraybackslash}p{4.8cm}|>{\centering\arraybackslash}p{1.3cm}|>{\centering\arraybackslash}p{2.7cm}|>{\raggedright\arraybackslash}p{3.5cm}|}
+{\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{longtable}{|>{\centering\arraybackslash}p{1cm}|>{\raggedright\arraybackslash}p{5cm}|>{\centering\arraybackslash}p{1cm}|>{\centering\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}p{4.5cm}|}
 
-% --- CABECERA PARA LA PRIMERA PÁGINA ---
+% --- HEADER FOR THE FIRST PAGE ---
 \hline
-\rowcolor{cyan!80}
-\multicolumn{5}{|c|}{\textbf{Project Tasks Overview}} \\ \hline
-\rowcolor{cyan!40}
-\textbf{Task ID} & \textbf{Task Name} & \textbf{Effort} & \textbf{Dependencies} & \textbf{Resources} \\ \hline
+\rowcolor{gray!50}
+\multicolumn{5}{|c|}{{\textbf{Project Tasks Overview}}} \\ \hline
+\rowcolor{gray!40}
+\textbf{Task ID} & \textbf{Task Name} & \textbf{Effort (h)} & \textbf{Dependen- cies} & \textbf{Resources} \\ \hline
 \endfirsthead
 
-% --- CABECERA PARA LAS PÁGINAS SIGUIENTES ---
-\multicolumn{5}{c}%
-{{\bfseries \tablename\ \thetable{} -- continuation of the previous page}} \\
+% --- HEADER FOR SUBSEQUENT PAGES ---
+\multicolumn{5}{r}%
+{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
 \hline
-\rowcolor{cyan!40}
-\textbf{Task ID} & \textbf{Task Name} & \textbf{Effort} & \textbf{Dependencies} & \textbf{Resources} \\ \hline
+\rowcolor{gray!40}
+\textbf{Task ID} & \textbf{Task Name} & \textbf{Effort (h)} & \textbf{Dependen- cies} & \textbf{Resources} \\ \hline
 \endhead
 
-% --- PIE DE PÁGINA (excepto la última) ---
-\hline \multicolumn{5}{r}{{The table continues on the next page}} \\ 
+% --- FOOTER (except for the last page) ---
+\hline \multicolumn{5}{r}{{Table continues on the next page}} \\ 
 \endfoot
 
-% --- PIE DE PÁGINA (sólo en la última) ---
+% --- FOOTER (only on the last page) ---
 \hline
 \caption{Project Tasks with Effort, Dependencies, and Resources (own creation)}
-\label{table:summary-project-tasks-and-resources} 
+\vspace{-1em}
+\label{table:tasks} 
 \endlastfoot 
 
-% --- CONTENIDO DE LA TABLA ---
-\rowcolor{cyan!24}
-PS & Project Starting & 60 & & \\ \hline
-PS1 & Context and Scope & 20 & & SM, PO, TD, GT, DT, OS, HW, MCS, VSC, FIB, GM, WEB, OVL \\ \hline
+% --- TABLE CONTENT ---
+% Note: Your original content's main task "Effort" was a sum. I am marking it as a header instead.
+\rowcolor{gray!30}
+\textbf{PS} & \textbf{Project Starting} & \textbf{60} & & \\ \hline
+PS1 & Context and Scope & 20 & - & SM, PO, TD, GT, DT, OS, HW, MCS, VSC, FIB, GM, WEB, OVL \\ \hline
 PS2 & Temporal Planning & 10 & PS1 & SM, PO, TD, GT, DT, OS, HW, MCS, VSC, FIB, GM, WEB, OVL, OT \\ \hline
 PS3 & Budget and Sustainability & 10 & PS2 & SM, PO, TD, GT, DT, OS, HW, MCS, VSC, FIB, GM, WEB, OVL \\ \hline
 PS4 & Initial Documentation & 10 & PS3 & SM, PO, TD, GT, DT, OS, HW, MCS, VSC, FIB, GM, WEB, OVL \\ \hline
  
-\rowcolor{orange!40}
-PM & Project Management & 140 & & \\ \hline
-PM1 & Agile Ceremonies & 51 & & SM, PO, DT, OS, HW, AZR, MCS, VSC \\ \hline
-PM2 & Thesis Director Review Meetings & 5 & & DT, TD, OS, HW, AZR, VSC, FIB, GM, WEB \\ \hline
+\rowcolor{gray!30}
+\textbf{PM} & \textbf{Project Management} & \textbf{140} & & \\ \hline
+PM1 & Agile Ceremonies & 51 & - & SM, PO, DT, OS, HW, AZR, MCS, VSC \\ \hline
+PM2 & Thesis Director Review Meetings & 5 & - & DT, TD, OS, HW, AZR, VSC, FIB, GM, WEB \\ \hline
 PM3 & Git Repository Documentation & 40 & Dev1 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 PM4 & User Manual Documentation & 2 & PM5 & DT, OS, HW, VSC, WEB \\ \hline
 PM5 & Product Backlog Update & 8 & PS2 & SM, DT, PO, OS, HW, AZR, WEB \\ \hline
-PM6 & Final Thesis Documentation & 20 & & DT, TD, OS, HW, FIB, GM, WEB, OVL, OT \\ \hline
+PM6 & Final Thesis Documentation & 20 & - & DT, TD, OS, HW, FIB, GM, WEB, OVL, OT \\ \hline
 PM7 & Final Demonstration Video & 4 & PM6 & DT, OS, HW, WEB \\ \hline
 PM8 & Bachelor’s Thesis Defense & 20 & PM6 & DT, TD, OS, HW, FIB, GM, WEB \\ \hline
 
-\rowcolor{green!30}
-DT & Design & 16 & & \\ \hline
-DT1 & Use Case Diagram & 2 & PS1 & DT, OS, HW, OT, WEB, MSC \\ \hline
+\rowcolor{gray!30}
+\textbf{DT} & \textbf{Design} & \textbf{16} & & \\ \hline
+DT1 & Use Case Diagram & 2 & PS1 & DT, OS, HW, OT, WEB, MCS \\ \hline
 DT2 & Conceptual Model Diagram & 4 & PS1 & DT, OS, HW, OT, WEB \\ \hline
-DT3 & Technology Stack Decision & 2 & PS1 & DT, OS, HW, WEB, MSC \\ \hline
-DT4 & Logic and Physic Architecture Design & 4 & PS1 & DT, OS, HW, WEB, MSC \\ \hline
+DT3 & Technology Stack Decision & 2 & PS1 & DT, OS, HW, WEB, MCS \\ \hline
+DT4 & Logical and Physical Architecture Design & 4 & PS1 & DT, OS, HW, WEB, MCS \\ \hline
 DT5 & UI mockups Design & 2 & DT1 & DT, OS, HW, OT, WEB \\ \hline
-DT6 & Security Design & 2 & DT3, DT4 & DT, OS, HW, WEB, MSC \\ \hline
+DT6 & Security Design & 2 & DT3, DT4 & DT, OS, HW, WEB, MCS \\ \hline
 
-\rowcolor{yellow!40}
-Dev & Development & 28 & & \\ \hline
+\rowcolor{gray!30}
+\textbf{Dev} & \textbf{Development} & \textbf{28} & & \\ \hline
 Dev0 & Self-learning and study of unfamiliar technologies & 8 & DT3 & DT, OS, HW, WEB \\ \hline
 Dev1 & Environment Configuration & 2 & DT2, DT5, DT6 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 Dev2 & Product Deployment & 8 & Dev3 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 Dev3 & Unit and Integration Testing & 10 & FBD9, FBD10, FBD11 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 Dev4 & Logging and Monitoring & 8 & Dev2 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 
-\rowcolor{violet!30}
-FBD & Frontend and Backend Development & 128 & & \\ \hline
+\rowcolor{gray!30}
+\textbf{FBD} & \textbf{Frontend and Backend Development} & \textbf{128} & & \\ \hline
 FBD1 & Expense Uploads & 16 & Dev1 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 FBD2 & Uploaded Expenses Real-time Dashboard & 4 & FBD1, BD6 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 FBD3 & AI-Extracted Expense Data Review and Correction & 20 & FBD2 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
@@ -79,8 +91,8 @@ FBD9 & Employee Spending Limit Configuration & 8 & FBD7 & DT, OS, HW, GIT, AZR, 
 FBD10 & Submitted and Reviewed Expenses Record Visualization & 4 & FBD8 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 FBD11 & Email Notification Service Integration & 20 & FBD8 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 
-\rowcolor{red!20}
-BD & Backend Development & 120 & & \\ \hline
+\rowcolor{gray!30}
+\textbf{BD} & \textbf{Backend Development} & \textbf{120} & & \\ \hline
 BD1 & RESTful API Backend Logic Implementation & 20 & Dev1 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 BD2 & Azure SQL Database Integration and Manipulation & 20 & BD1 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 BD3 & Azure Blob Storage Integration & 8 & BD2 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
@@ -89,9 +101,10 @@ BD5 & Automated AI-driven Data Extraction Pipeline & 20 & BD4 & DT, OS, HW, GIT,
 BD6 & Azure SignalR Real-time Notification Service Integration & 16 & BD5 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 BD7 & Microsoft Entra ID User Authentication Integration & 16 & BD1 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 
-\rowcolor{blue!20}
-FD & Frontend Development & 10 & & \\ \hline
+\rowcolor{gray!30}
+\textbf{FD} & \textbf{Frontend Development} & \textbf{10} & & \\ \hline
 FD1 & Expenses Search and Filter & 8 & FBD2 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 FD2 & Reports Search & 2 & FBD5 & DT, OS, HW, GIT, AZR, VSC, WEB \\ \hline
 
 \end{longtable}
+}

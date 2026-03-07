@@ -1,18 +1,14 @@
 \subsubsection{Backend Development}
 
-The following tasks are implemented exclusively in the application 
-backend logic.
+The following tasks are implemented exclusively in the application backend logic.
 
 \textbf{BD1. RESTful API Backend Logic Implementation}
 
-Develop a RESTful API to manage backend responsibilities invoked by 
-frontend requests.
+Develop a RESTful API to manage backend responsibilities invoked by frontend requests.
 
 \textbf{BD2. Azure SQL Database Integration}
 
-Integrate Azure SQL Database with Entity Framework to enable create, 
-read, update, and delete (CRUD) operations on the application's data. 
-Relevant information is stored in SQL database for data manipulation and retrieval.
+Integrate Azure SQL Database with Entity Framework to manage and retrieve the relevant information.
 
 \textbf{BD3. Azure Blob Storage Integration}
 
@@ -24,24 +20,15 @@ Integrate an AI model to automate the expense data extraction.
 
 \textbf{BD5. Automated AI-driven Data Extraction Pipeline}
 
-Integrate Event Grid and Service Bus into the expense upload pipeline, 
-and implement a mechanized data extraction workflow. When a new receipt 
-is uploaded and saved to Blob Storage and SQL Database, Azure Event Grid 
-detects the event and routes it to Service Bus. This triggers automated 
-submission to the AI model for processing, while preventing bottlenecks during 
-multiple simultaneous uploads.
+Integrate Event Grid and Service Bus and implement a mechanized data extraction workflow. When a new receipt is uploaded and saved to Blob Storage and SQL Database, Azure Event Grid detects the event and routes it to Service Bus. This automates the AI model's processing, while preventing bottlenecks during multiple simultaneous uploads.
 
-\newpage
+
 \textbf{BD6. Azure SignalR Real-time Notification Service Integration}
 
-Integrate SignalR into the backend logic, enabling the backend to notify the 
-frontend whenever the AI model processes a receipt. Once the expense extraction 
-has succeeded or failed, users are notified immediately, enabling real-time UI 
-updates without requiring a manual page refresh.
+Integrate SignalR into the backend logic, enabling the backend to notify the frontend whenever the AI model processes a receipt. Once the expense extraction has succeeded or failed, users are notified immediately, enabling real-time UI updates without requiring a manual page refresh.
 
 
 \textbf{BD7. Microsoft Entra ID User Authentication Integration}
 
-Integrate Microsoft Entra ID into the backend logic to handle employee 
-authentication through the company email account.
+Integrate Microsoft Entra ID into the backend logic to handle employee authentication through the company email account.
 
