@@ -1,0 +1,61 @@
+\subsubsection{Management Control}
+
+Challenges, both expected and unexpected, are always present in any project. Even with a precisely estimated timeline and budget, it is very common for a project to fall short of the initial plan. At the end of the project, various deviation formulas will be applied in the following areas:
+ 
+\begin{itemize}
+    \item \textbf{Human resources deviation:} To contrast the actual effort with the previous estimated effort of human resources in each task.
+    
+    \vspace{1em}
+    {\footnotesize
+    \centerline{$\displaystyle
+    \text{Human resources deviation} =
+    \sum_{i \in pit} 
+    \left(
+    \text{estimated\_cost\_per\_hour}_i - \text{real\_cost\_per\_hour}_i
+    \right) 
+    \times
+    \text{total\_real\_hours}_i
+    $}
+    }
+    {\footnotesize
+        Where $i$ indexes each individual in $pit$, the set of all personnel involved in that task.
+    }
+    
+    \item \textbf{Amortization deviation:} To compare the previously estimated use of hardware resources with the actual usage time of those resources.
+    
+    \vspace{1em}
+    {\footnotesize
+    \centerline{$\displaystyle
+    \text{Amortization deviation} =
+    \sum_{i \in hr} 
+    \left(
+    \text{estimated\_usage\_hours}_i - \text{real\_usage\_hours}_i
+    \right) 
+    \times
+    \text{price\_per\_hour}_i
+    $}
+    }
+    
+    {\footnotesize
+        Where $hr$ is the set of all hardware resources used in the project, and $i$ indexes each individual resource in that set.
+    }
+
+    \item \textbf{Total cost deviation:} To determine each task's real cost deviation from the estimated cost. The general cost in the following formula represents the sum of the personnel and generic costs, excluding contingency and incident costs. Hence, the following formula is applied to each task:
+
+    \vspace{1em}
+    {\small
+    \centerline{$\displaystyle
+    \text{Total cost deviation} =
+    \left(
+    \text{estimated\_general\_cost} - \text{real\_general\_cost}
+    \right) 
+    $}
+    }
+    
+\end{itemize}
+
+\vspace{0.5em}
+
+All cost deviation calculations require the real project costs across different categories. Before applying the deviation formulas, the real costs are calculated at the end of the project using the same methodology as the initial budget estimation.
+
+Note that the resulting total cost deviation value can be either positive or negative. A positive value indicates an overestimation of the initial budget for that resource or task. In this case, the additional budget can be reallocated to address issues that arise during the project. Conversely, a negative value indicates an underestimation, requiring contingency and incident costs to cover the budget shortfall.

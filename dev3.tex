@@ -1,10 +1,10 @@
-% !TeX root = dev2.tex
-\input{Configuration}
+% !TeX root = dev3.tex
+\input{Configuration} 
 
 \begin{document}
 
 % Cover page
-\input{Cover/main.tex}
+\input{Cover/main.tex} 
 
 \clearpage
 \pagenumbering{gobble} % removes page numbering completely
@@ -12,7 +12,7 @@
 % Table of contents
 \tableofcontents
 \clearpage
-
+ 
 %List of figures
 \listoffigures
 \clearpage 
@@ -25,9 +25,13 @@
 % Start numbering here
 \pagenumbering{arabic}
 \setcounter{page}{1}
-\setcounter{section}{4}
+\setcounter{section}{5}
+ 
+% Introduction  
+\input{BudgetandSustainability/main.tex}
 
-% Introduction 
-\input{TemporalPlanning/main.tex}
+\newpage
+%References 
+\printbibliography[heading=bibintoc]
 
-\end{document} 
+\end{document}

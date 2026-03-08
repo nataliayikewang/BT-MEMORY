@@ -1,0 +1,31 @@
+\vspace{10pt}
+
+\textbf{Electric cost}
+
+The current cost of electricity is around \textbf{0.1748 \texteuro /kWh} \cite{electricity-price-spain}. Electricity costs are calculated based solely on the electricity-consuming hardware resources and their respective usage times. Following the same approach used for amortization cost calculation, the usage time is \textbf{513 hours}. Table \ref{table:electricity-cost} details the calculations and the resulting total cost:
+
+%Table of electricity cost of hardware resources
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \small
+    \setlength{\tabcolsep}{3.5pt} 
+    \makebox[\textwidth][c]{% 
+    \resizebox{0.85\paperwidth}{!}{%
+    \begin{tabular}{@{}l r r r r@{}}
+    \textbf{Hardware Resources} & \textbf{Power (W)} & \textbf{Usage Time (h)} & \textbf{Energy Consumed (kWh)} & \textbf{Electricity Cost (\texteuro)} \\
+    \hline 
+    PC Dell 16 Pro \cite{dell-16-pro} & 65 & 513 & 33.345 & 5.83 \\
+    Wireless Mouse \cite{logitech-m171} & 0.05 & 513 & 0.02565 & 0.00 \\
+    Dell Monitor \cite{dell-pro-24-plus} & 24 & 513 & 12.312 & 2.15 \\
+    Keyboard \cite{logitech-k120} & 0.1 & 513 & 0.0513 & 0.01 \\
+    \hline
+    \textbf{Total} &&&& \textbf{7.99} \\
+    \end{tabular}%
+    }}
+    \normalsize 
+    \caption[ Electricity cost of the project's hardware resources ]
+    {Electricity cost of the project's hardware resources. [Own creation]} 
+    \vspace{-1em}
+    \label{table:electricity-cost}
+\end{table}

@@ -1,0 +1,47 @@
+\vspace{10pt}
+
+\textbf{Amortization}
+
+Physical resources are also required and used in the project. However, considering only the product purchase price would not be entirely correct. For this reason, the depreciation of each hardware resource has been calculated.
+
+Hardware resources have a 4-year depreciation period. Other relevant factors for amortization calculation include the total project duration and the number of hours dedicated to the project each day, respectively 122 days and 4 hours per day. Since the hardware resources are used throughout the project timeline, their total usage time corresponds to the total project hours (513 hours). Accordingly, the following equation calculates the amortization costs for each hardware resource shown in Table \ref{table:amortization-cost-of-hardware-resources}:
+
+\vspace{-15pt}
+\[
+\text{Amortization (\texteuro)} = \text{Resource price} \times 
+\dfrac{1}{4 \text{ years}} \times 
+\dfrac{1}{122 \text{ days}} \times 
+\dfrac{1}{4 \text{ hours}} \times 
+\text{hours used}
+\]
+
+
+\vspace{-5pt}
+
+%Table of amortization cost of hardware resources
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \small
+    \setlength{\tabcolsep}{3.5pt} 
+    \makebox[\textwidth][c]{% 
+    \resizebox{0.85\paperwidth}{!}{%
+    \begin{tabular}{@{}l r r r r r@{}}
+    \textbf{Hardware Resources} & \textbf{Price (\texteuro)} & \textbf{Quantity} & \textbf{Total Price (\texteuro)} & \textbf{Usage Time (h)} & \textbf{Amortization (\texteuro)} \\
+    \hline 
+    PC Dell 16 Pro \cite{dell-16-pro} & 1,193.53 & 1 & 1,193.53 & 513 & 313.67 \\
+    Wireless Mouse \cite{logitech-m171} & 11.99 & 1 & 16.99 & 513 & 4.47 \\
+    Dell Monitor \cite{dell-pro-24-plus} & 171.82 & 2 & 343.64 & 513 & 90.31 \\
+    Keyboard \cite{logitech-k120} & 19.99 & 1 & 19.99 & 513 & 5.25 \\
+    \hline
+    \textbf{Total} &&&&& \textbf{408.44} \\
+    \end{tabular}%
+    }}
+    \normalsize 
+    \caption[ Amortization cost of the project's hardware resources ]
+    {Amortization cost of the project's hardware resources. [Own creation]} 
+    \vspace{-1em}
+    \label{table:amortization-cost-of-hardware-resources} 
+\end{table}
+
+\vspace{-1em}
