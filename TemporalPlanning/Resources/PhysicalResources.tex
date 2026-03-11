@@ -6,17 +6,16 @@
     \footnotesize
     \renewcommand{\arraystretch}{1.2}
     \setlength{\arrayrulewidth}{0.8pt}
-    \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{3cm}|X|}
-        \hline
+    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{3cm} >{\centering\arraybackslash}p{3cm} p{10cm}}
         \rowcolor{gray!40} 
-        \textbf{Resource ID} & 
-        \textbf{Resource Name} & 
-        \parbox[c][\height][c]{\hsize}{\centering \textbf{Components}} \\ 
-        \hline
-        OS & Office Supplies & A table, a chair, electricity, internet, and office rental. \\ \hline
-        HW & Hardware Resources & A computer, two monitors, a mouse, and a keyboard. \\ \hline
+        \textbf{Resource ID} & \textbf{Resource Name} & \parbox[c][\height][c]{\hsize}{\centering \textbf{Components}} \\ 
+        \rowcolor{gray!05}
+        OS & Office Supplies & A table, a chair, electricity, internet, and office rental. \\
+        \rowcolor{gray!05}
+        HW & Hardware Resources & A computer, two monitors, a mouse, and a keyboard. \\
     \end{tabularx}
-    \caption{Hardware Resources (own creation)}
+    \caption[ Hardware resources. ]
+    {Hardware resources. [Own creation]} 
     \vspace{-1em}
     \label{table:hardware-resources-table} 
 \end{table} 
@@ -25,26 +24,37 @@
 \begin{table}[H]
     \centering 
     \footnotesize
-    \renewcommand{\arraystretch}{1.2}
+    \renewcommand{\arraystretch}{1.5}
     \setlength{\arrayrulewidth}{0.8pt}
-    \begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{1.8cm}|>{\centering\arraybackslash}p{3cm}|X|}
-        \hline
+    {\renewcommand{\tabularxcolumn}[1]{m{#1}}
+    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}m{1.8cm} >{\centering\arraybackslash}m{2.5cm} X}
         \rowcolor{gray!40} 
-        \textbf{Resource ID} & 
-        \textbf{Resource Name} & 
-        \parbox[c][\height][c]{\hsize}{\centering \textbf{Description}} \\ 
-        \hline
-        GIT & Git & A version control tool for managing the source code repository. \\ \hline
-        AZR & Microsoft Azure Resources & Cloud services and resources: SQL Database, Blob Storage, AI model, Event Grid, Service Bus, SignalR, EntraID, and Azure DevOps (for repository and product backlog management). \\ \hline
-        MCS & Microsoft  Collaboration Tools & Communication and coordination platforms: Microsoft Teams, Calendar, Outlook, and Word. \\ \hline
-        VSC & Visual Studio Code & Source code editor with extensions and debugging tools. \\ \hline
-        FIB & FIB Platforms & Platforms from Barcelona School of Informatics(FIB): Racó, Atenea, FIB secretary, bachelor's thesis official website guide. \\ \hline
-        GM & Gmail & Email communication with university entities. \\ \hline
-        WEB & Web Browsers and Search Engines & Research Browsers: Mozilla Firefox, Google Chrome, Microsoft Edge. \\ \hline
-        OVL & Overleaf LaTeX Editor & Thesis formatting editor for final thesis documentation. \\ \hline
-        OT & Online Tools & Diagram design tools: Edraw, Draw.io, and Gantt Project. \\ \hline
+        \textbf{Resource ID} & \textbf{Resource Name} & \parbox[c][\height][c]{\hsize}{\centering \textbf{Description}} \\ 
+        \rowcolor{gray!05}
+        GIT & Git & A version control tool for managing the source code repository. \\ 
+        \rowcolor{gray!05}
+        AZR & Microsoft Azure Resources & Cloud services and resources: SQL Database, Blob Storage, AI model, Event Grid, Azure Function, Service Bus, SignalR, EntraID, and Azure 
+        DevOps (for repository and product backlog). \\ 
+        \rowcolor{gray!05}
+        MCS & Microsoft  Collaboration Tools & Communication and coordination platforms: Microsoft Teams, Calendar, Outlook, and Word. \\ 
+        \rowcolor{gray!05}
+        VSC & Visual Studio Code & Source code editor with extensions and debugging tools. \\ 
+        \rowcolor{gray!05}
+        FIB & FIB Platforms & Platforms from Barcelona School of Informatics(FIB): Racó,    
+        
+        Atenea, FIB secretary, bachelor's thesis official website guide. \\ 
+        \rowcolor{gray!05}
+        GM & Gmail & Email communication with university entities. \\ 
+        \rowcolor{gray!05}
+        WEB & Web Browsers and Search Engines & Research Browsers: Mozilla Firefox, Google Chrome, Microsoft Edge. \\ 
+        \rowcolor{gray!05}
+        OVL & Overleaf LaTeX Editor & Thesis formatting editor for final thesis documentation. \\ 
+        \rowcolor{gray!05}
+        OT & Online Tools & Diagram design tools: Edraw, Draw.io, and Gantt Project. \\ 
     \end{tabularx}
-    \caption{Software Resources (own creation)}
+    }
+    \caption[ Software resources. ]
+    {Software resources. [Own creation]} 
     \vspace{-0.4em}
     \label{table:software-resources-table}
 \end{table}

@@ -1,28 +1,82 @@
+
+\newpage
+
 \subsection{Risk Management}
-Possible risks affecting project progress are outlined in Section 3.3. With the timeline now established, contingency plans are defined to mitigate potential delays. This section presents each identified risk along with its probability, impact, and corresponding mitigation strategy.
+Possible risks affecting project progress are outlined in Section 3.3. With the timeline now established, contingency plans are defined to mitigate potential obstacles. This section presents each identified risk along with its probability, impact, and corresponding mitigation strategy. Moreover, all identified risks, along with the corresponding affected tasks and the contingency resources required for mitigation, are detailed in Table \ref{table:risks-management}.
 
-\noindent\textbf{Coding Bugs} \hfill \textbf{Probability:} High
+\vspace{10pt}
 
-\hfill \textbf{Impact:} Medium
+\noindent\textbf{Coding Bugs} \hfill \textbf{Probability:} Medium 
 
-Coding bugs are inevitable, making thorough testing essential. As outlined in Section 5.4, every code change undergoes rigorous testing across all use cases, including edge cases. In addition, during the Dev1 task, Visual Studio Code (VS Code) extensions such as ESLint and SonarQube are installed to enable automated bug detection from the very beginning of implementation. These extensions highlight coding issues directly in the editor, preventing the developer from running the application until the errors are resolved.
+\hfill \textbf{Impact:} High
 
-If bugs persist, additional debugging time is allocated. However, thanks to the installed extensions and consistent testing, the number of bugs is minimized, reducing the likelihood of significant delays. Furthermore, complex tasks already include built-in buffer time, and the reserve hours are available to cover any delays that may arise.
+Coding bugs are inevitable, making thorough testing essential. As outlined in Section 5.4, every code change undergoes rigorous testing across all use cases, including edge cases. During the Dev1 task, ESLint and SonarQube Visual Studio Code extensions are installed to automate bug detection from the very beginning of the implementation. 
+
+If bugs persist, additional debugging time is allocated, using \textbf{10 hours} of the buffer time. It is important to fix critical bugs before proceeding with new feature development, prioritizing functional application delivery.
+
+However, thanks to the installed extensions and consistent testing, the number of bugs is minimized, reducing the likelihood of significant setbacks. Furthermore, complex tasks already include built-in buffer time, as mentioned in section 5.4, and the reserve hours are available to cover any delays that may arise.
+
+\vspace{10pt}
 
 \noindent\textbf{Tight Project Deadlines} \hfill \textbf{Probability:} High
  
-\hfill \textbf{Impact:} Low
+\hfill \textbf{Impact:} Medium
 
-Software development projects often struggle with tight deadlines. To overcome this challenge, the remaining 38 hours of overhead serve as a lifesaver. This can be particularly useful throughout the project, as unexpected delays are quite common.
+Software development projects often struggle with tight deadlines. Due to the author's limited professional experience, deviation between the actual task effort and the initial time estimation is anticipated. However, since this project follows Agile methodology, iterative meetings help to detect and manage overruns at an early stage. 
+
+To overcome this challenge, the remaining \textbf{9  hours} of overhead serve as a lifesaver. This is an intentional allocation, as the project is scheduled to finish several days before the thesis defense period. Therefore, a one-week delay is permitted without affecting the final submission.
+
+In the worst-case scenario, if the project misses the expected deadline, certain non-essential application features will be deferred to the final phase, depending on the time available. Nevertheless, this alternative can only be made after obtaining the Product Owner's approval.
+
+\vspace{10pt}
+
+\newpage
 
 \noindent\textbf{Lack of Experience in Certain Technologies}  \hfill \textbf{Probability:} High
  
 \hfill \textbf{Impact:} Medium
 
-Due to the author's limited coding experience, several technologies used in the application implementation fall outside their core expertise. Task Dev0 addresses this challenge by allocating time for self-study, helping to minimize potential delays. If significant delays persist, assistance from the FSP team serves as a fallback. Seeking timely assistance is an essential software development skill that helps avoid unnecessary deadline extensions.
+Given that several technologies used in application implementation lie beyond the author's expertise, mitigation plans have been established to address this challenge. Task Dev0 specifically accounts for this difficulty by allocating dedicated time for self-study, thereby minimizing potential setbacks. 
 
-\noindent\textbf{Company's licenses and security permissions} \hfill \textbf{Probability:} High
+Since a prior study cannot fully mitigate this risk, a proposed solution is to set aside up to \textbf{8 hours} from the available buffer. If delays are prolonged, assistance from the FSP team serves as a fallback. Seeking timely assistance is an essential professional skill, as it helps prevent unnecessary deadline extensions.
+
+\vspace{10pt}
+
+\noindent\textbf{Company's Licenses and Security Permissions} \hfill \textbf{Probability:} Medium
  
 \hfill \textbf{Impact:} Low
 
-Another risk involves FSP's security system. Cyberattacks are taken more seriously every day, often requiring developers to request and wait for permission to install resources and extensions. Consequently, new restrictions may limit initial resource availability. As a contingency, tasks with no pending dependencies, such as documentation, can be prioritized in such scenarios.
+Another risk involves FSP's security system. Cyberattacks are taken more seriously every day, often requiring developers to request and wait for permission to install resources and extensions. Consequently, new restrictions may limit initial resource availability. 
+
+To prevent this blocker, Dev1 has been created to install all the previously identified tools and extensions in advance. However, this prior setup does not remove the probability of installing forthcoming tools.
+
+As a contingency, a reordering of the project backlog can be considered using the Gantt chart (Figure 5.4.1) as a reference. Tasks with no dependencies, such as BD7 and the subsequent UA category tasks, may be prioritized and initialized earlier. Likewise, other non-dependent tasks (e.g., Dev5 task) may also be advanced to maintain project progress. 
+
+%Table of electricity cost of hardware resources
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \small
+    \setlength{\tabcolsep}{3.5pt} 
+    \makebox[\textwidth][c]{% 
+    \resizebox{0.85\paperwidth}{!}{%
+    \begin{tabular}{@{}l c c l l@{}}
+    \textbf{Risk} & \textbf{Probability} & \textbf{Time (h)} & \textbf{Affected Tasks} & \textbf{Resources} \\
+    \hline 
+    Coding Bugs & 15\% & 10 & Dev3, ER1-5, UA1-6, BD1-7, FD1-2 & DT, HW \\
+    Tight Project Deadlines & 30\% & 9 & Dev2-4, ER1-5, UA1-6, BD1-7, FD1-2 & DT, HW \\
+    Lack of Experience in Certain Technologies & 30\% & 8 & Dev2, Dev3,  ER1-5, UA1-6, BD1-7, & DT, HW \\
+    Company's Licenses and Security Permissions & 15\% & 0 & Dev2, BD1-7 & DT, HW \\
+    \end{tabular}%
+    }}
+    \normalsize 
+    \captionsetup{justification=centering}
+    \caption[ Summary of identified risks, their probabilities, affected tasks, and contingency resources. ]
+    {Summary of identified risks, their probabilities, affected tasks, and contingency duration and resources. [Own creation]} 
+    \vspace{-1em}
+    \label{table:risks-management}
+\end{table}
+
+
+
+

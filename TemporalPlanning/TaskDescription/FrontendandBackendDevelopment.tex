@@ -1,16 +1,25 @@
 \subsubsection{Frontend and Backend Development}
 
-As a full-stack web application, the implementation is divided into two main areas. The frontend is responsible for the user interface (UI) and user experience (UX). The backend implements the complex implementations hidden in the frontend and integrates external services via a RESTful API.
+As a full-stack web application, the implementation is divided into two main areas. The frontend is responsible for the user interface (UI) and user experience (UX). The backend implements the complex implementations hidden in the frontend via a RESTful API and integrates external services. 
 
-\textbf{FBD1. Expense Uploads}
+This development stage requires both frontend and backend development. Since it covers a wide range of functionalities, it is divided into two subgroups: Expense and Report Development, and User Access Development.
 
-Create an intuitive visual interface for receipt submission via drag-and-drop or file upload. The backend will later handle database updates to register the new ticket. In this way, uploaded expenses will be accessible on future logins.
+\newpage
 
-\textbf{FBD2. Uploaded Expenses Real-time Dashboard}
 
-Call the backend API from the frontend app to recover all uploaded receipts of the authenticated user. The frontend dashboard displays each expense and its real-time processing status, which can be:
+\textbf{Expense and Report Development}
 
-\begin{itemize}[leftmargin=0.5cm,noitemsep]
+This section includes all tasks related to the application’s core functionalities, namely the implementation of the expense and report features.
+
+\textbf{ER1. Expense Uploads}
+
+Develop a file submission feature where the frontend handles the expense drag-and-drop and upload interface, and the backend registers the uploaded expense in the database.
+
+\textbf{ER2. Uploaded Expenses Real-time Dashboard}
+
+Develop a visual dashboard to display all uploaded expenses with their real-time processing status, which can be:
+
+\begin{itemize}[leftmargin=0.75cm,noitemsep]
     \item \textbf{Processing:} The expense is pending processing by the AI model.
 
     \item \textbf{Pending Review:} The AI model has successfully analyzed the expense, the uploader can now review it.
@@ -21,44 +30,54 @@ Call the backend API from the frontend app to recover all uploaded receipts of t
 
 \end{itemize}
 
-\newpage 
+\vspace{5pt}
 
-\textbf{FBD3. AI-Extracted Expense Data Review and Correction}
+\textbf{ER3. AI-Extracted Expense Data Review and Correction}
 
-Let employees correct the AI-extracted expense data and fill in the missing required information in the frontend UI. Once the user saves the new expense information, the backend will then update the database with the corrected data.
+Develop a form page for users to review and edit AI-processed expenses and fill in missing required information. Once the expense information is saved, the database is updated with the corrected data.
 
-\textbf{FBD4. Uploaded Expenses Deletion}
+\textbf{ER4. Uploaded Expenses Deletion}
 
-Allow employees to delete any uploaded receipt, regardless of its current status. The frontend provides visual tools to delete one or multiple expenses. After the user confirms the deletion, the backend marks them as deleted in the database.
+Develop the expense deletion feature to delete one or multiple expenses at once, regardless of their current status. When the user confirms deletion, the respective expenses are marked as deleted in the database. 
 
-\textbf{FBD5. Expense Reports View, Creation, Edit, Submission, and Deletion}
+\textbf{ER5. Expense Reports View, Creation, Edit, Submission, and Deletion}
 
-Allow employees to create reports from uploaded, AI-processed, and reviewed expenses. They can edit the report details, submit for approval, or delete unsubmitted reports using the frontend UI. The backend updates the database status based on user actions.
+Develop report management functionalities (create, edit, submit, and delete reports) and the required RESTful API for synchronizing the database with the frontend changes.
 
+\vspace{10pt}
+\textbf{User Access Development}
 
-\textbf{FBD6. Company Email User Authentication}
+The tasks described in this subgroup are contingent upon user authentication implementation before their execution can begin. It is important to note that administrators can set spending limits and manage and view submitted reports solely from employees under their supervision.
 
-Grant employees login access using their company email account through the login page. The backend, which is integrated with Microsoft Entra ID,  verifies the user access. On first login, the backend creates a new user profile; on return visits, it retrieves the user's relevant data (e.g., uploaded expenses).
+\textbf{UA1. Company Email User Authentication}
 
-\textbf{FBD7.  Role-based User Access}
+Develop the login feature that allows users to authenticate in the application through the company's email account: 
 
-Assign the correct  role to the logged-in user, either regular employee or administrator. Administrators have additional features unavailable to regular employees. 
+\begin{enumerate}[noitemsep]
+    \item Verify the user access.
+    \item 
+    \begin{enumerate} 
+        \item On the first login, create a new user account.
+        \item On the return visit, recover the relevant data of the corresponding user.
+    \end{enumerate}
+\end{enumerate}
 
-When a user logs in, the backend retrieves their corresponding role, enabling the frontend to display only the functionalities specific to that role.
+\textbf{UA2. Role-based User Access}
 
+Develop the user role assignment (based on two main roles: regular employee or administrator) and expose only the corresponding role's functionalities.
 
-\textbf{FBD8. Submitted Report Approval and Rejection}
+\textbf{UA3. Submitted Report Approval and Rejection}
 
-Enable administrators to view reports submitted by their supervised employees for approval or rejection of reimbursement budgets. The frontend handles the interface, while the backend updates the database accordingly.
+Develop a feature to allow administrators to review, approve, or reject submitted reports, and update the database accordingly.
 
-\textbf{FBD9. Employee Spending Limit Configuration}
+\textbf{UA4. Employee Spending Limit Configuration}
 
-Provide administrative users the ability to set spending limits for employees under their supervision through the frontend UI. The backend is accountable for registering the new employee expense limit.
+Develop an admin-only interface to set employees' spending limits and record the changes in the database.
 
-\textbf{FBD10. Submitted  and Reviewed Expenses Records Visualization}
+\textbf{UA5. Submitted  and Reviewed Expenses Records Visualization}
 
-Enable users to view their submitted report record with their corresponding current status. Administrators can also see their reviewed report record, including their approval or rejection decision. To do that, the frontend calls the backend API to retrieve the accurate information and displays it to the user through a visual dashboard.
+Develop a dashboard displaying the records of both users' submitted reports and administrators' reviewed reports.
 
-\textbf{FBD11. Email Notification Service Integration}
+\textbf{UA6. Email Notification Service Integration}
 
-Send email notifications to approvers for new pending reports, and to employees upon report approval or rejection. The backend handles all email notifications triggered by frontend actions.
+Develop the email notification service to notify users when their submitted reports are reviewed, and to administrators when new reports are pending for their review. 

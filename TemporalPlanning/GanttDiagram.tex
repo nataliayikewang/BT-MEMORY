@@ -2,27 +2,27 @@
 
 A Gantt diagram is attached at the end of this section. Continuous arrows represent Finish-Start (FS) dependencies between tasks, while dashed arrows represent Finish-Finish (FF) dependencies. FS dependencies indicate that successor tasks cannot start until their predecessor tasks are completed. FF dependencies show that successor tasks cannot finish until their predecessor tasks are completed.
 
-Referring to Diagram \ref{fig:gantt-diagram} , the project timeline spans 121 days. Considering the 502  total estimated hours, this equates to approximately 4 hours of work per day. Consequently, the weekly workload is 28 hours, matching the weekly effort allocated in the Gantt diagram.
+Referring to Diagram \ref{fig:gantt-diagram} , the project timeline spans \textbf{122 days} with a \textbf{one-week built-in buffer}. Considering the 513 total estimated hours, this equates to approximately \textbf{4 hours of work per day}. Consequently, the weekly workload is 28 hours, matching the weekly effort allocated in the Gantt diagram. Hence, the task effort estimations from Table \ref{table:summary-of-tasks-with-effort-dependencies-and-resources} are translated into the Gantt diagram using this pattern (e.g., the ER1 task, which costs 20 hours, represents 4 days of work in the diagram).
 
-Since the Agile Methodology is selected for this application development, each week in the Gantt diagram represents one sprint. To perform the Agile ceremonies described in Section 4.1, daily Scrum (15 minutes each) is scheduled every 2 days, resulting in 3 meetings per week that happen on every Monday, Wednesday, and Friday. Sprint planning, review, and retrospective require 45 minutes each. Thus, Agile ceremonies total 3 hours per week, which equals 51 hours over 17 weeks. Agile's iterative meeting structure spans the PM1 task across the entire Gantt diagram timeline. 
+Since the Agile Methodology is selected for this application development, each week in the Gantt diagram represents one sprint. To perform the Agile ceremonies described in Section 4.1, daily Scrum (15 minutes each) is scheduled every 2 days, resulting in 3 meetings per week that happen on every Monday, Wednesday, and Friday. Sprint planning, review, and retrospective require 45 minutes each. Thus, Agile ceremonies total 3 hours per week, which equals 51 hours over 17 weeks. Agile's iterative meeting structure spans the \textbf{PM1} task across the entire Gantt diagram timeline. However, this task \textbf{should be represented iteratively}, since the Gantt diagram tool does not support this behaviour, it is represented as a concurrent task.  
 
 Other project management tasks follow the same pattern:
 
 \begin{itemize}[noitemsep]  
     \item \textbf{PM2} remains undetermined due to undefined thesis director meetings, representing iterative appointments throughout the project lifetime.
-    \item \textbf{PM3}, which depends on \textbf{Dev1} (beginning once the repository is created), spans most of the project duration to satisfy objective SG7 from Section 3.1, as clean code requires ongoing, extensive documentation.
-    \item \textbf{PM5} starts after \textbf{PS2} (temporal planning) is completed and runs concurrently with full application development, as the product backlog requires constant updates whenever new features or tasks are added.
-    \item \textbf{PM6} runs over the project stage to ensure consistency with final deliverables.
+    \item \textbf{PM3} starts after \textbf{PS2} (temporal planning) is completed and runs concurrently with full application development, as the product backlog requires constant updates whenever new features or tasks are added.
+    \item \textbf{FPD2} runs over the project stage to ensure consistency with final deliverables.
+    \item \textbf{Dev5}, which depends on \textbf{Dev1} (beginning once the repository is created), spans most of the project duration to satisfy objective SG7 from Section 3.1, as clean code requires ongoing, extensive documentation.
 \end{itemize}
 
-\newpage
+Certain development tasks also demand additional time. These tasks have an initial effort estimation of \textbf{8 hours (2 days of the Gantt diagram)}. Since these tasks face a high probability of experiencing significant challenges, the \textbf{remaining effort time} is allocated as a \textbf{buffer}.  
 
-Certain development tasks also demand additional time. For example, \textbf{FBD1}, \textbf{FBD3}, and \textbf{FBD11}. \textbf{FBD1} is the first coding task; \textbf{FBD3} requires extensive coordination with frontend and backend; \textbf{FBD11} marks the author's first experience implementing email notifications. As a result, extra time is allocated due to likely challenges. \textbf{Backend Development} tasks similarly incur additional time costs. Finally, \textbf{FBD7} requires a prior database record of the employee hierarchy, entailing an additional time cost.
+Notable examples include\textbf{ER1}, \textbf{ER3}, \textbf{UA2}, and \textbf{UA6}. \textbf{ER1}. \textbf{ER1} is the first coding task; \textbf{ER3} requires extensive coordination with frontend and backend; \textbf{UA2} requires a prior database record of the employee hierarchy; \textbf{UA6} marks the author's first experience implementing email notifications. Finally, \textbf{Backend Development} tasks similarly incur additional time costs. 
 
 %Gantt diagram from Images/GanttDiagram.png
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Images/GanttDiagram.png}
-    \caption{Gantt Diagram (own creation)} 
+    \caption{Gantt Diagram. [own creation]} 
     \label{fig:gantt-diagram} 
 \end{figure}    

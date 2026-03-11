@@ -4,31 +4,35 @@ The following tasks are implemented exclusively in the application backend logic
 
 \textbf{BD1. RESTful API Backend Logic Implementation}
 
-Develop a RESTful API to manage backend responsibilities invoked by frontend requests.
+Configure the backend architecture defined in the DT3 task and build a RESTful API to manage backend responsibilities through frontend requests.
 
 \textbf{BD2. Azure SQL Database Integration}
 
-Integrate Azure SQL Database with Entity Framework to manage and retrieve the relevant information.
+Integrate Azure SQL Database with Entity Framework Core migrations to manage users' relevant information (e.g., extracted expense and report information, employees' hierarchy) and configure the initial database according to the diagram designed in DT2 task. 
 
 \textbf{BD3. Azure Blob Storage Integration}
 
-Integrate Azure Blob Storage to save original expense files.
+Store original expense files using Azure Blob Storage.
 
 \textbf{BD4. Microsoft Document Intelligence AI Model Integration}
 
-Integrate an AI model to automate the expense data extraction.
+Automate the expense data extraction through the Microsoft Document Intelligence AI model integration.
 
 \textbf{BD5. Automated AI-driven Data Extraction Pipeline}
 
-Integrate Event Grid and Service Bus and implement a mechanized data extraction workflow. When a new receipt is uploaded and saved to Blob Storage and SQL Database, Azure Event Grid detects the event and routes it to Service Bus. This automates the AI model's processing while preventing bottlenecks during multiple simultaneous uploads.
+Integrate Event Grid, Service Bus, and Azure Function and implement a mechanized data extraction workflow that prevents bottlenecks during multiple simultaneous uploads:
 
+\begin{enumerate}
+    \item Save the uploaded receipt file in the Blob Storage and store the receipt information in the SQL Database.
+    \item Detect the event using Azure Event Grid and route the expense file to the Service Bus queue. 
+    \item Once the new expense is in the queue, trigger the Azure Function to process the receipt file using the integrated AI model. 
+\end{enumerate}
 
 \textbf{BD6. Azure SignalR Real-time Notification Service Integration}
 
-Integrate SignalR into the backend logic to notify the frontend whenever the AI model processes a receipt. Once the expense extraction succeeds or fails, users are notified immediately, enabling real-time UI updates without requiring a manual page refresh.
-
+Integrate SignalR to configure a SignalR Hub that sends real-time expense status updates, eliminating manual page refreshing whenever the AI processes a new receipt file.
 
 \textbf{BD7. Microsoft Entra ID User Authentication Integration}
 
-Integrate Microsoft Entra ID into the backend logic to handle employee authentication through the company email account.
+Handle employee authentication through the company email account by using Microsoft Entra ID integration.
 
