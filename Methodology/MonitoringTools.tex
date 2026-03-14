@@ -1,41 +1,32 @@
 \subsection{Monitoring Tools}
-The use of monitoring tools makes it easier for the project to follow 
-the Agile methodology. Moreover, most of the solutions are essential 
-in software development projects, as they help prevent the loss of the 
-work if any system or device fails unexpectedly during the development 
-process. 
-\subsubsection{Git}
+\label{sec:monitoring-tools}
 
-A version control system which allows multiple developers to work on 
-the same project and enables a single user to develop several features 
-at the same time. These capabilities make Git an essential tool for 
-software product development. 
+The upcoming monitoring tools in this section are used to facilitate the application of Agile methodology. 
 
-In Git, a repository is the location where the application’s source 
-code is stored. It serves as a project space where developers submit 
-their code, allowing changes to be tracked throughout the development 
-process.
+\textbf{Git}
 
-\subsubsection{Azure DevOps}
+A cloud version control system that allows multiple developers to work on the same project within a shared repository, and enables a single user to develop several features at the same time. These capabilities make Git essential for the Kanban's continuous flow principle, allowing developers to proceed with new tasks when the current one is blocked.
 
-Azure is a cloud resource that offers multiple tools. This project 
-makes use of two of them: the Git repository and the backlog dashboard. 
+In Git, a repository is the location where the application's source code is stored. It serves as a project space where developers submit their code, allowing changes to be tracked throughout the development process. Using a Git repository for source code version control provides high availability since it is cloud-based.
+
+\newpage
+
+\textbf{Azure DevOps}
+
+Azure is a cloud platform that offers multiple tools; among them, two relevant monitoring tools are used for this project: the Git repository (established earlier) and the backlog dashboard, employed for product backlog management. 
 
 In the backlog, four statuses are assigned to tasks:
 
-\begin {itemize}
-\item \textbf{New}: A task that has been defined but it is pending 
-development, or a bug that is pending resolution.
-\item \textbf{Active}: A task that is currently in development.
-\item \textbf{Resolved}: A bug that has been fixed.
-\item \textbf{Closed}: A task that has been developed, integrated and tested.
+\begin{itemize} [leftmargin=0.75cm, itemsep=0.5pt]
+    \item \textbf{New}: A task that has been defined but is pending development, or a bug that is pending resolution.
+    \item \textbf{Active}: A task that is currently in progress. As clarified in Section \ref{sec:methodology}, there are always 3 tasks in Active status, according to the WIP limit.
+    \item \textbf{Resolved}: A bug that has been fixed.
+    \item \textbf{Closed}: A task that has been developed, integrated and tested.
 \end{itemize}
 
-\subsubsection{Microsoft Teams}
+\vspace{5pt}
 
-Communication tool used in FSP. It is used primarily by the Scrum Master 
-and the author used primarily for chats and meetings.
+\textbf{Microsoft Teams}
 
-\subsubsection{Gmail}
+A communication tool used for conducting regular meetings with the Product Owner.
 
-An email platform used for communication between the author and the thesis director.

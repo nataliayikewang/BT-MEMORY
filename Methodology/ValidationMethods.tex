@@ -1,8 +1,10 @@
 \subsection{Validation Methods}
-During each Agile sprint, the product is validated in every daily Scrum meeting 
-and every sprint review as well. Agile facilitates the validation of this project, 
-as it is reviewed continuously, keeping every new feature or change under control. 
-Regarding technical validation, the application must pass several tests to ensure 
-that its behavior matches the discussed requirements. Finally, the thesis director 
-will supervise the documentation throughout the project to ensure it meets the 
-standards of a proper bachelor's thesis.
+\label{sec:validation-methods}
+
+As mentioned in Section \ref{sec:monitoring-tools}, the development code is managed in a Git repository. In this repository, new implementations are developed in their own branch (named Type/Author/ Feature) and are merged into the main branch via Pull Requests (PRs). Each PR triggers the CI/CD pipelines (as noted in Section \ref{sec:non-functional-requirements}) to compile, verify through rigorous testing, and build the new code.  
+
+In the CI/CD pipeline testing, both unit and integration tests are executed. Unit tests verify each component's behaviour functions as expected, while integration tests check that all components are properly connected. Additionally, unit tests must achieve at least 70\% of code coverage to ensure effective testing.
+
+Inside the code editor, Visual Studio Code extensions are installed from the beginning of code development. Before merging new code into the main branch, these extension tools must detect zero bugs and zero code smells  (suspicious bug-prone code). Moreover, to demonstrate the time requirements established in NFR1-4 (Section \ref{sec:non-functional-requirements}), the browser's development tools will measure the application response times for each user interaction. 
+
+Finally, to ensure that the application aligns with the established requirements (see Section \ref{sec:requirements}), tasks from the product backlog remain open until the Product Owner confirms that they meet the specified requirements. To support this process, regular meetings with the Product Owner (according to Section \ref{sec:methodology}) are held to monitor development progress. At the same time, the thesis director will supervise the project to ensure compliance with academic standards.

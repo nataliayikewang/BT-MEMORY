@@ -22,7 +22,7 @@ Automate the expense data extraction through the Microsoft Document Intelligence
 
 Integrate Event Grid, Service Bus, and Azure Function and implement a mechanized data extraction workflow that prevents bottlenecks during multiple simultaneous uploads:
 
-\begin{enumerate}
+\begin{enumerate} [noitemsep]
     \item Save the uploaded receipt file in the Blob Storage and store the receipt information in the SQL Database.
     \item Detect the event using Azure Event Grid and route the expense file to the Service Bus queue. 
     \item Once the new expense is in the queue, trigger the Azure Function to process the receipt file using the integrated AI model. 

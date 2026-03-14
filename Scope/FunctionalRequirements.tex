@@ -1,51 +1,64 @@
 \subsubsection{Functional Requirements}
-These are the functional requirements of the final product:
+\label{sec:functional-requirements}
 
-\begin{itemize}[leftmargin=0.5cm,label={}]
+Due to the constrained thesis timeline, the application's functional requirements are prioritized applying the MoSCoW methodology. By doing this, all core functionalities are delivered early. MoSCoW classifies requirements into four main groups: \textbf{Must have}, \textbf{Should have}, \textbf{Could have} and \textbf{Won't have}. 
 
-    \item \textbf{FR1:} The application must centralize expenses data in a single platform.
+\textbf{Must have:} requirements that are critical for the core application functionality.
 
-    \item \textbf{FR2:} The application must enable effortless uploads and drag-and-drop of receipts.
+MH1: The system must centralize expense data on a single platform.
 
-    \item \textbf{FR3:} The application must automate the extraction of relevant data from uploaded receipts using an AI model.
+MH2: The system must provide effortless receipt uploads and drag-and-drop.
 
-    \item \textbf{FR4:} The application must allow users to review and edit the automatically extracted expenses data.
+MH3: The system must automate data extraction from receipts using an AI model.
 
-    \item \textbf{FR5:} The application must provide a search bar and filters for uploaded expenses in order to search by name and filter by category.
+MH4: The system must allow users to review and correct the automatically extracted data.
 
-    \item \textbf{FR6:} The application must allow users to gather multiple expenses in a single report.
+MH5: The system must enable a simple submission of expense reports to a predefined approver.
 
-    \item \textbf{FR7:} The application must allow users to complete and edit the report information.
+MH6: The system must require users to log in through their company's account.
 
-    \item \textbf{FR8:} The application must provide a search bar to find reports by name.
+MH7. The system must implement role-based access control with two main roles: 
 
-    \item \textbf{FR9:} The application must enable simple submission of expenses report to the corresponding approver.
+\textbf{Employees:} Access to the basic application features.
 
-    \item \textbf{FR10:} The application must allow users to login through the company's employee account.
+\textbf{Admins:} Access to all employee features, plus the additional admin-only features.
 
-    \item \textbf{FR11:} The application must display a user account page showing the total budget of all submitted reports, categorized as:
-        \begin{itemize}
-            \item Pending approval or rejection budget
-            \item Approved budget
-            \item Rejected budget
-        \end{itemize}
+MH8. The system could send email notifications to the report creator when the report is approved or rejected and to the administrator when new reports are pending review.
 
-    \item \textbf{FR12:} The application must send email notifications when a submitted report is approved or rejected.
+\textbf{Should have:} requirements that are relevant for the application functionality, but permit a certain delay in complete achievement.
 
-    \item \textbf{FR13:} The application must implement role-based access control for employees and admins:
-        \begin{itemize}[label={}]
-            \item \textbf {Employees} can use all previously listed features.
-            \item \textbf {Admins} can use all employee features plus the additional features listed below.
-        \end{itemize}
+SH1: The system should provide a search bar and filters for uploaded expenses.
 
-    \item \textbf{FR14:} The application must allow admin users to approve or reject submitted expenses reports from employees under their supervision.
+SH2: The system should allow users to group multiple expenses into a single report for submission.
 
-    \item \textbf{FR15:} The application must display the history of all reviewed reports (approved or rejected).
+SH3. The system should  display a history of submitted reports, categorized as:
 
-    \item \textbf{FR16:} The application must enable admins to set the expenses budget limit for those employees under their supervision.
-
-    \item \textbf{FR17:} The application must send email notifications to users when an employee under their supervision submits an expense report pending approval or rejection.
-
-    \item \textbf{FR18:} The application must provide a monthly summary of the total submitted budget by employees under their supervision.
-
+\begin{itemize} [leftmargin=0.75cm, noitemsep]
+    \item Pending review
+    \item Approved
+    \item Rejected
 \end{itemize}
+
+\vspace{5pt}
+
+SH4: The system should allow admin users to approve or reject submitted reports.
+
+SH5: The system should display to admin users a history of reviewed reports.
+
+\textbf{Could have:} requirements that enhance the application usability and are fulfilled if time permits.
+
+CH1: The system could allow users to edit report information.
+
+CH2: The system could provide a search bar to find specific reports.
+
+CH3. The system could allow admins to set the expenses budget limit for those employees under their supervision.
+
+\textbf{Won't have:} requirements that are irrelevant and will not be included in the application.
+
+WH1: The system won't provide virtual payment cards.
+
+WH2: The system won't handle reimbursement transactions.
+
+WH3: The system won't allow admins to customize approval processes.
+
+WH4: The system won't provide VAT receipt extractions.

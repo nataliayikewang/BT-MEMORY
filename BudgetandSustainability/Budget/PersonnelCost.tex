@@ -2,9 +2,9 @@
 
 To obtain realistic personnel cost estimates, the average hourly wage for each personnel member was calculated in advance using market salary data \cite{annual-spain-salary}. This calculation assumes 260 working days per year with an average of 7.5 working hours per day.
 
-In Table  \ref{table:hourly-wage-of-personnel}, the hourly wage calculation for each member of personnel is specified. Note that the final number already includes the Social Security (SS) cost. Also note that personnel are categorized by roles rather than by the human resources (HR) identified in Section 5.2.1. Each resource is assigned to at least one role in the table. There are five different roles involved in this project:
+In Table  \ref{table:hourly-wage-of-personnel}, the hourly wage calculation for each member of personnel is specified. Note that the final number already includes the Social Security (SS) cost. Also note that personnel are categorized by roles rather than by the human resources (HR) identified in Section \ref{sec:human-resources}. Each resource is assigned to at least one role in the table. There are five different roles involved in this project:
 
-\begin{itemize} [itemsep=-2pt]
+\begin{itemize} [leftmargin=0.75cm, itemsep=-2pt]
     \item \textbf{Project Manager (PM)}: Responsible for planning and leading the entire project.
     \item \textbf{Junior Full-Stack Developer (D)}: Responsible for the full coding implementation of the application
     \item \textbf{QA Tester (T)}: Responsible for verifying the applications' functionality.
@@ -23,7 +23,7 @@ In Table  \ref{table:hourly-wage-of-personnel}, the hourly wage calculation for 
     \begin{tabular}{@{}l r r r l@{}}
     \textbf{Role} & \textbf{Annual Salary (\texteuro)} & \textbf{Total including SS (\texteuro)} & \textbf{Cost / Hour (\texteuro)} & \textbf{Assigned HR} \\
     \hline 
-    Project Manager (PM) & 43,300 & 56,290 & 28.87 & SM, PO, TD, GT \\
+    Project Manager (PM) & 43,300 & 56,290 & 28.87 & PO, TD, GT \\
     Full-stack Junior Developer (D) & 29,800 & 38,740 & 19.87 & DT \\
     QA Tester (T) & 26,888 & 34,954.4 & 17.93 & DT \\
     Software Architect (SA) & 41,800 & 54,340 & 27.87 & DT \\
@@ -70,7 +70,7 @@ In Table \ref{table:personnel-cost-breakdown-total}, personnel costs for each ta
 \hline 
 \addlinespace[0.2em]
 \rowcolor{gray!45}
-\textbf{Total} & & \textbf{513} & \textbf{109} & \textbf{401} & \textbf{5} & \textbf{16} & \textbf{41} & \textbf{12,504.03} \\
+\textbf{Total} & & \textbf{513} & \textbf{88.5} & \textbf{385.5} & \textbf{10} & \textbf{16} & \textbf{51.5} & \textbf{11,913.05} \\
 \caption[Personnel cost breakdown by task, role, and total personnel cost]
 {Personnel cost breakdown by task, role, and total personnel cost. [Own creation]} 
 \vspace{-1em}
@@ -88,9 +88,9 @@ PS3 & Budget and Sustainability & 10 & 10 & 0 & 0 & 0 & 0 & 288.67 \\
 \rowcolor{gray!05}
 PS4 & Initial Documentation & 10 & 10 & 0 & 0 & 0 & 0 & 288.67 \\
 \rowcolor{gray!20}
-\textbf{PM} & \textbf{Project Management} & \textbf{67} & \textbf{59} & \textbf{67} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{3,034.20} \\
+\textbf{PM} & \textbf{Project Management} & \textbf{46.5} & \textbf{38.5} & \textbf{46.5} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{2,035.17} \\
 \rowcolor{gray!05}
-PM1 & Agile Ceremonies & 51 & 51 & 51 & 0 & 0 & 0 & 2,485.40 \\
+PM1 & Product Owner Meetings & 30.5 & 30.5 & 30.5 & 0 & 0 & 0 & 1486.37 \\  
 \rowcolor{gray!05}
 PM2 & Thesis Director Review Meetings & 8 & 8 & 8 & 0 & 0 & 0 & 389.87 \\
 \rowcolor{gray!05}
@@ -110,17 +110,17 @@ DT5 & UI mockups Design & 2 & 0 & 0 & 0 & 2 & 0 & 55.73 \\
 \rowcolor{gray!05}
 DT6 & Security Design & 2 & 0 & 0 & 0 & 2 & 0 & 55.73 \\
 \rowcolor{gray!20}
-\textbf{FPD} & \textbf{Final Product Delivery} & \textbf{46} & \textbf{0} & \textbf{5} & \textbf{0} & \textbf{0} & \textbf{41} & \textbf{954.87} \\
+\textbf{FPD} & \textbf{Final Product Delivery} & \textbf{56.5} & \textbf{0} & \textbf{5} & \textbf{0} & \textbf{0} & \textbf{51.5} & \textbf{1173.97} \\
 \rowcolor{gray!05}
 FPD1 & User Manual Documentation & 2 & 0 & 1 & 0 & 0 & 1 & 40.73 \\
 \rowcolor{gray!05}
-FPD2 & Final Thesis Documentation & 20 & 0 & 0 & 0 & 0 & 20 & 417.33 \\
+FPD2 & Final Thesis Documentation & 30.5 & 0 & 0 & 0 & 0 & 30.5 & 636.43 \\
 \rowcolor{gray!05}
 FPD3 & Final Demonstration Video & 4 & 0 & 4 & 0 & 0 & 0 & 79.47 \\
 \rowcolor{gray!05}
 FPD4 & Bachelor's Thesis Defense & 20 & 0 & 0 & 0 & 0 & 20 & 417.33 \\
 \rowcolor{gray!20}
-\textbf{Dev} & \textbf{Development} & \textbf{76} & \textbf{0} & \textbf{71} & \textbf{5} & \textbf{0} & \textbf{0} & \textbf{1500.16} \\
+\textbf{Dev} & \textbf{Development} & \textbf{86} & \textbf{0} & \textbf{76} & \textbf{10} & \textbf{0} & \textbf{0} & \textbf{1689.12} \\
 \rowcolor{gray!05}
 Dev0 & Self-learning and study of unfamiliar technologies & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
 \rowcolor{gray!05}
@@ -128,7 +128,7 @@ Dev1 & Environment Configuration & 2 & 0 & 2 & 0 & 0 & 0 & 39.73 \\
 \rowcolor{gray!05}
 Dev2 & Product Deployment & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
 \rowcolor{gray!05}
-Dev3 & Unit and Integration Testing & 10 & 0 & 5 & 5 & 0 & 0 & 188.96 \\
+Dev3 & CI/CD Pipeline Implementation & 20 & 0 & 10 & 10 & 0 & 0 & 377.92 \\
 \rowcolor{gray!05}
 Dev4 & Logging and Monitoring & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
 \rowcolor{gray!05}

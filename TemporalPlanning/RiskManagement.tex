@@ -2,7 +2,9 @@
 \newpage
 
 \subsection{Risk Management}
-Possible risks affecting project progress are outlined in Section 3.3. With the timeline now established, contingency plans are defined to mitigate potential obstacles. This section presents each identified risk along with its probability, impact, and corresponding mitigation strategy. Moreover, all identified risks, along with the corresponding affected tasks and the contingency resources required for mitigation, are detailed in Table \ref{table:risks-management}.
+\label{sec:risk-management}
+
+Possible risks affecting project progress are outlined in Section \ref{sec:obstaclesandrisks}. With the timeline now established, contingency plans are defined to mitigate potential obstacles. This section presents each identified risk along with its probability, impact, and corresponding mitigation strategy. Moreover, all identified risks, along with the corresponding affected tasks and the contingency resources required for mitigation, are detailed in Table \ref{table:risks-management}.
 
 \vspace{10pt}
 
@@ -10,11 +12,11 @@ Possible risks affecting project progress are outlined in Section 3.3. With the 
 
 \hfill \textbf{Impact:} High
 
-Coding bugs are inevitable, making thorough testing essential. As outlined in Section 5.4, every code change undergoes rigorous testing across all use cases, including edge cases. During the Dev1 task, ESLint and SonarQube Visual Studio Code extensions are installed to automate bug detection from the very beginning of the implementation. 
+Coding bugs are inevitable, making thorough testing essential. As outlined in Section  \ref{sec:validation-methods}, every code change undergoes rigorous testing through automated CI/CD pipelines, including unit and integration tests. During the Dev1 task, ESLint and SonarQube Visual Studio Code extensions are installed to automate bug detection from the very beginning of the implementation. 
 
 If bugs persist, additional debugging time is allocated, using \textbf{10 hours} of the buffer time. It is important to fix critical bugs before proceeding with new feature development, prioritizing functional application delivery.
 
-However, thanks to the installed extensions and consistent testing, the number of bugs is minimized, reducing the likelihood of significant setbacks. Furthermore, complex tasks already include built-in buffer time, as mentioned in section 5.4, and the reserve hours are available to cover any delays that may arise.
+However, thanks to the installed extensions and consistent testing, the number of bugs is minimized, reducing the likelihood of significant setbacks. Furthermore, complex tasks already include built-in buffer time, as mentioned in section \ref{sec:gantt-diagram}, and the reserve hours are available to cover any delays that may arise.
 
 \vspace{10pt}
 
@@ -26,7 +28,7 @@ Software development projects often struggle with tight deadlines. Due to the au
 
 To overcome this challenge, the remaining \textbf{9  hours} of overhead serve as a lifesaver. This is an intentional allocation, as the project is scheduled to finish several days before the thesis defense period. Therefore, a one-week delay is permitted without affecting the final submission.
 
-In the worst-case scenario, if the project misses the expected deadline, certain non-essential application features will be deferred to the final phase, depending on the time available. Nevertheless, this alternative can only be made after obtaining the Product Owner's approval.
+In the worst-case scenario, if the project misses the expected deadline, a selection of non-essential features, based on the MoSCoW prioritization defined in Section \ref{sec:functional-requirements}, will be deferred to the final development phase. As a result, these tasks will becompleted only if time permits. This alternative may be adopted solely with the Product Owner's approval. 
 
 \vspace{10pt}
 

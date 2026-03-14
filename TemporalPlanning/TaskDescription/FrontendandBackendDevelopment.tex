@@ -4,12 +4,9 @@ As a full-stack web application, the implementation is divided into two main are
 
 This development stage requires both frontend and backend development. Since it covers a wide range of functionalities, it is divided into two subgroups: Expense and Report Development, and User Access Development.
 
-\newpage
-
-
 \textbf{Expense and Report Development}
 
-This section includes all tasks related to the application’s core functionalities, namely the implementation of the expense and report features.
+This group includes all tasks related to the application’s core functionalities, namely the implementation of the expense and report features.
 
 \textbf{ER1. Expense Uploads}
 
@@ -30,8 +27,6 @@ Develop a visual dashboard to display all uploaded expenses with their real-time
 
 \end{itemize}
 
-\vspace{5pt}
-
 \textbf{ER3. AI-Extracted Expense Data Review and Correction}
 
 Develop a form page for users to review and edit AI-processed expenses and fill in missing required information. Once the expense information is saved, the database is updated with the corrected data.
@@ -44,21 +39,22 @@ Develop the expense deletion feature to delete one or multiple expenses at once,
 
 Develop report management functionalities (create, edit, submit, and delete reports) and the required RESTful API for synchronizing the database with the frontend changes.
 
-\vspace{10pt}
+
 \textbf{User Access Development}
 
 The tasks described in this subgroup are contingent upon user authentication implementation before their execution can begin. It is important to note that administrators can set spending limits and manage and view submitted reports solely from employees under their supervision.
 
 \textbf{UA1. Company Email User Authentication}
 
-Develop the login feature that allows users to authenticate in the application through the company's email account: 
+Develop the login feature that allows users to authenticate in the application through the company's email account, including: 
 
+\vspace{-5pt}
 \begin{enumerate}[noitemsep]
-    \item Verify the user access.
+    \item User access verification.
     \item 
     \begin{enumerate} 
-        \item On the first login, create a new user account.
-        \item On the return visit, recover the relevant data of the corresponding user.
+        \item New account creation on first login.
+        \item Existing user data recovery for returning users.
     \end{enumerate}
 \end{enumerate}
 

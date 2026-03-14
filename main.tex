@@ -9,45 +9,39 @@
 \clearpage
 \pagenumbering{gobble} % removes page numbering completely
 
-% Table of contents
-\tableofcontents
+% Table of contents 
+\tableofcontents    
 \clearpage
-
+  
 %List of figures
-\listoffigures
-\clearpage
+\listoffigures 
 
 %List of tables
 \listoftables
 \clearpage
 \newpage
 
-% % Start numbering here 
-% \pagenumbering{arabic}
-% \setcounter{page}{1} 
-
-% % Introduction 
-% \input{Context/main.tex}
-
-% %Justification
-% \input{Justification/main.tex}
-
-% %Scope
-% \input{Scope/main.tex}
-
-% %Methodology
-% \input{Methodology/main.tex}
-
-
-  
-% Start numbering here
+% Start numbering here 
 \pagenumbering{arabic}
 \setcounter{page}{1} 
-\setcounter{section}{4}
 
+% Introduction 
+\input{Context/main.tex} 
+
+%Justification
+\input{Justification/main.tex} 
+ 
+%Scope
+\input{Scope/main.tex}
+
+%Methodology
+\input{Methodology/main.tex}
+
+\newpage 
+%Temporal planning
 \input{TemporalPlanning/main.tex}
   
-% Introduction 
+% Budget and sustainability
 \input{BudgetandSustainability/main.tex}
  
 \newpage 

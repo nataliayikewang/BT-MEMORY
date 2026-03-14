@@ -1,49 +1,56 @@
+\vspace{10pt}
+
 \subsubsection{Non-Functional Requirements}
-These are the non-functional requirements of the final product:
+\label{sec:non-functional-requirements}
 
-\begin{itemize}[leftmargin=0.5cm,label={}]
-    \item \textbf {NFR1: The application must provide real-time dashboards for tracking receipt status to improve UX.}
-    
-    Users should be able to check the current status of their reports submissions.
+The subsequent requirements fall under the non-functional category.
 
-    \item \textbf {NFR2: The application must offer an interactive, responsive, reactive, and user-friendly UI.}
-    
-    The UI must be interactive–every user action should trigger a response. The UI must also be responsive, 
-    meaning it adapts automatically to any device or screen size. Additionally, the UI must be reactive, this 
-    behavior is needed as the UI and the internal server are two separate components that communicate with 
-    each other. Updating the UI without repeatedly calling the server is an important practice to prevent 
-    server overloaded\cite{reactive-responsive-interactive}. Finally, the UI should be intuitive and easy to use, a new user should not need 
-    more than five minutes to learn how to navigate the app.
+\newpage
 
-    \item \textbf {NFR3: The application must ensure high application performance and availability.}
-    
-    High performance delivers a fast and smooth user experience. Any action within the application should not take longer than 
-    four seconds to complete. The application should also maintain high availability, meaning users can access it 24 hours a day, 
-    365 days a year.
-    
-    \item \textbf {NFR4: The application must support high scalability as the company grows.}
-    
-    The app should remain stable and responsive even when the number of employees using the app increases significantly.
+\textbf{NFR1. The application must provide real-time updates on expense processing status.}
 
-    \item \textbf {NFR5: The application must guarantee data storage compliance with GDPR.}
-    
-    FSP is a UK-based company, therefore, the expenses application should also comply with the General Data Protection Regulation(GDPR).
+When the AI model processes a receipt in the backend, the UI updates the expenses dashboard to reflect the new status in less than \textbf{1 second}.
 
-    \item \textbf {NFR6: The application must ensure secure sensitive information storage, as well as secure information access and submission.}
-    
-    Any sensitive data stored by the web-app should not be leaked. Additionally, the app should also control who can access that information, 
-    and also protect it from external parties during the submission.
+\vspace{5pt}
 
-    \item \textbf {NFR7: The application must enable efficient and intuitive expense management process.}
-    
-    Employees should find the new expense managing process much faster and easier than the traditional one.
+\textbf{NFR2. The application must offer an interactive, responsive, and user-friendly UI.}
 
-    \item \textbf {NFR8: The application must ensure efficient processing for approval and rejection of expenses reports.}
-    
-    Approvers should also be able to review and manage submitted expenses more quickly and efficiently.
+The UI must be \textbf{interactive}; hence, every user action should trigger a response \cite{interactive-ui}. The UI must also be \textbf{responsive}, meaning it adapts automatically to any device or screen size \cite{responsive-ui}. Finally, the UI must be intuitive and easy to use (\textbf{user-friendly}); a new user should not spend more than \textbf{5 minutes} uploading, reviewing, and saving an expense.
 
-    \item \textbf {NFR9: The application must provide an integration-friendly architecture.}
-    
-    Meeting this requirement facilitates the integration of new AI models in the future.
+\vspace{5pt}
 
-\end{itemize}
+\textbf{NFR3. The application must ensure high performance and availability.}
+
+Upon user login, the application should load the prior uploaded expenses within \textbf{3 seconds}. Other basic user interactions (e.g., saving expense information, deleting expenses) should trigger an application response in under \textbf{500ms}. Additionally, the application should be available \textbf{24 hours} a day, \textbf{365 days} a year.
+
+\vspace{5pt}
+
+\textbf{NFR4. The application must support scalability as the company grows.}
+
+The automated expense extraction workflow should support \textbf{20 receipt uploads} without overloading the server. 
+
+\vspace{5pt}
+
+\textbf{NFR5.  The application must guarantee compliance with GDPR.}
+
+The application must store only relevant data and use an external cloud platform (this project will use Azure) that meets GDPR standards for data manipulation (Azure SQL Database) and user access (Microsoft Entra ID).
+
+\vspace{5pt}
+
+\textbf{NFR6. The application must enable a more efficient expense management process and a streamlined approval workflow.}
+
+The application must reduce expense processing time from the current 15 minutes (manual process) to \textbf{5 minutes} maximum, achieving a \textbf{66.6\%} efficiency gain. Additionally, the reimbursement cycle is shortened by \textbf{50\%} from its current duration.
+
+\vspace{5pt}
+
+\textbf{NFR7. The application must be designed to facilitate future AI model integrations.}
+
+The application must provide a separate logic for the AI model integration, simplifying the integration of new models by updating a single endpoint. 
+
+\vspace{5pt}
+
+\textbf{NFR8. The project must support automated deployment and testing.}
+
+The application must implement Continuous Integration (CI) and Continuous Deployment (CD) pipelines to follow DevOps principles. When a new implementation is pulled into the source code, pipelines enforce thorough testing of the updated version to prevent bugs while ensuring high-quality code and fast delivery.
+
+\vspace{5pt}
