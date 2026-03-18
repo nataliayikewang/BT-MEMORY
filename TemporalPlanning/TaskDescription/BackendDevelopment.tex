@@ -16,16 +16,16 @@ Store original expense files using Azure Blob Storage.
 
 \textbf{BD4. Microsoft Document Intelligence AI Model Integration}
 
-Automate the expense data extraction through the Microsoft Document Intelligence AI model integration.
+Automate expense data extraction using the Microsoft Document Intelligence AI model.
 
 \textbf{BD5. Automated AI-driven Data Extraction Pipeline}
 
-Integrate Event Grid, Service Bus, and Azure Function and implement a mechanized data extraction workflow that prevents bottlenecks during multiple simultaneous uploads:
+Integrate Event Grid, Service Bus, and Azure Function to implement a mechanized data extraction workflow that prevents bottlenecks during multiple simultaneous uploads:
 
-\begin{enumerate} [noitemsep]
-    \item Save the uploaded receipt file in the Blob Storage and store the receipt information in the SQL Database.
-    \item Detect the event using Azure Event Grid and route the expense file to the Service Bus queue. 
-    \item Once the new expense is in the queue, trigger the Azure Function to process the receipt file using the integrated AI model. 
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+    \item Save the uploaded receipt file in Blob Storage and associated data in SQL Database.
+    \item Detect the event using Azure Event Grid and route the file to the Service Bus queue. 
+    \item Once the new expense is in the queue, trigger the Azure Function to process the receipt file using the integrated AI model (BD4 Task). 
 \end{enumerate}
 
 \textbf{BD6. Azure SignalR Real-time Notification Service Integration}
@@ -34,5 +34,5 @@ Integrate SignalR to configure a SignalR Hub that sends real-time expense status
 
 \textbf{BD7. Microsoft Entra ID User Authentication Integration}
 
-Handle employee authentication through the company email account by using Microsoft Entra ID integration.
+Handle employee authentication through the company email account using Microsoft Entra ID integration.
 

@@ -1,64 +1,45 @@
 \subsubsection{Functional Requirements}
 \label{sec:functional-requirements}
 
-Due to the constrained thesis timeline, the application's functional requirements are prioritized applying the MoSCoW methodology. By doing this, all core functionalities are delivered early. MoSCoW classifies requirements into four main groups: \textbf{Must have}, \textbf{Should have}, \textbf{Could have} and \textbf{Won't have}. 
+Due to the constrained thesis timeline, the application's functional requirements are prioritized applying the MoSCoW methodology. MoSCoW classifies requirements into four main groups: \textbf{Must have}, \textbf{Should have}, \textbf{Could have} and \textbf{Won't have}. 
 
 \textbf{Must have:} requirements that are critical for the core application functionality.
 
-MH1: The system must centralize expense data on a single platform.
+FR1. The system must centralize expense data on a single platform.
 
-MH2: The system must provide effortless receipt uploads and drag-and-drop.
+FR2. The system must provide effortless receipt uploads and drag-and-drop.
 
-MH3: The system must automate data extraction from receipts using an AI model.
+FR3. The system must automate data extraction from receipts using an AI model.
+ 
+FR4. The system must allow users to review and correct the AI-extracted data.
 
-MH4: The system must allow users to review and correct the automatically extracted data.
+FR5. The system must enable simple report submissions to a predefined approver.
 
-MH5: The system must enable a simple submission of expense reports to a predefined approver.
+FR6. The system must require users to log in through their company's account.
 
-MH6: The system must require users to log in through their company's account.
+FR7. The system must implement role-based access control with two roles: employees, with access to basic features, and admins, with access to additional features.
 
-MH7. The system must implement role-based access control with two main roles: 
+FR8. The system should allow admin users to approve or reject submitted reports.
 
-\textbf{Employees:} Access to the basic application features.
-
-\textbf{Admins:} Access to all employee features, plus the additional admin-only features.
-
-MH8. The system could send email notifications to the report creator when the report is approved or rejected and to the administrator when new reports are pending review.
+FR9. The system could send email notifications to the report creator when the report is approved or rejected and to the administrator when new reports are pending review.
 
 \textbf{Should have:} requirements that are relevant for the application functionality, but permit a certain delay in complete achievement.
 
-SH1: The system should provide a search bar and filters for uploaded expenses.
+FR10. The system should provide a search bar and filters for uploaded expenses.
 
-SH2: The system should allow users to group multiple expenses into a single report for submission.
+FR11. The system should allow users to group multiple expenses into a single report.
 
-SH3. The system should  display a history of submitted reports, categorized as:
+FR12. The system should  display a history of submitted reports, categorized as: Pending Review, Approved, and Rejected.
 
-\begin{itemize} [leftmargin=0.75cm, noitemsep]
-    \item Pending review
-    \item Approved
-    \item Rejected
-\end{itemize}
-
-\vspace{5pt}
-
-SH4: The system should allow admin users to approve or reject submitted reports.
-
-SH5: The system should display to admin users a history of reviewed reports.
+FR13. The system should display to admin users a history of reviewed reports.
 
 \textbf{Could have:} requirements that enhance the application usability and are fulfilled if time permits.
 
-CH1: The system could allow users to edit report information.
+FR14. The system could allow users to edit report information.
 
-CH2: The system could provide a search bar to find specific reports.
+FR15. The system could provide a search bar to find specific reports.
 
-CH3. The system could allow admins to set the expenses budget limit for those employees under their supervision.
+FR16. The system could allow admins to set expense budget limits for employees under their supervision.
 
-\textbf{Won't have:} requirements that are irrelevant and will not be included in the application.
+\textbf{Won't have:} requirements that are irrelevant and will not be included in the application. As they fall outside the application scope, these requirements are not explicitly defined.
 
-WH1: The system won't provide virtual payment cards.
-
-WH2: The system won't handle reimbursement transactions.
-
-WH3: The system won't allow admins to customize approval processes.
-
-WH4: The system won't provide VAT receipt extractions.

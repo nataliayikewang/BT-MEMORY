@@ -1,30 +1,32 @@
 
+% !TeX root = ../../main.tex
 \subsubsection{Environmental Impact}
 
-\vspace{5pt}
 
 \textbf{Regarding PPP: Have you estimated the project's environmental impact? }
+\vspace{-5pt}
 
-The only resource directly affecting the environmental footprint is energy consumption. This resource is required throughout the entire project, as specified in Section \ref{sec:electric-cost}. Both hardware resources and the shared workspace consume electricity continuously. However, hardware resource consumption is vital for application development and sharing the workspace's lighting with other employees reduces its environmental impact.
+The only resource directly affecting the environmental footprint is energy consumption. As shown in Table \ref{table:electricity-cost}, the total energy consumption is 45.73 kWh. Using a conversion factor of 0.283 kg CO$_2$/kWh \cite{electricity-carbon}, the project's carbon footprint is around 12.94 kg CO$_2$.  
 
-\newpage
 
 \textbf{Regarding PPP: Have you considered minimizing its impact, for example, by reusing resources? }
+\vspace{-5pt}
 
-The application uses Azure for software resources. Currently, the Azure resources required for application development cost less than traditional physical resources. This cost optimization results from significantly reduced resource consumption, as cloud resources eliminate the need for transportation and frequent physical replacements. Updates and fixes are performed virtually, further reducing hardware requirements and electronic waste.
+The project's environmental impact is minimized by conducting the full project development in FSP's shared office, reusing existing lighting and preventing unnecessary energy consumption. 
 
-Furthermore, training the AI model requires substantial energy consumption. Reusing existing solutions, as decided in this project, optimizes this energy-intensive development process. Hence, the entire application development process prevents excessive resource use. As a result, tasks can be significantly reduced while avoiding excessive time costs.
-
-\vspace{5pt}
 
 \textbf{Regarding Useful Life: How is the problem that you want to address currently solved (state of the art)?}
+\vspace{-5pt}
 
-The extensive time employees and finance staff dedicate to Excel spreadsheets results in excessive energy use. Switching the personnel to process expenses in the application also requires an energy-saving approach. 
+The current employees' annual effort spent on manual expense management is 225 hours, corresponding to an estimated energy consumption of 12.63 kWh (assuming a PC power consumption of 65 W). As the proposed solution reduces the required effort by 75\%, the associated energy consumption is expected to decrease by around 3.16 kWh. In addition, digitalizing the process reduces the environmental impact associated with printing, transportation, and the physical handling of expense records.
 
-The primary strategy for reducing resource consumption is to develop the most efficient application possible, avoiding unnecessary resources and inefficient code that could overuse resources. This ensures that only essential resources are consumed each time employees use the application, limiting overall resource consumption throughout its lifecycle. Therefore, writing high-quality code is an essential skill for a programmer and is strongly considered throughout the project development.
+In addition, the application uses Azure for software resources. The Azure resources required for application development cost less than traditional physical resources. This cost optimization results from significantly reduced resource consumption, as cloud resources eliminate the need for transportation and frequent physical replacements. Updates and fixes are performed virtually, further reducing hardware requirements and electronic waste.
 
-\vspace{5pt}
+Nevertheless, suboptimal code may lead to excessive CPU and memory consumption, resulting in a negative environmental impact on the project. Therefore, adherence to high-quality coding practices, as defined in subobjective SO5 in Section \ref{sec:objectives}, is emphasized throughout the project development. As a result, a more sustainable application is delivered, using only essential resources and minimizing overall consumption throughout its lifecycle.
+
+
 
 \textbf{Regarding Useful Life: How will your solution improve the environment with respect to other existing solutions? }
+\vspace{-5pt}
 
 This application is tailored for the company's exclusive use and excludes any irrelevant functionality from the final product. It streamlines resource consumption by avoiding the unnecessary computation performed by other existing applications.

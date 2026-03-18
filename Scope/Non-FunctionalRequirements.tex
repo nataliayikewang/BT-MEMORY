@@ -1,56 +1,37 @@
-\vspace{10pt}
-
 \subsubsection{Non-Functional Requirements}
 \label{sec:non-functional-requirements}
 
 The subsequent requirements fall under the non-functional category.
 
-\newpage
-
 \textbf{NFR1. The application must provide real-time updates on expense processing status.}
 
-When the AI model processes a receipt in the backend, the UI updates the expenses dashboard to reflect the new status in less than \textbf{1 second}.
+The UI must update the expenses dashboard in less than \textbf{1 second} when any expense status changes.
 
-\vspace{5pt}
+\textbf{NFR2. The application must offer a responsive and user-friendly UI.}
 
-\textbf{NFR2. The application must offer an interactive, responsive, and user-friendly UI.}
-
-The UI must be \textbf{interactive}; hence, every user action should trigger a response \cite{interactive-ui}. The UI must also be \textbf{responsive}, meaning it adapts automatically to any device or screen size \cite{responsive-ui}. Finally, the UI must be intuitive and easy to use (\textbf{user-friendly}); a new user should not spend more than \textbf{5 minutes} uploading, reviewing, and saving an expense.
-
-\vspace{5pt}
+The UI must be \textbf{responsive}, adapting to any device or screen size \cite{responsive-ui}, and user-friendly, allowing new users to upload, review, and save an expense within \textbf{5 minutes}.
 
 \textbf{NFR3. The application must ensure high performance and availability.}
 
-Upon user login, the application should load the prior uploaded expenses within \textbf{3 seconds}. Other basic user interactions (e.g., saving expense information, deleting expenses) should trigger an application response in under \textbf{500ms}. Additionally, the application should be available \textbf{24 hours} a day, \textbf{365 days} a year.
-
-\vspace{5pt}
+Upon user login, the application should load the previously uploaded expenses within \textbf{3 seconds}. Other basic user interactions (e.g., saving expense information, deleting expenses) should be completed under \textbf{500ms}. Additionally, the application should be available \textbf{24 hours} a day, \textbf{365 days} a year.
 
 \textbf{NFR4. The application must support scalability as the company grows.}
 
-The automated expense extraction workflow should support \textbf{20 receipt uploads} without overloading the server. 
-
-\vspace{5pt}
+The application should support \textbf{20 receipt uploads} without overloading the server. 
 
 \textbf{NFR5.  The application must guarantee compliance with GDPR.}
 
 The application must store only relevant data and use an external cloud platform (this project will use Azure) that meets GDPR standards for data manipulation (Azure SQL Database) and user access (Microsoft Entra ID).
 
-\vspace{5pt}
-
 \textbf{NFR6. The application must enable a more efficient expense management process and a streamlined approval workflow.}
 
-The application must reduce expense processing time from the current 15 minutes (manual process) to \textbf{5 minutes} maximum, achieving a \textbf{66.6\%} efficiency gain. Additionally, the reimbursement cycle is shortened by \textbf{50\%} from its current duration.
+The application must optimize the expense workflow from the current 20 minutes to \textbf{5 minutes} for both employees and finance staff, achieving a \textbf{75\%} efficiency gain.
 
-\vspace{5pt}
+\textbf{NFR7. The application must facilitate integration of future AI models.}
 
-\textbf{NFR7. The application must be designed to facilitate future AI model integrations.}
-
-The application must provide a separate logic for the AI model integration, simplifying the integration of new models by updating a single endpoint. 
-
-\vspace{5pt}
+The application must facilitate new AI models integrations by changing a single endpoint.
 
 \textbf{NFR8. The project must support automated deployment and testing.}
 
 The application must implement Continuous Integration (CI) and Continuous Deployment (CD) pipelines to follow DevOps principles. When a new implementation is pulled into the source code, pipelines enforce thorough testing of the updated version to prevent bugs while ensuring high-quality code and fast delivery.
 
-\vspace{5pt}

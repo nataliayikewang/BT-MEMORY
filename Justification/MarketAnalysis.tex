@@ -3,31 +3,29 @@
 
 The market already offers a bunch of available expense management applications. However, this analysis compares only a subset of the leading platforms \cite{best-expenses-tools}. Conducting a current market analysis helps identify industry gaps and standards and determine the most essential application functionalities.
 
-To establish a baseline, the analyzed platforms are assumed to incorporate fundamental features of simplified expense management. This includes centralized expense data, digital expense management and reporting, streamlined information submissions, and secure login access through the company's employee account. 
+To establish a baseline, the analyzed platforms are assumed to incorporate fundamental expense management features: centralized expense data and digital expense management, reporting, and submission. To delve deeper into the main differences of the available market offerings, refer to Table \ref{table: comparative-analysis-leading-solutions} for a comparative overview. Green cells indicate features that the application offers, while red cells indicate the opposite. 
 
-To delve deeper into the main differences of available market offerings, consider Table \ref{table: comparative-analysis-leading-solutions}, which shows a comparative overview of these platforms. Green cells indicate features that the application offers, while red cells indicate the opposite. Each platform's pricing appears in the final row. These costs are only an estimation, since each model offers a customised plan.
+As shown in Table \ref{table: comparative-analysis-leading-solutions}, two prominent industry features are AI-powered data extraction and OCR technology. The AI model serves as an automatic receipt extraction tool, and OCR technology converts a text-content image into a machine-readable text \cite{ocr-technology}.
 
-The detailed analysis of Table \ref{table: comparative-analysis-leading-solutions} reveals two common industry features: AI-powered data extraction and OCR technology. The AI model serves as an automatic extraction tool for selecting relevant information from receipts, and OCR technology automates the conversion of a text-content image into a machine-readable text \cite{ocr-technology}.
-
-Incorporating an AI model is essential for this project to streamline expense data extraction. The final product will integrate this tool, as outlined previously in Section \ref{sec:proposed-solution}. This approach replaces the previous tedious manual data entry and reduces human error. Nevertheless, OCR technology is intentionally omitted in this implementation, since the AI model already includes image data extraction.
+Incorporating an AI model is essential for this project to streamline expense data extraction. This approach replaces the previous tedious manual data entry and reduces human error. Nevertheless, OCR technology is intentionally omitted in this implementation, since the AI model already includes image data extraction.
 
 Despite the strengths of these solutions, there are clear differences in their target markets and secondary features. For example, SAP Concur dominates the large enterprise sector, but it is often criticized for its non-intuitive user interface and high-cost plans.
 
-In contrast, Zoho Expense and Expensify primarily target small businesses, offering more user-friendly interfaces, more affordable pricing, and additional features not included in SAP Concur. Additionally, Payhawk introduces a feature not offered by previous platforms: automated VAT receipt extraction \cite{expense-management-market} \cite{expense-management-evolution}.
+In contrast, Zoho Expense and Expensify primarily target small businesses, offering more user-friendly interfaces and additional features not included in SAP Concur. Additionally, Payhawk introduces a feature not offered by previous platforms: automated VAT receipt extraction \cite{expense-management-market} \cite{expense-management-evolution}.
 
 The last column of Table \ref{table: comparative-analysis-leading-solutions} shows all the included features in the ongoing application. These are the AI model integration (as mentioned earlier), an intuitive user interface to minimize the learning curve and reporting time, plus a spending limit configuration to prevent misuse of the application.
 
 However, as a small private company, FSP is not interested in all available market features. Customized approval processes lie beyond FSP's needs. Global reimbursements are unnecessary (expenses are added to monthly salaries). Virtual cards serve no purpose for the Barcelona team. Finally, automated VAT extraction lacks relevance.
+\newpage
+Considering the last feature in Table \ref{table: comparative-analysis-leading-solutions}, FSP's demand an innovative feature not supported by existing platforms: real-time email notifications. This functionality alerts employees when their submitted report has been rejected or approved, and notifies approvers when a new report is pending review. 
 
-Considering the last feature in Table \ref{table: comparative-analysis-leading-solutions}, FSP's demand an innovative feature not supported by existing platforms: real-time email notifications. This functionality alerts employees when an expense report has been rejected or approved, and notifies approvers when a report is submitted and pending review. This feature is essential at FSP, enabling employees to focus on core tasks while awaiting review results and freeing Finance from constantly checking pending reports.
-
-\vspace{20pt}
+\vspace{-5pt}
 
 %Comparative Analysis of Leading Expense Management Solutions (own creation)
 \begin{table}[H]
     \centering
     \footnotesize
-    \renewcommand{\arraystretch}{2}
+    \renewcommand{\arraystretch}{1}
     \setlength{\arrayrulewidth}{0pt}
     \begin{tabularx}{\textwidth}{@{}>{\hsize=1.4\hsize\RaggedRight\arraybackslash}X *{5}{>{\hsize=0.92\hsize\centering\arraybackslash}X}@{}}
         \rowcolor{gray!40}  
@@ -51,8 +49,6 @@ Considering the last feature in Table \ref{table: comparative-analysis-leading-s
         Automated VAT extraction & \cellcolor{red!25}  & \cellcolor{red!25}  & \cellcolor{red!25}  & \cellcolor{green!25}   & \cellcolor{red!25}  \\
         \rowcolor{gray!05}
         Real-time notification service & \cellcolor{red!25}  & \cellcolor{red!25}  & \cellcolor{red!25}  & \cellcolor{red!25}   & \cellcolor{green!25}  \\ 
-        \rowcolor{gray!05}
-        Estimated cost per month & \cellcolor{gray!20} \texteuro 21.90/user & \cellcolor{gray!20} \texteuro 5.26/user & \cellcolor{gray!20} \texteuro 7.88/user & \cellcolor{gray!20} Customized pricing &  \\ 
     \end{tabularx}
     \caption[ Comparative analysis of leading expense management solutions. ]
     {Comparative analysis of leading expense management solutions. [Own creation]} 
@@ -60,11 +56,7 @@ Considering the last feature in Table \ref{table: comparative-analysis-leading-s
     \label{table: comparative-analysis-leading-solutions} 
 \end{table}
 
-
-\vspace{15pt}
-
-\newpage
-
+\vspace{-10pt}
 
 
 

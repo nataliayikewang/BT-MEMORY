@@ -1,16 +1,21 @@
 \subsubsection{Personnel Cost}
 
-To obtain realistic personnel cost estimates, the average hourly wage for each personnel member was calculated in advance using market salary data \cite{annual-spain-salary}. This calculation assumes 260 working days per year with an average of 7.5 working hours per day.
+The personnel cost is calculated from the effort estimates presented in Table \ref{table:summary-of-tasks-with-effort-dependencies-and-resources}. To obtain a realistic estimate, the average hourly wage for each personnel role was calculated in advance using market salary data\cite{annual-spain-salary}, assuming 260 working days per year and an average of 7.5 working hours per day.
 
-In Table  \ref{table:hourly-wage-of-personnel}, the hourly wage calculation for each member of personnel is specified. Note that the final number already includes the Social Security (SS) cost. Also note that personnel are categorized by roles rather than by the human resources (HR) identified in Section \ref{sec:human-resources}. Each resource is assigned to at least one role in the table. There are five different roles involved in this project:
+Table  \ref{table:hourly-wage-of-personnel} specifies the hourly wage calculation for each role, including the Social Security (SS) cost. Each human resource identified in Section \ref{sec:human-resources} is assigned to a specific role in the table, resulting in 5 different roles:
 
-\begin{itemize} [leftmargin=0.75cm, itemsep=-2pt]
+\small
+\begin{itemize} [leftmargin=0.75cm, noitemsep]
     \item \textbf{Project Manager (PM)}: Responsible for planning and leading the entire project.
-    \item \textbf{Junior Full-Stack Developer (D)}: Responsible for the full coding implementation of the application
-    \item \textbf{QA Tester (T)}: Responsible for verifying the applications' functionality.
-    \item \textbf{Software Architect (SA)}: Responsible for designing the application's technical structure while considering the project requirements and scope.
-    \item \textbf{Technical Writer (TW)}: Responsible for elaborating a clear and accurate project documentation.
+    \item \textbf{Junior Full-Stack Developer (D)}: Responsible for the full application implementation
+    \item \textbf{QA Tester (T)}: Responsible for verifying the application functionalities.
+    \item \textbf{Software Architect (SA)}: Responsible for designing the application's technical architecture while considering the project requirements and scope.
+    \item \textbf{Technical Writer (TW)}: Responsible for drafting clear, accurate project documentation.
 \end{itemize}
+
+\vspace{-10pt}
+
+\normalsize
 
 %Table of hourly wage of each personnel member
 \begin{table}[H]
@@ -37,38 +42,45 @@ In Table  \ref{table:hourly-wage-of-personnel}, the hourly wage calculation for 
     \label{table:hourly-wage-of-personnel} 
 \end{table}
 
-In Table \ref{table:personnel-cost-breakdown-total}, personnel costs for each task and role, as well as the overall cost, are calculated. These costs result from multiplying each personnel member's effort hours (from Table 5.3.1) by their corresponding role's hourly wage (from Table \ref{table:hourly-wage-of-personnel}).
+\vspace{-10pt}
 
 
+Given each personnel member's hourly wage and their corresponding effort hours in each task, the total personnel cost is calculated as shown in Table \ref{table:personnel-cost-breakdown-total}. Each task cost results from multiplying both values.
+
+\vspace{10pt}
 %Table of personnel cost breakdown by task and role
-\begin{landscape}
 \pagestyle{fancy}
 \scriptsize
-\setlength{\tabcolsep}{9pt}
+\setlength{\tabcolsep}{2pt}
 \setlength{\arrayrulewidth}{0.1pt}
-\renewcommand{\arraystretch}{1.15}
-\begin{longtable}{l l r r r r r r r}
+\renewcommand{\arraystretch}{1.05}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+\setlength{\LTleft}{0cm} 
+\setlength{\LTright}{0cm}
+\begin{longtable}{@{}l p{8.5cm} r r r r r r r@{}}
 \rowcolor{gray!45}
 & & & \multicolumn{5}{c}{\textbf{Hours per role}} & \\
 \rowcolor{gray!45}
 \textbf{ID} & \textbf{Name} & \textbf{Total hours} & PM & D & T & SA & TW & \textbf{Cost (\texteuro)} \\
-\addlinespace[0.2em]
+\addlinespace[0pt]
 \endfirsthead
 
+
+\noalign{\vskip -15pt}
 \multicolumn{9}{l}{\textit{(Continued from previous page)}} \\
 \rowcolor{gray!45}
-& & & \multicolumn{5}{c}{\textbf{Hours per role}} & \\
-\rowcolor{gray!45}
 \textbf{ID} & \textbf{Name} & \textbf{Total hours} & PM & D & T & SA & TW & \textbf{Cost (\texteuro)} \\
-\addlinespace[0.2em]
+\addlinespace[0pt]
 \endhead
 
 \hline 
 \multicolumn{9}{r}{\textit{(Continued on next page)}} \\
+\noalign{\vskip -14pt} 
 \endfoot
 
 \hline 
-\addlinespace[0.2em]
+\addlinespace[0pt]
 \rowcolor{gray!45}
 \textbf{Total} & & \textbf{513} & \textbf{88.5} & \textbf{385.5} & \textbf{10} & \textbf{16} & \textbf{51.5} & \textbf{11,913.05} \\
 \caption[Personnel cost breakdown by task, role, and total personnel cost]
@@ -104,7 +116,7 @@ DT2 & Conceptual Model Diagram & 4 & 0 & 0 & 0 & 4 & 0 & 111.47 \\
 \rowcolor{gray!05}
 DT3 & Technology Stack Decision & 2 & 0 & 0 & 0 & 2 & 0 & 55.73 \\
 \rowcolor{gray!05}
-DT4 & Logic and Physic Architecture Design & 4 & 0 & 0 & 0 & 4 & 0 & 111.47 \\
+DT4 & Logical and Physical Architecture Design & 4 & 0 & 0 & 0 & 4 & 0 & 111.47 \\
 \rowcolor{gray!05}
 DT5 & UI mockups Design & 2 & 0 & 0 & 0 & 2 & 0 & 55.73 \\
 \rowcolor{gray!05}
@@ -184,4 +196,5 @@ FD1 & Expenses Search and Filter & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
 \rowcolor{gray!05}
 FD2 & Reports Search & 2 & 0 & 2 & 0 & 0 & 0 & 39.73 \\
 \end{longtable}
-\end{landscape}
+\normalsize
+ 
