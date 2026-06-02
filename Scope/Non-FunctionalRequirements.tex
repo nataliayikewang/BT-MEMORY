@@ -1,13 +1,13 @@
 \subsubsection{Non-Functional Requirements}
 \label{sec:non-functional-requirements}
 
-The subsequent requirements fall under the non-functional category.
+The subsequent requirements fall under the non-functional category. A brief description and acceptance criteria (where possible) are provided in each requirement for final project validation.
 
 \textbf{NFR1. The application must provide real-time updates on expense processing status.}
 
-The UI must update the expenses dashboard in less than \textbf{1 second} when any expense status changes.
+The UI must update the expense statuses in less than \textbf{1 second} once the AI-driven data extraction is completed. 
 
-\textbf{NFR2. The application must offer a responsive and user-friendly UI.}
+\textbf{NFR2. The application must offer a responsive, user-friendly UI.}
 
 The UI must be \textbf{responsive}, adapting to any device or screen size \cite{responsive-ui}, and user-friendly, allowing new users to upload, review, and save an expense within \textbf{5 minutes}.
 
@@ -17,21 +17,21 @@ Upon user login, the application should load the previously uploaded expenses wi
 
 \textbf{NFR4. The application must support scalability as the company grows.}
 
-The application should support \textbf{20 receipt uploads} without overloading the server. 
+The application must implement a decoupled architecture that separates the initial user request from any subsequent intensive processing workload. Additionally, its resources must be deployed on a cloud computing platform (or Platform-as-a-Service) that supports automatic horizontal scaling.
 
 \textbf{NFR5.  The application must guarantee compliance with GDPR.}
 
-The application must store only relevant data and use an external cloud platform (this project will use Azure) that meets GDPR standards for data manipulation (Azure SQL Database) and user access (Microsoft Entra ID).
+The acceptance criteria of this specific requirement are justified in Section \ref{regulatory-section}.
 
 \textbf{NFR6. The application must enable a more efficient expense management process and a streamlined approval workflow.}
 
 The application must optimize the expense workflow from the current 20 minutes to \textbf{5 minutes} for both employees and finance staff, achieving a \textbf{75\%} efficiency gain.
 
-\textbf{NFR7. The application must facilitate integration of future AI models.}
+\textbf{NFR7. The application must support easy integration with external systems.}
 
-The application must facilitate new AI models integrations by changing a single endpoint.
+The application must define abstractions for interactions with external systems, with their concrete implementations placed in a separate layer. The relationship between these abstractions and their implementations is established by adopting the Dependency Inversion Principle. This architectural approach ensures that future integrations of external components can be achieved with minimal code changes, thereby improving maintainability and extensibility.
 
-\textbf{NFR8. The project must support automated deployment and testing.}
+\textbf{NFR8. The project must support maintainability and extensibility.}
 
-The application must implement Continuous Integration (CI) and Continuous Deployment (CD) pipelines to follow DevOps principles. When a new implementation is pulled into the source code, pipelines enforce thorough testing of the updated version to prevent bugs while ensuring high-quality code and fast delivery.
+The application must separate the technical implementation from the business logic, facilitating the extension of technical features or adaptation to a changing business structure. 
 

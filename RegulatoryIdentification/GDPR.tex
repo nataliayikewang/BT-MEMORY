@@ -1,0 +1,16 @@
+\subsection{General Data Protection Regulation (GDPR)}
+\label{regulatory-section}
+
+This application is targeted at FSP's Barcelona office team. As part of European citizenship, this group is legally protected by the GDPR. Therefore, the application must comply with all applicable GDPR provisions in this project.
+
+According to the data minimization principle (\textbf{Article 5(1)(c)}), the application must gather and store strictly essential information for the stated purpose. Any information that falls outside this scope must not be collected.
+
+In this case, the application aims to manage employees' expenses. Hence, the application only stores relevant data to approve or reject the reported expenses. In addition, the collected user personal information is limited to the user's name and email, which are used exclusively for the email notification service. 
+
+
+Pursuant to \textbf{Article 6 of the GDPR}, any data processing must rest on a valid legal basis and pursue a lawful purpose. In this project, the data processing is based on contractual necessity, since the company expense reimbursement is a condition for fulfilling the employee's employment contract.
+
+Following \textbf{Article 32 of the GDPR}, technical and organizational measures are required to guarantee data security. This is adequately addressed by applying several techniques. Secure communication between the client and the server is achieved using HTTPS, which encrypts data in transit. Data at rest is stored in Azure SQL Database and encrypted through Transparent Data Encryption, and receipt files are stored in Azure Blob Storage with private access.
+
+Finally, to fully comply with \textbf{Article 32}, the application access is protected by Microsoft Entra ID. User authorization is managed by App Roles, restricting each user's access to their own expenses and each administrator's access to the expenses corresponding to their own team. This last feature ensures compliance with the principle of least privilege.
+

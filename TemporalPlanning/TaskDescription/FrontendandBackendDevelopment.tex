@@ -1,12 +1,12 @@
 \subsubsection{Frontend and Backend Development}
 
-As a full-stack web application, the implementation is divided into two main areas. The frontend is responsible for the user interface (UI) and user experience (UX). The backend implements the complex implementations hidden in the frontend via a RESTful API and integrates external services. 
+As a full-stack web application, the implementation is divided into two main areas. The frontend is responsible for the user interface (UI) and user experience (UX). The backend implements the complex internal logic hidden from the frontend via a RESTful API and integrates with external services. 
 
 This development stage requires both frontend and backend development. Since it covers a wide range of functionalities, it is divided into two subgroups: Expense and Report Development, and User Access Development.
 
 \textbf{Expense and Report Development}
 
-This development subgroup includes the application’s core functionalities, namely, the expense and report management.
+This development subgroup includes the application's core functionalities, namely, the expense and report management.
 
 \textbf{ER1. Expense Uploads}
 
@@ -19,11 +19,11 @@ Develop a visual dashboard to display all uploaded expenses with their real-time
 \begin{itemize}[leftmargin=0.75cm,noitemsep]
     \item \textbf{Processing:} The expense is pending processing by the AI model.
 
-    \item \textbf{Pending Review:} The AI model has successfully analyzed the expense, the uploader can now review it.
+    \item \textbf{Pending Review:} The AI model has successfully analyzed the expense; the uploader can now review the AI-extracted information.
 
-    \item \textbf{Completed:} The user has reviewed and completed all required information. The expense is ready for being included in a new or existing report.
+    \item \textbf{Completed:} The user has reviewed and completed all required information. The expense is ready to be included in a new or existing report.
 
-    \item \textbf{Failed:} The AI couldn't extract data from the receipt (due to unavailability or unrecognized format).
+    \item \textbf{Failed:} The AI couldn't extract data from the receipt (due to unavailability or unrecognized format). The uploader should manually fill in all required expense details.
 
 \end{itemize}
 
@@ -33,7 +33,7 @@ Develop a form page for users to review, edit, and save AI-extracted expense inf
 
 \textbf{ER4. Uploaded Expenses Deletion}
 
-Develop the expense deletion feature to delete one or multiple expenses at once, regardless of their current status, marking them as deleted in the database after user confirmation.
+Develop the expense deletion feature to delete one or multiple expenses at once, regardless of their current status. After user confirmation, they are marked as deleted in the database. 
 
 \textbf{ER5. Expense Reports View, Creation, Edit, Submission, and Deletion}
 
@@ -60,7 +60,7 @@ Develop the login feature that allows users to authenticate in the application t
 
 \textbf{UA2. Role-based User Access}
 
-Develop the user role assignment (based on two main roles: regular employee or administrator) and expose only the corresponding role's functionalities.
+Develop the user role assignment (based on two main roles: regular employee or administrator) and expose to the user only their corresponding role's functionalities. 
 
 \textbf{UA3. Submitted Report Approval and Rejection}
 

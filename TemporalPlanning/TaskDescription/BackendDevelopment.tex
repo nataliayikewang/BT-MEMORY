@@ -4,23 +4,23 @@ The following tasks are implemented exclusively in the application backend logic
 
 \textbf{BD1. RESTful API Backend Logic Implementation}
 
-Configure the backend architecture defined in the DT3 task and build a RESTful API to manage backend responsibilities through frontend requests.
+Build a RESTful API that follows the technology stack defined in the DT3 task to manage backend responsibilities via frontend requests. 
 
 \textbf{BD2. Azure SQL Database Integration}
 
-Integrate Azure SQL Database with Entity Framework Core migrations to manage users' relevant information (e.g., extracted expense and report information, employees' hierarchy) and configure the initial database according to the diagram designed in DT2 task. 
+Integrate with Azure SQL Database using Entity Framework Core migrations to manage the application’s data storage and configure the initial database according to the diagram designed in the DT2 task. 
 
 \textbf{BD3. Azure Blob Storage Integration}
 
-Store original expense files using Azure Blob Storage.
+Store original receipt files using Azure Blob Storage.
 
 \textbf{BD4. Microsoft Document Intelligence AI Model Integration}
 
-Automate expense data extraction using the Microsoft Document Intelligence AI model.
+Extract the relevant information from expenses using the Microsoft Document Intelligence AI model. 
 
 \textbf{BD5. Automated AI-driven Data Extraction Pipeline}
 
-Integrate Event Grid, Service Bus, and Azure Function to implement a mechanized data extraction workflow that prevents bottlenecks during multiple simultaneous uploads:
+Integrate Event Grid, Service Bus, and Azure Function to implement an automated data extraction workflow that prevents bottlenecks during multiple simultaneous uploads:
 
 \begin{enumerate} [leftmargin=0.75cm, noitemsep]
     \item Save the uploaded receipt file in Blob Storage and associated data in SQL Database.
@@ -34,5 +34,6 @@ Integrate SignalR to configure a SignalR Hub that sends real-time expense status
 
 \textbf{BD7. Microsoft Entra ID User Authentication Integration}
 
-Handle employee authentication through the company email account using Microsoft Entra ID integration.
+Handle employee authentication through the company email account via Microsoft Entra ID.
+
 

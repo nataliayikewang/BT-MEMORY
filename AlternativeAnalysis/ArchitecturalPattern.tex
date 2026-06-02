@@ -1,0 +1,14 @@
+
+\vspace{0.2cm}
+
+\subsection{Architectural Pattern Selection}
+
+The automated data extraction pipeline, defined in the BD5 task in Section \ref{sec:taskdescription}, can be implemented using two distinct architectural patterns. The first is a synchronous monolithic architecture, in which the entire process, from the initial upload to the AI processing of the expense, is handled through a single API call. The second is an asynchronous microservices-based architecture, where each service is responsible for a specific function in the workflow.
+
+An expense upload triggers the POST /api/expenses call. A simple POST request is quick and lightweight, whereas the AI-powered extraction introduces considerable processing delay. Consequently, the two architectural patterns exhibit opposite behaviours.
+
+In the case of synchronous monolithic architecture, the POST call cannot complete until AI extraction is finished, so the server response time is considerably prolonged. This is particularly harmful in bulk-upload scenarios, where expenses are processed sequentially, degrading user experience and reducing server availability. At the same time, reliability is low: any error in the end-to-end workflow causes the entire request to fail, requiring users to retry the upload.
+
+In an asynchronous microservices-based architecture, the POST call is fully decoupled from the AI extraction process. Single uploads complete instantly, and bulk uploads are handled concurrently, preventing server overload. After a successful expense upload, the expense is routed to a queue and processed by the AI when resources are available. In addition, a more robust error-handling strategy is applied: if the AI model fails to extract the data, the expense is preserved and sent back to the queue for a later retry.
+
+Due to its negative impact on user experience and scalability, the synchronous monolithic approach is discarded, biasing the design toward the alternative solution. The \textbf{asynchronous architecture with microservices} delivers immediate feedback to the user, prevents API bottlenecks, and results in a more resilient and scalable system. By making this choice, the non-functional requirements NFR1, NFR3, and NFR4 (Section \ref{sec:non-functional-requirements}) are also fulfilled.

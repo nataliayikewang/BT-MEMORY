@@ -1,0 +1,12 @@
+
+\vspace{0.2cm}
+\subsection{Data Extraction Selection}
+
+After uploading the expenses, their relevant information can be extracted in several ways: manually entering the data, using OCR technology, or leveraging a pre-trained AI service. FSP's traditional expense management approach relies on manual data entry, which sometimes can be frustrating, error-prone, and time-consuming (as discussed in Section \ref{sec:problems-to-solve}).
+
+OCR is a technology that captures text from images and converts it into machine-readable text. However, this technology introduces certain drawbacks. It is sensitive to low-quality images, increasing the probability of errors. It also follows strict rules; even minor differences in keyword capitalization or data formatting may produce inconsistencies. Consequently, the solution must account for countless receipt formats, which raises the need for regular maintenance. 
+
+Unlike OCR, AI models not only read text but also understand context across a wide variety of formats without relying on rigid rules. With this capability, they can also recognize structured data such as line items and their corresponding amounts, going well beyond what conventional text-scanning technologies can achieve.
+
+While traditional OCR with extensive rules is a possibility, it is overly brittle and requires intensive maintenance to handle the wide variety of real-world receipts. An \textbf{AI model} is a more effective choice, since it provides higher accuracy and significantly lower development and maintenance overhead. In addition, it fulfills FR3, one of the core project requirements outlined in Section \ref{sec:functional-requirements}.
+
