@@ -1,0 +1,42 @@
+\subsubsection{\textbf{Use Case: Consult Expense Details}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user requests the detailed information for a specific expense record.
+
+\textbf{Preconditions:} The user is authenticated, viewing the Expenses page, and at least one expense record is displayed in the list.
+
+\textbf{Postconditions:} The system displays detailed expense information in an editable form, along with the original receipt image or file.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+    \item The user selects an expense record from the list.
+    \item The system retrieves the expense record and its full metadata from the database.
+    \item The system retrieves the associated receipt image or file from blob storage.
+    \item The system displays a form containing the expense metadata with the original receipt image or file.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+    \item \textbf{2a. Expense Not Found:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 2a1. The system cannot find the expense record with the provided ID.
+        \item 2a2. The system displays a 404 ``Expense Not Found'' error message and prompts the user to return to the previous page.
+    \end{itemize}
+
+    \item \textbf{3a. File or Image Loading Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3a1. The system retrieves the expense metadata but fails to load the receipt image or file.
+        \item 3a2. The system displays a warning while keeping the metadata form visible.
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

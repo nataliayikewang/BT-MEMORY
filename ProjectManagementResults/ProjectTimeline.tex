@@ -1,0 +1,29 @@
+ \subsection{Project Timeline}
+\label{actual-project-timeline}
+
+ For a better visualization of the comparison between the initial project timeline and the actual one, a comparative table is displayed in Table \ref{table:comparison-of-planned-and-actual-effort-per-task}. Beyond that, a new Gantt diagram representing the actual execution progress is also created and corresponds to Figure \ref{fig:gantt2}. 
+
+ \input{ProjectManagementResults/ProjectTimeline/TaskSummary.tex}
+ \input{ProjectManagementResults/ProjectTimeline/ActualGanttDiagram.tex}
+
+ Before diving into the details of the deviations between the planned and actual project execution, note that a minor adjustment was made to the \textbf{UA5} task. The original task name, “Submitted and Reviewed Expenses Records Visualization,” was replaced with the more descriptive name “Report History Categorization by Status and User Role.” 
+
+The \textbf{UA5} task was renamed because it was upgraded by the Product Owner during project execution. A more accurate description is that it involves developing a dashboard for each report status: for employees, dashboards showing “Not Sent” and “Submitted” reports, and for admins, dashboards showing “Pending Review” and “Reviewed” reports.
+
+Looking at Table \ref{table:comparison-of-planned-and-actual-effort-per-task}, the project clearly overspent its schedule: the initial plan was \textbf{513 hours}, but the actual effort reached \textbf{542.5 hours}. However, as shown in the Gantt diagram in Figure \ref{fig:gantt2}, the project was still executed within the planned \textbf{122 days}.
+
+Comparing each task's planned time with its actual effort shows that some tasks exceeded their estimates while others required less time. The most significant underestimation occurred in task \textbf{FPD2} (final thesis documentation), which overran by 49.5 hours. The author acknowledges this clear underestimation of effort.
+
+Other overrunning tasks were \textbf{Dev2} (product deployment), \textbf{UA3} (submitted report approval and rejection), and \textbf{BD2} (Azure SQL database integration and manipulation). These tasks required more effort than initially calculated. The root cause of this underestimation is the author's inexperience with database manipulation and product release.
+
+Several tasks, however, were completed faster than expected: \textbf{Dev5}, \textbf{UA6}, \textbf{BD4}, and \textbf{BD5}. \textbf{Dev5} involved creating clear repository documentation to help future developers understand the project context. The originally estimated 40 hours were reduced by half. 
+
+\textbf{UA6}, \textbf{BD4}, and \textbf{BD5} tasks involved Azure resources. The initial approximation included a buffer because this was the author's first experience with cloud platforms. However, Azure Portal's intuitive interface and the straightforward handling of Azure resources through the .NET platform enabled efficient execution of these tasks.
+
+Despite the time gained on some tasks, the overruns on others were larger, so the total execution time still exceeded the established effort. As explained in Section \ref{sec:temporal-planning}, this bachelor's thesis is organized for 540 total hours; the 27-hour buffer is insufficient, and actual execution has already surpassed the planned workload. To keep the project within budget, some tasks were discarded following the MoSCoW approach.
+
+Tasks \textbf{UA4} and \textbf{FD2} are \textit{Could have} functionalities with low priority. Omitting them does not significantly impact the final product value, so they are not included in the actual Gantt diagram. Another missing task in the Gantt diagram is \textbf{Dev4}, which involves logging and monitoring the application. It is also low-priority, and omitting it does not affect the product's final value.
+
+During project execution, dedicating one week to \textbf{Dev3} task (CI/CD Pipeline Implementation) revealed a shortfall compared to the original approximation of five days due to the author's lack of expertise. The execution was already exceeding the planned allocation, the task is not high-priority and has no strong dependencies on other tasks. \textbf{Dev3} was rescheduled to the final development stage and ultimately discarded. By the project's final stage, no buffer time remained for its completion, leaving the possibility to implement this task in future iterations.
+
+Despite all the challenges encountered and the incomplete execution of the project, the final product fulfills all high-priority and medium-priority requirements (\textit{Must have} and \textit{Should have}) thanks to the MoSCoW strategy. As a result, an application that delivers optimal value within the timeline, as well as within the author's capabilities and expertise, has been delivered.

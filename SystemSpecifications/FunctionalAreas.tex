@@ -1,0 +1,19 @@
+\subsection{Functional Areas}
+\label{sec:functional-areas}
+
+Before describing how the application's functional requirements are structured within the system architecture, it is necessary to clarify the distinction between an application and a system. An application is a software program that performs specific tasks, whereas a system is a collection of interacting components, among which the application is considered one element.
+
+Within this system, functional requirements are organized into functional areas based on shared purpose or behavior. Each functional area groups related use cases performed by a specific actor. To illustrate the structure of these areas, a dedicated UML Use Case diagram is provided for each one.
+
+In this context, actors represent the application's end users. Two types of actors are identified: Users and Administrators (labeled as “Admin” in the diagrams). The user category includes both ordinary employees and administrators. Administrators, in addition to general user capabilities, possess further permissions to review and manage the expense reports submitted by employees under their supervision.
+
+To illustrate how these use cases are implemented, this section provides a detailed technical description for three critical and representative use cases: user authentication, expense registration via file upload, and report approval. These specific examples have been carefully selected because they best demonstrate the system's core functionalities, security mechanisms, asynchronous processing architecture, and multi-role interactions.
+
+The complete and exhaustive technical description to all use cases diagrammed in this section, including their respective actors, triggers, pre/postconditions, and detailed event flows, is available for comprehensive review in Appendix~\ref{appendix:use_case_specifications}: Detailed Use Case Specifications.
+
+\input{SystemSpecifications/FunctionalAreas/AccountManagement.tex}
+\input{SystemSpecifications/FunctionalAreas/ExpenseManagement.tex}
+\input{SystemSpecifications/FunctionalAreas/ReportManagement.tex}
+\input{SystemSpecifications/FunctionalAreas/SubmittedReportManagement.tex}
+\input{SystemSpecifications/FunctionalAreas/PendingReviewReportManagement.tex}
+\input{SystemSpecifications/FunctionalAreas/ReviewedReportManagement.tex}

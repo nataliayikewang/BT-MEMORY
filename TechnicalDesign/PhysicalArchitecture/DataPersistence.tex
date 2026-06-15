@@ -1,0 +1,7 @@
+\vspace{0.5cm}
+
+\textbf{Data Persistence}
+
+The application uses two data storage services to support distinct storage approaches. \textbf{Azure SQL Database} is designed to persistently store structured, relational data, such as user information, expense metadata, and report details. In contrast, \textbf{Azure Blob Storage} is optimized for storing and retrieving large unstructured objects, specifically raw receipt files (binary files such as images and PDFs).
+
+When the application needs to access previously uploaded receipt files, the browser interacts with \textbf{Azure Blob Storage}. A critical architectural pattern used here is the ``Valet Key Pattern'': each time the client requests a stored receipt, the backend API generates a temporary secure link, known as a Shared Access Signature (SAS) URL. Using this URL, the browser can securely download the file directly from \textbf{Azure Blob Storage}.

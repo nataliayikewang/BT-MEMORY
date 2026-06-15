@@ -1,0 +1,16 @@
+\subsection{Infrastructure Provisioning}
+
+The first step in the deployment process was to provision all necessary cloud infrastructure, as detailed in the Physical Architecture diagram (Figure \ref{fig:physical-architecture-diagram}). All Azure resources were created manually through the Azure Portal and include the following:
+
+\begin{itemize}  [leftmargin=0.75cm, label=$\bullet$]
+    \item \textbf{Azure App Service Plan and App Service}: To host the .NET backend API.
+
+    \item \textbf{Azure SQL Database and Server}: For relational database persistence.
+
+    \item \textbf{Azure Static Web App}: To host the frontend React application.
+
+    \item \textbf{Supporting Services}: All other required services, such as Azure Storage Account (for Blob Storage), Azure Service Bus, Azure Event Grid, Azure Functions, and Azure SignalR, were also provisioned and configured.
+
+\end{itemize}
+
+By creating these resources, the application settings and secrets (e.g., database connection string and Azure AD application IDs) were securely configured. Instead of being stored in the source code, these values were added to the “Configuration” section of the Azure App Service and Azure Functions. This is a security best practice that allows sensitive information to be managed independently of the application code.

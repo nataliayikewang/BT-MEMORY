@@ -1,0 +1,10 @@
+\subsection{Backend Deployment}
+
+The .NET backend was deployed directly to the Azure App Service. The process consists of two steps:
+
+\begin{enumerate} [leftmargin=0.75cm]
+    \item \textbf{Publishing the Artifact}: The application is first published locally. This step is easily performed using Visual Studio's built-in “Publish” feature. This process involves compiling the C\texttt{\#} code, resolving all dependencies, and gathering all necessary files into a single, optimized deployment package, a .zip file. 
+
+    \item \textbf{Deploying to Azure}: The obtained package was then deployed to the App Service using the “Zip Deploy” method. This is a reliable and straightforward method to upload and deploy the application package and can be completed through various tools. In this case, Azure CLI was the tool used. Once the package is deployed, the App Service automatically unzips it and starts the application.
+
+\end{enumerate}

@@ -3,7 +3,7 @@
 
 Due to the constrained thesis timeline, the application's functional requirements are prioritized by applying the MoSCoW methodology. MoSCoW categorizes requirements into four priorities: \textbf{Must have}, \textbf{Should have}, \textbf{Could have}, and \textbf{Won't have}. 
 
-Throughout the full classification process, the Product Owner serves as the primary reference point for determining the relevance of each requirement. The resulting MoSCoW-prioritized requirements list appears below.
+Throughout the full classification process, the Product Owner serves as the primary reference point for determining the relevance of each requirement. The resulting MoSCoW-prioritized requirements list appears below. Each requirement is also linked to a specific development task, which is further detailed in Section \ref{sec:taskdescription}.
 
 By following the MoSCoW strategy, high-priority requirements are addressed first, while lower-priority ones are deferred in case of setbacks. Consequently, this enables early delivery of a high-value product; only requirements with negligible outcome impact can be omitted if time allocation falls short.
 
@@ -11,41 +11,47 @@ Before delving into the specific requirements, notice that a report is a set of 
 
 \textbf{Must have:} requirements that are critical for the core application functionality.
 
-FR1. The system must centralize expense data on a single platform.
+FR1. The system must centralize expense data on a single platform. (All ER category tasks)
 
-FR2. The system must provide effortless receipt uploads and drag-and-drop.
+FR2. The system must provide effortless receipt uploads and drag-and-drop functionality. (ER1, BD1, BD2, BD3)
 
-FR3. The system must automate data extraction from receipts using an AI model.
- 
-FR4. The system must allow users to review and correct the AI-extracted data.
+FR3. The system must automate data extraction from receipts using an AI model. (BD4, BD5)
 
-FR5. The system must enable simple report submissions to a predefined approver.
+FR4. The system must display the current AI processing status of uploaded expenses.  (ER2, BD6)
 
-FR6. The system must require users to log in through their company's account.
+FR5. The system must allow users to review and correct the AI-extracted expense data. (ER3, BD2)
 
-FR7. The system must implement role-based access control with two roles: employees, with access to basic features, and admins, with access to additional features.
+FR6. The system must allow users to delete single or multiple uploaded expenses that are not attached to a submitted report. (ER4, BD2)
 
-FR8. The system must allow admin users to approve or reject submitted reports.
+FR7. The system must allow users to create, edit or delete reports. (ER5, BD2)
 
-FR9. The system must send email notifications to the report creator when the report is approved or rejected and to the administrator when new reports are pending review.
+FR8. The system must allow users to attach and detach single or multiple expenses to a report pending submission. (ER5, BD2)
+
+FR9. The system must enable simple report submissions to a predefined approver.  (ER5, BD2)
+
+FR10. The system must require users to log in through their company's account. (UA1, BD7)
+
+FR11. The system must implement role-based access control with two roles: employees, who have access to basic features, and admins, who have access to additional features. (UA2)
+
+FR12. The system must allow admin users to approve or reject submitted reports. (UA3, BD2)
+
+FR13. The system must send email notifications to the report creator when a report is approved or rejected, and to the creator's supervisor when a report is submitted. (UA6)
+
+FR14. The system should display the report's current status, categorized as Not Sent, Pending, Approved, or Rejected. (ER5)
 
 \textbf{Should have:} requirements that are relevant for the application functionality, but permit a certain delay in complete achievement.
 
-FR10. The system should provide search bar and filters for uploaded expenses.
+FR15. The system should provide search bar and filters for uploaded expenses. (FD1)
 
-FR11. The system should allow users to group multiple expenses into a single report.
+FR16. The system should display to employee users a history of reports in each of the following statuses: Not Sent and Submitted. (UA5)
 
-FR12. The system should  display a history of submitted reports, categorized as: Pending Review, Approved, and Rejected.
-
-FR13. The system should display to admin users a history of reviewed reports.
+FR17.The system should display to admin users a history of reports in each of the following statuses: Pending Review and Reviewed. (UA5)
 
 \textbf{Could have:} requirements that enhance the application usability and are fulfilled if time permits.
 
-FR14. The system could allow users to edit report information.
+FR18. The system could provide a search bar to find specific reports. (FD2)
 
-FR15. The system could provide a search bar to find specific reports.
+FR19. The system could allow admins to set expense budget limits for employees under their supervision. (UA4)
 
-FR16. The system could allow admins to set expense budget limits for employees under their supervision.
-
-\textbf{Won't have:} requirements that are irrelevant and will not be included in the application. As they fall outside the application's scope, these requirements are not explicitly defined.
+\textbf{Won't have:} requirements that are irrelevant and are not be included in the application. As they fall outside the application's scope, these requirements are not explicitly defined.
 

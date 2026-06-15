@@ -1,0 +1,47 @@
+\subsubsection{Final Milestone}
+
+\textbf{Regarding PPP: Have you quantified the cost (human and material resources) of undertaking the project? What decisions have you taken to reduce the cost? Have you quantified these savings?}
+
+The final project cost has been quantified and amounts to €14,309.00, as detailed in Section \ref{sec:actual-budget}. This figure includes actual personnel costs derived from the effort allocated to each task, as well as generic costs adjusted to the total of 542.5 hours of work.
+
+During project execution, several critical decisions were made to allocate resources within the available budget while maintaining a high-value product despite time constraints. The MoSCoW prioritization technique was adopted to achieve this objective. As the project exceeded its planned effort, low-priority tasks, specifically those categorized as \textit{Could have} requirements, were excluded.
+
+The omitted tasks were UA4 (Employee Spending Limit Configuration), FD2 (Reports Search), and Dev3 (CI/CD Pipeline Implementation). This exclusion generated cost savings of €356.59 (extracted from the costs indicated in Table \ref{table:actual-personnel-cost-breakdown-total}), which proved essential in keeping the project within the initial budget.
+
+\textbf{Regarding PPP: Is the expected cost similar to the final cost? Have you justified any differences (lessons learnt)?}
+
+The final project cost remains close to the initially estimated cost. The estimated cost was €14,592.78, while the final actual cost was €14,309.00, resulting in a deviation of €283.78 below the initial estimate.
+
+An analysis of the deviation values presented in Section
+\ref{project-deviations} indicates that the primary discrepancy occurred in personnel costs. An overrun of 29.5 hours led to an additional cost of €1,156.89. A key lesson learned is the underestimation of tasks involving extensive documentation and the author's limited proficiency in database manipulation, particularly in tasks FPD2 and BD2.
+
+Conversely, tasks related to the integration of cloud platform resources were completed more efficiently than expected, largely due to the platform's intuitive interface and straightforward integration processes. Ultimately, the overall budget remained balanced through the inclusion of contingency and incidental costs, which offset the personnel cost overrun. 
+
+\textbf{Regarding Exploitation: What cost do you estimate the project will have during its useful life? Could this cost be reduced to increase viability?}
+
+The operational cost during the application's useful life primarily consists of Azure's monthly service fees, as the system relies entirely on cloud-based resources. No server maintenance or hardware replacement costs are required. The monthly Azure cost depends on resource usage; however, Azure provides a range of pricing tiers that allow scaling according to application demand.
+
+At present, the application operates under the most basic subscription tier. Consequently, further cost reduction is not feasible. Nonetheless, the current strategy leverages several cloud-native advantages.
+
+Currently, the application's resources meet performance and demand requirements while remaining within the most cost-effective pricing tier. Additionally, the asynchronous processing pipeline described in the physical architecture (Section \ref{sec:physical-architecture}) is serverless and incurs costs only when executed. This characteristic of Azure Functions makes it particularly suitable for asynchronous workflows.
+
+\textbf{Regarding Exploitation: Have you considered the cost of adaptations, updates, and repairs during the project's useful life?}
+
+Future maintenance, including adaptations, updates, and repairs, was a primary consideration during the design of the application's logical architecture. The adoption of Clean Architecture and SOLID principles directly addresses maintainability concerns.
+
+The application's core business logic resides in a dedicated Domain layer, isolated from technical implementation details. Interactions with external systems are defined through abstract interfaces, with their implementations located in the Infrastructure layer.
+
+A representative scenario illustrating the benefits of this approach is a change in the email notification service or database system. In such cases, only the Infrastructure layer components implementing the relevant interfaces need to be modified or replaced, while the remaining layers remain unaffected. Additional design patterns that further support maintainability are discussed in Section \ref{sec:principles-and-patterns}.   
+
+\textbf{Regarding Risks: Could situations occur that are detrimental to the project's viability?}
+
+Several risks may affect the project's long-term economic viability, which depends on achieving the projected annual cost savings of €5,838.75, based on the actual 86.5\% efficiency gain derived from the validation of NFR6 in Section \ref{sec:non-functional-requirements-validation}.
+
+\begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\bullet$]
+    \item \textbf{Low user adoption}: Resistance from employees to adopting the new system may prevent the realization of expected efficiency gains, thereby extending the ROI period. This risk is mitigated through the development of a user manual (Task FPD1) and the design of an intuitive user interface (NFR2).
+
+    \item \textbf{Uncontrolled cloud costs}: Unexpected increases in application usage without proper monitoring could lead to escalating Azure costs, negatively affecting the projected ROI. This risk is addressed by implementing cost alerts and regularly reviewing service tiers, particularly during periods of increased activity.
+
+    \item \textbf{Increased maintenance costs}: The omission of Task Dev4 (Logging and Monitoring) introduces technical debt. The absence of a robust monitoring solution may result in time-consuming and costly debugging processes in production environments, potentially leading to system downtime and reduced user productivity.
+
+\end{itemize}

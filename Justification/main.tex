@@ -1,12 +1,12 @@
 \section{Justification}
 
-Given the project's focus on developing an expense management tool for FSP (Section 1.5), it is necessary to justify the project's execution. This section helps define the project's scope, objectives, and requirements, which are discussed in Section 3. 
+Given the project's focus on developing an expense management tool for FSP (Section \ref{sec:proposed-solution}), it is necessary to justify the project's execution. This section helps define the project's scope, objectives, and requirements, which are discussed in Section \ref{sec:scope}. 
 
 Although the current market offers numerous off-the-shelf solutions, they impose significant architectural limitations. Adopting a third-party platform implies conforming to its predefined AI model, functional workflow, and limited integration points. Since FSP is a technology consultancy, it is not seeking a solution that simply mirrors market offerings, but rather a more agile, customized approach.
 
 Consequently, an in-house, scalable expense management application is preferred at FSP because it provides three key architectural advantages over commercial products:
 
-\begin{itemize} [leftmargin=0.75cm]
+\begin{itemize} [leftmargin=0.75cm, label=\textbullet]
     
 
     \item \textbf{Horizontal Scalability}
@@ -19,7 +19,7 @@ Consequently, an in-house, scalable expense management application is preferred 
 
     \item \textbf{Easy Integration}
 
-    By implementing a decoupled, multi-layered Clean Architecture, the logic for interacting with any external system is encapsulated behind abstractions. The concrete implementations of these abstractions reside in a completely separate layer. Additionally, external systems are registered via Dependency Injection to adhere to the Dependency Inversion Principle. As a result, external services can be easily integrated without requiring critical changes in the backend API.
+    By implementing a decoupled, multi-layered Clean Architecture, the logic for interacting with any external system is encapsulated behind abstractions. The concrete implementations of these abstractions reside in a completely separate layer. Additionally, external systems are registered via abstract interfaces to adhere to the Dependency Inversion Principle. As a result, external services can be easily integrated without requiring critical changes in the backend API.
 
 \end{itemize}
 

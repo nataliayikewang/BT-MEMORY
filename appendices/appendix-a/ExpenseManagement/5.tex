@@ -1,0 +1,47 @@
+\subsubsection{\textbf{Use Case: Delete Multiple Expenses}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user activates the bulk expense deletion mode.
+
+\textbf{Preconditions:} The user is successfully authenticated and viewing the Expenses page, and at least one expense is displayed in the list.
+
+\textbf{Postconditions:} The selected expenses are deleted.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+    \item The user activates bulk expense deletion mode.
+    \item The user selects one or more expense records from the list.
+    \item The user initiates the deletion of the selected expenses.
+    \item The system prompts the user to confirm the bulk deletion.
+    \item The user confirms the deletion.
+    \item The system deletes the selected expense records.
+    \item The system returns the user to the standard Expenses page view.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+    \item \textbf{1-3a. Cancel Deletion or Deactivate Mode:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 1-3a1. The user cancels the operation or deactivates bulk deletion mode.
+        \item 1-3a2. The system clears all active selections, deactivates bulk deletion mode without deleting any records, and restores the standard Expenses page view.
+    \end{itemize}
+
+    \item \textbf{5a. Deletion Confirmation Rejected:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 5a1. The user declines or closes the confirmation dialog.
+        \item 5a2. The system closes the confirmation dialog and preserves the current selection without deleting any records.
+    \end{itemize}
+
+    \item \textbf{6a. Expense Deletion Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 6a1. An error occurs during the bulk deletion due to a database connection error or an internal error.
+        \item 6a2. The system notifies the user of the error and restores the standard Expenses page view without deleting any expense.
+    \end{itemize}
+\end{itemize}

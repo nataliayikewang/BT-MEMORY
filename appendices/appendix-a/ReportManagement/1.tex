@@ -1,0 +1,40 @@
+\subsubsection{\textbf{Use Case: List Personal Reports}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user navigates to the Reports page.
+
+\textbf{Preconditions:} The user is successfully authenticated.
+
+\textbf{Postconditions:} The system displays a list of the user’s pending reports.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The user selects the ``Reports'' option in the navigation bar.
+\item The system redirects the user to the Reports page.
+\item The system retrieves and displays all reports previously created by the user that are pending submission.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+\item \textbf{3a. No Reports Found:}
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+    \item 3a1. The system cannot find any report that meets the criteria and informs the user.
+\end{itemize}
+
+\item \textbf{3b. Database Connection Error:}
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+    \item 3b1. The system notifies the user of the error.
+    \item 3b2. The system prompts the user to refresh the page.
+\end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

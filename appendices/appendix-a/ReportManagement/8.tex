@@ -1,0 +1,35 @@
+\subsubsection{\textbf{Use Case: Submit Report}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user wants to submit a specific report.
+
+\textbf{Preconditions:} The user is authenticated, the system displays a form containing the report metadata, and at least one expense is included in the report.
+
+\textbf{Postconditions:} The system submits the currently displayed report to the corresponding supervisor for review.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The user submits the currently displayed report.
+\item The system submits the report and notifies the user’s supervisor that a new report is pending review.
+\item The report and its associated expenses become read-only and remain available for consultation.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+    \item \textbf{2a. Report Submission Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 2a1. An error occurs during the report submission due to a database connection error or an internal error.
+        \item 2a2. The system notifies the user of the error and keeps the user on the current report details view.
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

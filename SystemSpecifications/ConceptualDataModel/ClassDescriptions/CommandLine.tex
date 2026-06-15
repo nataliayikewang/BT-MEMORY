@@ -1,0 +1,47 @@
+\textbf{CommandLine}
+
+This class represents an individual line item within an expense, typically corresponding to a specific product or service listed on a receipt. If the associated expense is deleted, the command line must also be deleted.
+
+\begin{itemize} [leftmargin=0.75cm, noitemsep, label=\textbullet]
+
+    \item \textbf{commandLineId:} Unique identifier of the command line.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} UUID.
+
+        \item \textbf{constraints:} mandatory, unique, non-null.
+
+    \end{itemize}
+
+    \item \textbf{item:} Description or name of the purchased item or service.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{quantity:} Number of units of the item.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} Integer.
+
+        \item \textbf{constraints:} mandatory, non-null, must be $\geq 1$.
+
+    \end{itemize}
+
+    \item \textbf{price:} Monetary value of the item.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} Decimal.
+
+        \item \textbf{constraints:} mandatory, non-null, must be $\geq 0$.
+
+    \end{itemize}
+
+\end{itemize}

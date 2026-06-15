@@ -1,0 +1,177 @@
+\textbf{Expense}
+
+This class represents an expense submitted by a user. Each expense must be associated with the user who uploaded it.
+
+\begin{itemize} [leftmargin=0.75cm, noitemsep, label=\textbullet]
+
+    \item \textbf{expenseId:} Unique identifier of the expense.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} UUID.
+
+        \item \textbf{constraints:} mandatory, unique, non-null.
+
+    \end{itemize}
+
+    \item \textbf{expenseName:} Name assigned to the expense by the user.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{blobUri:} URI of the stored expense file.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, unique, non-null.
+
+    \end{itemize}
+
+    \item \textbf{fileName:} Name of the uploaded file.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{fileType:} Type of the uploaded file (e.g., PDF, JPEG).
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{uploadedAt:} Timestamp indicating when the expense was uploaded.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} DateTime.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{expenseType:} Category of the expense (e.g., travel, meals).
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{amount:} Monetary amount of the expense.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} Decimal.
+
+        \item \textbf{constraints:} mandatory, non-null, must be $\geq 0$.
+
+    \end{itemize}
+
+    \item \textbf{currency:} Currency of the expense amount (e.g., EUR, USD).
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null, must be a valid international currency code.
+
+    \end{itemize}
+
+    \item \textbf{vendor:} Name of the vendor or service provider.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{expenseDate:} Date when the expense was incurred.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} DateTime.
+
+        \item \textbf{constraints:} mandatory, non-null, must be $\leq$ current datetime and uploaded datetime.
+
+    \end{itemize}
+
+    \item \textbf{expenseLocation:} Location where the expense was incurred.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{comments:} Additional notes or description provided by the user.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} optional.
+
+    \end{itemize}
+
+    \item \textbf{paymentMethod:} Method used for the payment (e.g., cash, credit card).
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} optional.
+
+    \end{itemize}
+
+    \item \textbf{isDeleted:} Indicates whether the expense has been logically deleted.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} Boolean.
+
+        \item \textbf{constraints:} mandatory, default = false.
+
+    \end{itemize} 
+
+    \item \textbf{status:} Current AI extraction process status of the expense.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} ExpenseStatus Enum (Processing, PendingReview, Reviewed, Failed).
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{tax:} Tax amount associated with the expense.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} Decimal.
+
+        \item \textbf{constraints:} optional, must be $\geq 0$.
+
+    \end{itemize}
+
+\end{itemize}

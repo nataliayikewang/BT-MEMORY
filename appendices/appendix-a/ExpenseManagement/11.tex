@@ -1,0 +1,39 @@
+\subsubsection{\textbf{Use Case: Filter Expenses by Category}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user wants to filter expenses by category.
+
+\textbf{Preconditions:} The user is successfully authenticated and viewing the Expenses page.
+
+\textbf{Postconditions:} The system displays a filtered list of expenses that belong to the selected category.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The user selects a category from the filter sidebar.
+\item The system filters and displays all expenses that belong to the selected category.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+\item \textbf{2a. No Matches Found:}
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+    \item 2a1. The system cannot find any expense that belongs to the selected category.
+    \item 2a2. The system displays an empty list and informs the user that no expenses were found.
+    \item 2a3. The user decides how to proceed:
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item \textbf{Scenario A (Reset Filter):} The user clears the filter; the system restores the standard Expenses page view.
+        \item \textbf{Scenario B (New Filter):} The user modifies the filter; the flow returns to step 2.
+    \end{itemize}
+\end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

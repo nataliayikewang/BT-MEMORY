@@ -1,0 +1,7 @@
+\subsection{AI Approach Justification}
+
+Considering the client's current situation described in Section \ref{sec:problems-to-solve}, a key problem that needed to be addressed was the tedious process of manually entering receipt data. To solve this problem, the client explicitly requested an application that integrates an external AI model. At the same time, the solution must require only minimal code changes, such as changing an endpoint, if the company later decides to use an internal model.
+
+The proposed solution is a division between fast, synchronous operations for user interactions and a robust, asynchronous pipeline for background processing. Both flows serve distinct purposes and are completely separated in the Logical Architecture Diagram in Figure \ref{fig:logical-architecture-diagram}. This ensures that the user experience remains fast and responsive. The system uses the external AI model through an interface to satisfy the client's maintainability requirement, which is also reflected in the UML class diagram in Appendix \ref{appendix:uml-class-diagram}. 
+
+Regarding the origin, nature, and processing of data, this is already specified in Section \ref{sec:logical-architecture}, specifically in the Asynchronous AI Processing Flow.

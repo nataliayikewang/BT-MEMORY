@@ -1,0 +1,53 @@
+\subsubsection{Final Milestone}
+
+\textbf{Regarding PPP: Has undertaking this project led to meaningful reflections at the personal, professional, or ethical level among the people involved?}
+
+At a personal level, managing the project from conception to delivery significantly strengthened self-discipline, time management, and problem-solving skills. Overcoming unforeseen technical challenges and adapting the project plan to deviations fostered resilience and encouraged a more pragmatic approach to achieving objectives.
+
+At a professional level, the project provided practical experience within the software engineering domain. The author gained hands-on experience with modern cloud technologies (Microsoft Azure), enterprise architectural patterns (Clean Architecture), and agile prioritization techniques (MoSCoW). A key learning outcome was the importance of accurate time estimation and the need to balance technical ambition with delivery constraints, as illustrated by the decision to exclude the CI/CD implementation.
+
+At an ethical level, the project involved handling sensitive financial data, requiring a strong focus on security. Measures such as robust authentication via Azure Active Directory and data encryption at rest were implemented. This experience highlighted the ethical responsibility of protecting user data and privacy, and reinforced regulatory considerations such as GDPR compliance as concrete design constraints.
+
+\textbf{Regarding Exploitation: Who will benefit from the use of the project? Could any group be adversely affected by the project? To what extent?}
+
+The primary beneficiaries are company employees and finance or administrative staff. Employees benefit from a substantial reduction in the time and effort required to manage and submit expense reports, allowing greater focus on core responsibilities and improving productivity.
+
+Finance staff benefit from a centralized and digitalized approval workflow. The system enforces data consistency, reduces manual errors, and provides a clear audit trail, thereby improving the reliability and efficiency of the reimbursement process.
+
+No group is expected to be adversely affected in the long term. However, during the adoption phase, some users may experience difficulties adapting to the new system. Resistance to change or initial learning barriers may temporarily reduce productivity. These risks are mitigated through the provision of a user manual (Task FPD1) and the design of an intuitive user interface (NFR2), both validated during the testing phase.
+
+\textbf{Regarding Exploitation: To what extent does the project solve the initially defined problem?}
+
+The project successfully addresses the initial problem of a time-consuming, inefficient, and error-prone manual expense management process.
+
+The delivered solution achieves this through several key improvements:
+
+\begin {itemize} [leftmargin=0.75cm, noitemsep, label=$\bullet$]
+
+    \item \textbf{Automated data entry}: Integration of an AI model enables automatic extraction of relevant information from receipts, fulfilling requirement FR3.
+
+    \item \textbf{Centralized workflows}: The application provides a unified platform for expense submission, report creation, and approval management, replacing fragmented tools such as spreadsheets and email.
+
+    \item \textbf{Improved efficiency}: The digitalization of the process establishes the foundation for achieving the actual 86.5\% efficiency improvement (NFR6).
+
+\end{itemize}
+Although some lower-priority features, such as advanced report search (FD2) and spending limits (UA4), were not implemented due to time constraints, all \textit{Must have} and \textit{Should have} requirements were delivered. Consequently, the solution provides significant value and effectively optimizes the company's expense management process.
+
+\textbf{Regarding Risks: Could situations occur in which the project adversely affects a specific population segment?}
+
+While the application is designed to benefit most users, certain groups may experience temporary challenges. Employees less comfortable with digital tools, despite working in a technical environment, may find it difficult to adapt, particularly if they are accustomed to manual processes. Insufficient onboarding or support could lead to short-term frustration and reduced productivity.
+
+Additionally, the system's reliance on an active internet connection may disadvantage users operating in environments with limited or unstable connectivity. Unlike manual processes that allow offline work, this constraint may disrupt workflows and require users to relocate to areas with better network access. 
+
+\textbf{Regarding Risks: Could the project create any kind of dependency that puts users in a weak position?}
+
+The project introduces a dependency on Microsoft Azure and the Azure AI Document Intelligence service, leading to two primary risks:
+
+\begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\bullet$]
+
+    \item \textbf{Service downtime}: If critical Azure services experience outages, the application may become temporarily unavailable. While this risk is mitigated by Azure's high availability guarantees, it cannot be entirely eliminated. Currently, the impact is limited due to the relatively small user base (approximately 25 employees in the Barcelona office and 4 finance staff). However, this risk will become more significant if the system is scaled to additional locations.
+
+    \item \textbf{Vendor lock-in}: The application relies heavily on Azure services, making the company dependent on Microsoft's technology and pricing model. Potential changes in pricing or service availability could create challenges. This risk is mitigated through the adoption of Clean Architecture, which isolates core business logic from infrastructure concerns. For example, the dependency on the AI service is abstracted through the IDocumentAnalysisService interface, allowing alternative implementations to be introduced with minimal impact on the overall system.
+    
+\end{itemize}
+

@@ -1,0 +1,40 @@
+\subsubsection{\textbf{Use Case: List Pending Review Reports}}
+
+\textbf{Primary Actor:} Administrator
+
+\textbf{Trigger:} The administrator navigates to the Pending Review Reports page.
+
+\textbf{Preconditions:} The administrator is successfully authenticated.
+
+\textbf{Postconditions:} The system displays a list of reports submitted by employees under their supervision.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The administrator selects the ``Pending Review Reports'' option in the navigation bar.
+\item The system redirects the administrator to the Pending Review Reports page.
+\item The system retrieves and displays all reports submitted by employees under their supervision that are pending review.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+    \item \textbf{3a. No Reports Found:}
+    \begin{itemize} [label={},leftmargin=0.75cm, noitemsep]
+        \item 3a1. The system cannot find any reports that meet the criteria and informs the administrator.
+    \end{itemize}
+
+    \item \textbf{3b. Database Connection Error:}
+    \begin{itemize} [label={},leftmargin=0.75cm, noitemsep]
+        \item 3b1. The system notifies the administrator of the error.
+        \item 3b2. The system prompts the administrator to refresh the page.
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

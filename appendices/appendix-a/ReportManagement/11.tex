@@ -1,0 +1,49 @@
+\subsubsection{\textbf{Use Case: Detach Individual Expense from Report}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user removes a single expense from the report’s expenses list.
+
+\textbf{Preconditions:} The user is authenticated, and the system displays a form containing the report metadata.
+
+\textbf{Postconditions:} The expense is excluded from the report.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The user initiates the detachment of a single expense from the report’s expenses list.
+\item The system prompts the user to confirm the detachment.
+\item The user confirms the detachment.
+\item The system removes the selected expense from the current report and updates the report’s information accordingly, such as the total amount or expense count.
+\item The system updates the detailed information view of the report to reflect the current changes.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+    \item \textbf{3a. No Expenses Attached:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3a1. No expenses are associated with the report; the system displays an empty list.
+        \item 3a2. The user cannot detach any expense.
+    \end{itemize}
+
+    \item \textbf{6a. Detachment Confirmation Rejected:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 6a1. The user declines or closes the confirmation dialog.
+        \item 6a2. The system closes the confirmation dialog and preserves the current Report Information page view.
+    \end{itemize}
+
+    \item \textbf{7a. Expense Detachment Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 7a1. An error occurs during the expense detachment due to a database connection error or an internal error.
+        \item 7a2. The system notifies the user of the error and restores the detailed information view of the report.
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

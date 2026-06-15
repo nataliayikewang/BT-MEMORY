@@ -1,0 +1,7 @@
+\vspace{0.5cm}
+
+\textbf{Real-time Notifications}
+
+Receiving real-time feedback is a key positive aspect of the user experience. Once the AI has finished processing the receipt, a message is sent to the \textbf{Azure SignalR Service}, which maintains a persistent WebSocket connection with the user's browser. 
+
+Whenever the SinalR receives a “Expense Processed” message, it immediately pushes this notification to the client application. This approach allows the user to visualize a real-time update of the expense processing status without needing a manual page refresh. Moreover, \textbf{Azure Communication Services} dispatches email notifications to the interested user whenever a report is submitted or reviewed.

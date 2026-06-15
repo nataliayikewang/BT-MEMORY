@@ -1,0 +1,200 @@
+\subsection{Personnel Costs}
+
+To obtain a realistic personnel cost estimate, the average hourly wage for each personnel role was calculated in advance using market salary data \cite{annual-spain-salary}, assuming 260 working days per year and an average of 7.5 working hours per day.
+
+Table  \ref{table:hourly-wage-of-personnel} specifies the hourly wage calculation for each role, including the Social Security (SS) cost. Each human resource identified in Section \ref{sec:human-resources} is assigned to a specific role in the table, resulting in 5 different roles:
+
+\small
+\begin{itemize}[leftmargin=0.75cm, noitemsep, label=\textbullet]
+    \item \textbf{Project Manager (PM)}: Responsible for planning and leading the entire project.
+    \item \textbf{Junior Full-Stack Developer (D)}: Responsible for the full application implementation
+    \item \textbf{QA Tester (T)}: Responsible for verifying the application functionalities.
+    \item \textbf{Software Architect (SA)}: Responsible for designing the application's technical architecture while considering the project requirements and scope.
+    \item \textbf{Technical Writer (TW)}: Responsible for drafting clear, accurate project documentation.
+\end{itemize}
+
+\vspace{-10pt}
+
+\normalsize
+
+%Table of hourly wage of each personnel member
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1.2}
+    \centering
+    \small
+    \setlength{\tabcolsep}{3.5pt} 
+    \makebox[\textwidth][c]{% 
+    \resizebox{0.85\paperwidth}{!}{%
+    \begin{tabular}{@{}l r r r l@{}}
+    \textbf{Role} & \textbf{Annual Salary (\texteuro)} & \textbf{Total including SS (\texteuro)} & \textbf{Cost / Hour (\texteuro)} & \textbf{Assigned HR} \\
+    \hline 
+    Project Manager (PM) & 43,300 & 56,290 & 28.87 & PO, TD, GT \\
+    Full-stack Junior Developer (D) & 29,800 & 38,740 & 19.87 & DT \\
+    QA Tester (T) & 26,888 & 34,954.4 & 17.93 & DT \\
+    Software Architect (SA) & 41,800 & 54,340 & 27.87 & DT \\
+    Technical Writer (TW) & 31,300 & 40,690 & 20.87 & DT \\ 
+    \end{tabular}%
+    }}
+    \normalsize 
+    \caption[ Annual and hourly salaries for different project roles ]
+    {Annual and hourly salaries for different project roles. [Own creation]} 
+    \vspace{-1em}
+    \label{table:hourly-wage-of-personnel} 
+\end{table}
+
+\vspace{-10pt}
+
+
+Given each personnel member's hourly wage and their corresponding effort hours in each task (extracted from Table \ref{table:summary-of-tasks-with-effort-dependencies-and-resources}), the total personnel cost is calculated as shown in Table \ref{table:personnel-cost-breakdown-total}. Each task cost results from multiplying both values.
+
+\vspace{10pt}
+%Table of personnel cost breakdown by task and role
+\pagestyle{fancy}
+\scriptsize
+\setlength{\tabcolsep}{2pt}
+\setlength{\arrayrulewidth}{0.1pt}
+\renewcommand{\arraystretch}{1.05}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+\setlength{\LTleft}{0cm} 
+\setlength{\LTright}{0cm}
+\begin{longtable}{@{}l p{8.5cm} r r r r r r r@{}}
+\rowcolor{gray!45}
+& & & \multicolumn{5}{c}{\textbf{Hours per role}} & \\
+\rowcolor{gray!45}
+\textbf{ID} & \textbf{Name} & \textbf{Total hours} & PM & D & T & SA & TW & \textbf{Cost (\texteuro)} \\
+\addlinespace[0pt]
+\endfirsthead
+
+
+\noalign{\vskip -15pt}
+\multicolumn{9}{l}{\textit{(Continued from previous page)}} \\
+\rowcolor{gray!45}
+\textbf{ID} & \textbf{Name} & \textbf{Total hours} & PM & D & T & SA & TW & \textbf{Cost (\texteuro)} \\
+\addlinespace[0pt]
+\endhead
+
+\hline 
+\multicolumn{9}{r}{\textit{(Continued on next page)}} \\
+\noalign{\vskip -14pt} 
+\endfoot
+
+\hline 
+\addlinespace[0pt]
+\rowcolor{gray!45}
+\textbf{Total} & & \textbf{513} & \textbf{88.5} & \textbf{385.5} & \textbf{10} & \textbf{16} & \textbf{51.5} & \textbf{11,913.05} \\
+\caption[Personnel costs breakdown by task, role, and total personnel cost]
+{Personnel costs breakdown by task, role, and total personnel cost. [Own creation]} 
+\vspace{-1em}
+\label{table:personnel-cost-breakdown-total} 
+\endlastfoot
+
+\rowcolor{gray!20}
+\textbf{PS} & \textbf{Project Starting} & \textbf{50} & \textbf{80} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{1,433.33} \\ 
+\rowcolor{gray!05}
+PS1 & Context and Scope & 20 & 20 & 0 & 0 & 0 & 0 & 577.33 \\
+\rowcolor{gray!05}
+PS2 & Temporal Planning & 10 & 10 & 0 & 0 & 0 & 0 & 288.67 \\
+\rowcolor{gray!05}
+PS3 & Budget and Sustainability & 10 & 10 & 0 & 0 & 0 & 0 & 288.67 \\
+\rowcolor{gray!05}
+PS4 & Initial Documentation & 10 & 10 & 0 & 0 & 0 & 0 & 288.67 \\
+\rowcolor{gray!20}
+\textbf{PM} & \textbf{Project Management} & \textbf{46.5} & \textbf{38.5} & \textbf{46.5} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{2,035.17} \\
+\rowcolor{gray!05}
+PM1 & Product Owner Meetings & 30.5 & 30.5 & 30.5 & 0 & 0 & 0 & 1486.37 \\  
+\rowcolor{gray!05}
+PM2 & Thesis Director Review Meetings & 8 & 8 & 8 & 0 & 0 & 0 & 389.87 \\
+\rowcolor{gray!05}
+PM3 & Product Backlog Update & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
+\rowcolor{gray!20}
+\textbf{DT} & \textbf{Design} & \textbf{16} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{16} & \textbf{0} & \textbf{445.87} \\
+\rowcolor{gray!05}
+DT1 & Use Case Diagram & 2 & 0 & 0 & 0 & 2 & 0 & 55.73 \\
+\rowcolor{gray!05}
+DT2 & Conceptual Model Diagram & 4 & 0 & 0 & 0 & 4 & 0 & 111.47 \\
+\rowcolor{gray!05}
+DT3 & Technology Stack Decision & 2 & 0 & 0 & 0 & 2 & 0 & 55.73 \\
+\rowcolor{gray!05}
+DT4 & Logical and Physical Architecture Design & 4 & 0 & 0 & 0 & 4 & 0 & 111.47 \\
+\rowcolor{gray!05}
+DT5 & UI mockups Design & 2 & 0 & 0 & 0 & 2 & 0 & 55.73 \\
+\rowcolor{gray!05}
+DT6 & Security Design & 2 & 0 & 0 & 0 & 2 & 0 & 55.73 \\
+\rowcolor{gray!20}
+\textbf{FPD} & \textbf{Final Product Delivery} & \textbf{56.5} & \textbf{0} & \textbf{5} & \textbf{0} & \textbf{0} & \textbf{51.5} & \textbf{1173.97} \\
+\rowcolor{gray!05}
+FPD1 & User Manual Documentation & 2 & 0 & 1 & 0 & 0 & 1 & 40.73 \\
+\rowcolor{gray!05}
+FPD2 & Final Thesis Documentation & 30.5 & 0 & 0 & 0 & 0 & 30.5 & 636.43 \\
+\rowcolor{gray!05}
+FPD3 & Final Demonstration Video & 4 & 0 & 4 & 0 & 0 & 0 & 79.47 \\
+\rowcolor{gray!05}
+FPD4 & Bachelor's Thesis Defense & 20 & 0 & 0 & 0 & 0 & 20 & 417.33 \\
+\rowcolor{gray!20}
+\textbf{Dev} & \textbf{Development} & \textbf{86} & \textbf{0} & \textbf{76} & \textbf{10} & \textbf{0} & \textbf{0} & \textbf{1689.12} \\
+\rowcolor{gray!05}
+Dev0 & Self-learning and study of unfamiliar technologies & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
+\rowcolor{gray!05}
+Dev1 & Environment Configuration & 2 & 0 & 2 & 0 & 0 & 0 & 39.73 \\
+\rowcolor{gray!05}
+Dev2 & Product Deployment & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
+\rowcolor{gray!05}
+Dev3 & CI/CD Pipeline Implementation & 20 & 0 & 10 & 10 & 0 & 0 & 377.92 \\
+\rowcolor{gray!05}
+Dev4 & Logging and Monitoring & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
+\rowcolor{gray!05}
+Dev5 & Git Repository Documentation & 40 & 0 & 40 & 0 & 0 & 0 & 794.67 \\
+\rowcolor{gray!20}
+\multicolumn{2}{l}{\textbf{Frontend and Backend Development}} & \textbf{128} & \textbf{0} & \textbf{128} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{2,542.93} \\
+\rowcolor{gray!10}
+\textbf{ER} & \textbf{Expense and Report Development} & \textbf{64} & \textbf{0} & \textbf{64} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{1,271.47} \\
+\rowcolor{gray!05}
+ER1 & Expense Uploads & 16 & 0 & 16 & 0 & 0 & 0 & 317.87 \\
+\rowcolor{gray!05}
+ER2 & Uploaded Expenses Real-time Dashboard & 4 & 0 & 4 & 0 & 0 & 0 & 79.47 \\
+\rowcolor{gray!05}
+ER3 & AI-Extracted Expense Data Review and Correction & 20 & 0 & 20 & 0 & 0 & 0 & 397.33 \\
+\rowcolor{gray!05}
+ER4 & Uploaded Expenses Deletion & 4 & 0 & 4 & 0 & 0 & 0 & 79.47 \\
+\rowcolor{gray!05}
+ER5 & Expense Reports View, Creation, Edit, Submission, and Deletion & 20 & 0 & 20 & 0 & 0 & 0 & 397.33 \\
+\rowcolor{gray!10}
+\textbf{UA} & \textbf{User Access Development} & \textbf{64} & \textbf{0} & \textbf{64} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{1,271.47} \\
+\rowcolor{gray!05}
+UA1 & Company Email User Authentication & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
+\rowcolor{gray!05}
+UA2 & Role-based User Access & 16 & 0 & 16 & 0 & 0 & 0 & 317.87 \\
+\rowcolor{gray!05}
+UA3 & Submitted Report Approval and Rejection & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
+\rowcolor{gray!05}
+UA4 & Employee Spending Limit Configuration & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
+\rowcolor{gray!05} 
+UA5 & Submitted and Reviewed Expenses Record Visualization & 4 & 0 & 4 & 0 & 0 & 0 & 79.47 \\
+\rowcolor{gray!05}
+UA6 & Email Notification Service Integration & 20 & 0 & 20 & 0 & 0 & 0 & 397.33 \\
+\rowcolor{gray!20}
+\textbf{BD} & \textbf{Backend Development} & \textbf{120} & \textbf{0} & \textbf{120} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{2,384.00} \\
+\rowcolor{gray!05}
+BD1 & RESTful API Backend Logic Implementation & 20 & 0 & 20 & 0 & 0 & 0 & 397.33 \\
+\rowcolor{gray!05}
+BD2 & Azure SQL Database Integration and Manipulation & 20 & 0 & 20 & 0 & 0 & 0 & 397.33 \\
+\rowcolor{gray!05}
+BD3 & Azure Blob Storage Integration & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
+\rowcolor{gray!05}
+BD4 & Microsoft Document Intelligence AI Model Integration & 20 & 0 & 20 & 0 & 0 & 0 & 397.33 \\
+\rowcolor{gray!05}
+BD5 & Automated AI-driven Data Extraction Pipeline & 20 & 0 & 20 & 0 & 0 & 0 & 397.33 \\
+\rowcolor{gray!05}
+BD6 & Azure SignalR Real-time Notification Service Integration & 16 & 0 & 16 & 0 & 0 & 0 & 317.87 \\
+\rowcolor{gray!05}
+BD7 & Microsoft Entra ID User Authentication Integration & 16 & 0 & 16 & 0 & 0 & 0 & 317.87 \\
+\rowcolor{gray!20}
+\textbf{FD} & \textbf{Frontend Development} & \textbf{10} & \textbf{0} & \textbf{10} & \textbf{0} & \textbf{0} & \textbf{0} & \textbf{198.67} \\
+\rowcolor{gray!05}
+FD1 & Expenses Search and Filter & 8 & 0 & 8 & 0 & 0 & 0 & 158.93 \\
+\rowcolor{gray!05}
+FD2 & Reports Search & 2 & 0 & 2 & 0 & 0 & 0 & 39.73 \\
+\end{longtable}
+\normalsize
+ 

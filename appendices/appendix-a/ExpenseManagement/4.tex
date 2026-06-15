@@ -1,0 +1,39 @@
+\subsubsection{\textbf{Use Case: Delete Individual Expense}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user deletes a single expense from the list.
+
+\textbf{Preconditions:} The user is successfully authenticated and viewing the Expenses page, and at least one expense is displayed in the list.
+
+\textbf{Postconditions:} The expense is deleted.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+    \item The user initiates the deletion of a single expense from the list.
+    \item The system prompts the user to confirm the deletion.
+    \item The user confirms the deletion.
+    \item The system deletes the expense.
+    \item The system restores the standard Expenses page view with the updated list (without displaying the recently deleted expense).
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+    \item \textbf{3a. Deletion Confirmation Rejected:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3a1. The user declines or closes the confirmation dialog.
+        \item 3a2. The system closes the confirmation dialog and restores the standard Expenses page view.
+    \end{itemize}
+
+    \item \textbf{4a. Expense Deletion Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 4a1. An error occurs during the expense deletion due to a database connection error or an internal error.
+        \item 4a2. The system notifies the user of the error and keeps them on the same page without deleting the expense.
+    \end{itemize}
+\end{itemize}

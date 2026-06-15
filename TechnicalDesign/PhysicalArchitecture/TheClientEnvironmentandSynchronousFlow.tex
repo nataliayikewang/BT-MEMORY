@@ -1,0 +1,22 @@
+\vspace{0.5cm}
+
+\textbf{The Client Environment and Synchronous Flow}
+
+As defined in sub-objective SO2 in Section \ref{sec:objectives}, this project aims to develop a full-stack web application; consequently, the application comprises a frontend and a backend. The frontend is implemented as a React application and deployed using \textbf{Azure Static Web Apps}, while the backend is a .NET solution hosted on \textbf{Azure App Service}.
+
+User interaction begins in the \textbf{Client Environment}, where the \textbf{web browser} executes the React application. Unlike traditional frontend architectures, where the React application communicates directly with the backend API, Azure Static Web Apps does not act as an intermediary in this interaction. Instead, the browser communicates directly with the backend service.
+
+The interaction flow is as follows:
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+    \item The user opens a \textbf{web browser} and navigates to the application URL.
+    \item \textbf{Azure Static Web Apps} delivers the static assets (HTML, CSS, and JavaScript) with low latency via a Content Delivery Network (CDN).
+    \item The application is executed locally in the user's browser, not on Azure Static Web Apps.
+    \item The browser is responsible for making REST API requests to the backend.
+\end{enumerate}
+
+In this setup, \textbf{Azure Static Web Apps} serves only as a static content host. The benefit of this approach is that fast global access is accomplished, as assets are distributed through a CDN, reducing load times for users regardless of location. 
+
+Consequently, as illustrated in Figure \ref{fig:physical-architecture-diagram}, the browser communicates directly with the backend hosted on \textbf{Azure App Service}.  This communication follows a standard HTTPS request-response pattern, represented as a bidirectional interaction (arrow). Each time the browser sends a request (e.g., upload a new expense or retrieve expense data), the API returns a JSON-formatted response. 
+
+\textbf{Azure App Service} executes the .NET API and synchronously handles business logic, data validation, authentication, and authorization. Additionally, Azure App Service is also responsible for interacting with \textbf{data persistence and notification services}.

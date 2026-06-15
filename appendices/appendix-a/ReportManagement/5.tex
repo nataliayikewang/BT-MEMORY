@@ -1,0 +1,42 @@
+\subsubsection{\textbf{Use Case: Consult Report Details}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user requests the detailed information for a specific report.
+
+\textbf{Preconditions:} The user is authenticated, is on the Reports page, and at least one report record is displayed in the list.
+
+\textbf{Postconditions:} The system displays detailed report information in an editable form, along with any associated expenses.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The user selects a report record from the list.
+\item The system retrieves the record and its full metadata from the database using the unique Report ID.
+\item The system retrieves the associated expenses.
+\item The system displays a form containing the report metadata and a list of associated expenses.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+    \item \textbf{2a. Report Not Found:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 2a1. The system cannot find the report record with the provided ID.
+        \item 2a2. The system displays a 404 ``Report Not Found'' error message and prompts the user to return to the previous page.
+    \end{itemize}
+
+    \item \textbf{3a. No Expenses Found:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3a1. The system detects that no expenses are associated with the report.
+        \item 3a2. The system displays a form containing the report metadata and an empty expenses list while informing the user that no expenses are attached to this report.
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

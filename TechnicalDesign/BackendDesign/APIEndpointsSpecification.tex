@@ -1,0 +1,38 @@
+\subsubsection{API Endpoints Specification}
+
+The API is the intermediary between the frontend and the backend. The application's API is designed to follow RESTful principles, using standard HTTP methods (\texttt{GET}, \texttt{POST}, \texttt{PUT}, and \texttt{DELETE}) for operations and communicating via the JSON data format. As a result, a clear, standardized interface is provided for any client application.
+
+The following table summarizes the main functional capabilities exposed by the API, classified by their business resource. The core objective is to provide a high-level overview of what the system can do. A complete visual overview of all endpoints, along with detailed specifications for representative use cases, is available in Appendix \ref{appendix:api-endpoints}: API Endpoint Specification.
+
+\begin{table}[H]
+    \centering  
+    \footnotesize
+    \renewcommand{\arraystretch}{1.2}
+    \setlength{\arrayrulewidth}{0.8pt}
+    \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{1.6cm} >{\centering\arraybackslash}p{4.75cm} X}
+        \rowcolor{gray!40} 
+        \textbf{Resource} & \textbf{Endpoint Path} & \parbox[c][\height][c]{\hsize}{\centering \textbf{Description}} \\
+        
+        \rowcolor{gray!05}
+        Users & \texttt{GET /api/users/me} & Retrieves the profile and identity information of the currently authenticated user. \\
+        
+        \rowcolor{gray!05}
+        Expenses & \texttt{GET, POST, PUT, DELETE /api/expenses/\{id\}} & Provides full CRUD (Create, Read, Update, Delete) operations for individual expense records. \\
+        
+        \rowcolor{gray!05}
+        Reports & \texttt{GET, POST, PUT, DELETE /api/reports/\{id\}} & Provides full CRUD operations for expense reports, which act as containers for expenses. \\
+        
+        \rowcolor{gray!05}
+        Reports & \texttt{POST, DELETE /api/reports/\{id\}/expenses} & Manages the relationship between a report and its expenses (e.g., adding an existing expense to a report). \\ 
+        
+        \rowcolor{gray!05}
+        Reports & \texttt{PATCH /api/reports/\{id\}/[action]} & Manages the report lifecycle workflow. Actions include submit, approve, and reject. \\
+        
+        \rowcolor{gray!05}
+        Blob & \texttt{GET /api/blob/sas-url} & Generates a secure, temporary URL (SAS) for direct and safe access to receipt files stored in the blob storage service. \\
+    \end{tabularx}
+    \caption[API endpoints specification]
+    {API endpoints specification. [Own creation]}
+    \vspace{-1em}
+    \label{table:api-endpoints} 
+\end{table}

@@ -1,0 +1,23 @@
+\subsubsection{Database Model Justification}
+
+The nature of the application's data guided the choice of a relational data model. Core entities such as Users, Expenses, and Reports exhibit clear, well-defined relationships (e.g., a report contains many expenses; an expense belongs to one user). A relational model is particularly effective at enforcing these relationships and ensuring data integrity through mechanisms such as primary keys, foreign keys, and transaction support (ACID compliance). 
+
+\begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\bullet$]
+
+    \item \textbf{Primary keys} define the unique identifier of an entity instance, enabling efficient retrieval of an instance at runtime. 
+
+    \item \textbf{Foreign keys} define relationships between entities, allowing efficient searches based on those relationships when required. 
+
+    \item \textbf{ACID support} guarantees that transactions behave correctly by ensuring the following properties:
+
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+        \item \textbf{Atomicity}: Every transaction is treated as a single unit; either all operations succeed or all fail, preventing partial updates that would produce inconsistent data.
+
+        \item \textbf{Consistency}: Transactions must adhere to the integrity constraints defined for storing valid data.
+
+        \item \textbf{Isolation}: Each transaction is isolated; one transaction does not affect the result of another.
+
+        \item \textbf{Durability}: Once a transaction is successfully committed, its changes are permanently saved, even if the system fails.
+    \end{itemize}
+
+\end{itemize}

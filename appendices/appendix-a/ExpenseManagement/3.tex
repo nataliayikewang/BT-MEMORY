@@ -1,0 +1,38 @@
+\newpage
+
+\subsubsection{\textbf{Use Case: Monitor AI Processing Status}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The AI model succeeds or fails to process a receipt while the user is on the Expenses page.
+
+\textbf{Preconditions:} The user is successfully authenticated and viewing the Expenses page, and at least one expense is in the processing queue, awaiting AI extraction.
+
+\textbf{Postconditions:} The expense AI processing status is updated in real-time, eliminating the need for the user to refresh the page manually.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+    \item The system processes a new receipt from the queue when the AI model is available.
+    \item The system successfully extracts the data, triggers a real-time expense status update, and makes the AI-extracted data available for user review.
+    \item The user visualizes the updated ``Pending Review'' status without manually refreshing the page.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+    \item \textbf{2a. AI Processing Failure (Technical Error or Unrecognized Document):}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item \textbf{2a1. The system fails to extract the expense data due to either:}
+        \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+            \item \textbf{Scenario A (Invalid Content):} If the AI determines the image or file is not a valid receipt or invoice.
+            \item \textbf{Scenario B (Technical Issue):} If a timeout or connection loss occurs, the system re-queues the record for a retry.
+        \end{itemize}
+        \item 2a2. The system updates the expense status to ``Failed''.
+        \item 2a3. The system enables the user to enter the expense data manually.
+    \end{itemize}
+\end{itemize}

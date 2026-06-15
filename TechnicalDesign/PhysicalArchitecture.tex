@@ -1,0 +1,23 @@
+\subsection{Physical Architecture}
+\label{sec:physical-architecture}
+
+A physical architecture diagram shows all the hardware and software resources used by the application. This visual representation provides a clearer understanding of how these components communicate across the network. The physical architecture diagram is shown in Figure \ref{fig:physical-architecture-diagram}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Images/PhysicalArchitecture.png}
+    \caption[Physical architecture diagram]
+    {Physical architecture diagram. [Own creation]}
+    \label{fig:physical-architecture-diagram}
+\end{figure}
+
+The application's physical architecture follows a modern, cloud-native approach, leveraging Microsoft Azure Platform-as-a-Service (PaaS). It is structured around two main operational flows: the Synchronous Flow, which handles immediate user requests, and the Asynchronous AI Processing Flow, which executes complex tasks in the background. This design ensures scalability while maintaining a highly responsive user experience.
+
+\input{TechnicalDesign/PhysicalArchitecture/TheClientEnvironmentandSynchronousFlow.tex}
+\input{TechnicalDesign/PhysicalArchitecture/DataPersistence.tex}
+\input{TechnicalDesign/PhysicalArchitecture/TheAsynchronousAIProcessingFlow.tex}
+\input{TechnicalDesign/PhysicalArchitecture/Real-timeNotifications.tex}
+\input{TechnicalDesign/PhysicalArchitecture/SecurityandIdentityManagement.tex}
+
+
+

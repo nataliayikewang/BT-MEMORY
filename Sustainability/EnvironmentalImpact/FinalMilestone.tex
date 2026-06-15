@@ -1,0 +1,41 @@
+\subsubsection{Final Milestone}
+
+\textbf{Regarding PPP: Have you quantified the environmental impact of undertaking the project? What measures have you taken to reduce the impact? Have you quantified this reduction?}
+
+The final environmental impact of the project's development phase has been adjusted based on the actual execution time. The total effort of 542.5 hours, as detailed in Section \ref{actual-project-timeline}, corresponds to an energy consumption of 48.36 kWh. Using a conversion factor of 0.283 kg CO$_2$/kWh, the resulting carbon footprint for the development phase (PPP) is approximately 13.69 kg CO$_2$.
+
+Both implicit and explicit measures were implemented to minimize environmental impact. First, existing resources were reused by developing the application at the FSP Barcelona office, where infrastructure such as lighting, heating, and networking is shared among employees. Second, the use of cloud-hosted resources (Microsoft Azure) enabled access to energy-efficient computing infrastructure, resulting in minimal baseline power consumption.
+
+Although the exact reduction is difficult to quantify, there is clear evidence that operating within a shared environment significantly reduces environmental impact compared to deploying a dedicated, single-purpose infrastructure.
+
+\textbf{Regarding PPP: If you carried out the project again, could you use fewer resources?}
+
+A retrospective analysis indicates that fewer human hours, and therefore less energy, could have been consumed. Several tasks, particularly BD2 (Database Integration) and FPD2 (Documentation), exceeded initial estimates due to the author's limited experience.
+
+If the project were undertaken again, the experience gained would likely reduce the time required for these tasks, leading to lower energy consumption and a reduced carbon footprint. Furthermore, improved estimation accuracy would enhance project planning and potentially prevent the omission of tasks such as Dev3 (CI/CD Pipeline Implementation). The inclusion of such automation could further streamline development processes, particularly during Dev2 (Deployment), thereby improving overall efficiency.
+
+\textbf{Regarding Exploitation: What resources do you estimate will be used during the useful life of the project? What will be the environmental impact of these resources?}
+
+During the application's operational phase, the primary resource consumption will be the electrical energy required to run Microsoft Azure services. Unlike on-premises solutions, this approach eliminates the need for direct hardware maintenance, cooling systems, and physical infrastructure. Therefore, the environmental impact is primarily determined by the energy consumption of Azure data centers.
+
+Microsoft has committed to sustainability goals, including the use of 100\% renewable energy for its data centers since 2025. \cite{microsoft-renewable-energy-goal} As the application is hosted on Azure, it indirectly benefits from these initiatives, resulting in a significantly lower carbon footprint compared to traditional on-premises hosting.
+
+The application's environmental impact is directly proportional to its usage and represents only a negligible fraction of total data center consumption. The most computationally intensive process, AI-based data extraction from uploaded receipts, is executed through serverless Azure Functions, which consume energy only when triggered. This event-driven model further minimizes unnecessary energy usage.
+
+\textbf{Regarding Exploitation: Will the project enable a reduction in the use of other resources? Overall, does the use of the project improve or worsen the ecological footprint?}
+
+The project reduces resource consumption by automating expense management. As shown by the fulfillment of NFR6 (Section \ref{sec:non-functional-requirements-validation}), the application reduces manual effort by approximately 86.5\%, which also lowers the energy consumed in processing tasks and improves the overall ecological footprint.
+
+\textbf{Regarding Risks: Could situations occur that could increase the project's ecological footprint?}
+
+There are many risks that may negatively impact the project's environmental performance during its operational life:
+
+\begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\bullet$]
+
+    \item \textbf{Inefficient code and queries}: Suboptimal implementation or poorly designed database queries may result in excessive CPU and memory usage within Azure services. This increases both operational costs and energy consumption. This risk is mitigated by adhering to high-quality coding practices, as defined in the project's objectives (SG5).
+
+    \item \textbf{Uncontrolled scalability}: Improper scaling strategies may lead to over-provisioning of resources, such as selecting unnecessarily large database tiers. This results in wasted computational resources and increased energy usage. This risk is managed through continuous monitoring of resource utilization using Azure's built-in tools and adjusting service tiers accordingly.
+
+    \item \textbf{Data growth}: Uncontrolled growth in stored data, particularly large receipt files in Azure Blob Storage, may increase storage requirements and associated energy consumption. Although cloud storage is highly optimized, implementing a data retention policy (e.g., archiving or deleting outdated data after a defined period) would mitigate this risk.
+
+\end{itemize}

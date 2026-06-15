@@ -1,0 +1,33 @@
+\subsection{Objective Achievement}
+
+This section evaluates the project's success by assessing the degree to which each of the initial sub-objectives, defined at the outset, has been fulfilled.
+
+\textbf{SO1. Design the application's technology stack and the database structure.}
+
+\textbf{Status}: Fully achieved
+
+\textbf{Evidence}: A complete technology stack was defined and justified in Section \ref{sec:physical-architecture}, including .NET 8 for the backend, React with TypeScript for the frontend, and Microsoft Azure as the cloud platform. The database structure was thoroughly designed and documented in Section \ref{database-design}, and implemented using Azure SQL Database with Entity Framework Core following a Code-First approach.
+
+\textbf{SO2. Develop a full-stack web application.}
+
+\textbf{Status}: Fully achieved
+
+\textbf{Evidence}: A complete end-to-end application was successfully developed. It includes a fully functional frontend interface for managing expenses and reports, as well as a robust backend API responsible for business logic, data persistence, and security. The delivered system satisfies all \textit{Must have} and \textit{Should have} functional requirements.
+
+\textbf{SO3. Design a scalable pipeline to automate AI-driven data extraction from expense uploads.}
+
+\textbf{Status}: Fully achieved
+
+\textbf{Evidence}: The asynchronous processing pipeline, described in the Physical Architecture (Section \ref{sec:physical-architecture}) and illustrated in the sequence diagrams (Figure \ref{fig:expense-asynchronous-sequence-diagram}), represents a key contribution of the project. The event-driven architecture, leveraging Azure Blob Storage, Event Grid, Service Bus, and Azure Functions, decouples AI processing from user requests, ensuring scalability and responsiveness.
+
+\textbf{SO4. Use a cloud infrastructure platform to manage external application resources.}
+
+\textbf{Status}: Fully achieved
+
+\textbf{Evidence}: The application is fully built and deployed on the Microsoft Azure cloud platform. As detailed in the Physical Architecture and Implementation sections, the solution makes extensive use of Platform-as-a-Service (PaaS) resources. This approach reduces infrastructure management overhead while providing scalability, security, and reliability, supporting the development of a cloud-native solution.
+
+\textbf{SO5. Maintain a clean, reusable, maintainable, and integration-friendly application codebase.}
+
+\textbf{Status}: Fully achieved
+
+\textbf{Evidence}: The project consistently applies Clean Architecture principles, along with SOLID and other design patterns, as described in Section \ref{sec:principles-and-patterns}. The resulting codebase is highly decoupled, with clear separation between the Domain, Application, and Infrastructure layers. This structure facilitates maintainability and extensibility, fulfilling non-functional requirements related to integration (NFR7) and maintainability (NFR8). Code quality was further supported by a multi-layered testing strategy, achieving 78\% code coverage.

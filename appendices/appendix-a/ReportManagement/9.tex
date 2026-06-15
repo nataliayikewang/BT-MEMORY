@@ -1,0 +1,45 @@
+\subsubsection{\textbf{Use Case: Attach Expenses to Report}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user wants to attach new expenses to a report.
+
+\textbf{Preconditions:} The user is authenticated, and the system displays a form containing the report metadata along with a list of any associated expenses.
+
+\textbf{Postconditions:} The selected expenses are included in the report.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The user initiates the attachment of new expenses.
+\item The system displays a list of available reportable expenses for selection (selectable expenses must have been manually reviewed and corrected by the user, and must not belong to any report).
+\item The user selects one or more expense records from the list.
+\item The user asks the system to attach the selected expenses to the current report.
+\item The system includes the selected expenses in the current report and updates the report’s information accordingly, such as the total amount or expense count.
+\item The system updates the detailed information view of the report to reflect the current changes.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+    \item \textbf{2a. No Expenses Available:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 2a1. The system detects that no reportable expenses are available.
+        \item 2a2. The system notifies the user that no expenses are available.
+        \item 2a3. Once the user cancels the operation or terminates the process, the system restores the detailed information view of the report.
+    \end{itemize}
+
+    \item \textbf{5a. Expense Attachment Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 5a1. An error occurs during the expense attachment due to a database connection error or an internal error.
+        \item 5a2. The system notifies the user of the error and restores the detailed information view of the report.
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

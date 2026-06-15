@@ -1,0 +1,13 @@
+\vspace{0.5cm}
+
+\textbf{The Asynchronous AI Processing Flow}
+
+The Asynchronous Flow is the most sophisticated component of the application. It is an event-based solution designed to perform the heavy, complex task of extracting expense data using an AI model. At the same time, it avoids introducing significant delays that impact the user experience, preventing the user from having to wait until the expense is processed. This is achieved through an event-driven architecture, where the entire process is triggered whenever a new file is uploaded to \textbf{Azure Blob Storage}.
+
+Once a file is uploaded, \textbf{Azure Event Grid}, a highly scalable service, immediately detects the ``Blob Created'' event and forwards the expense metadata. Instead of sending the expense directly to the AI for processing, it is queued to \textbf{Azure Service Bus}, a reliable container that acts as a durable buffer. In this way, if the processing service is temporarily unavailable, the request is not lost and will be handled once the service is recovered.
+
+In response, the \textbf{Azure Function} is triggered when a new message is available in the Service Bus queue. The Function then orchestrates the analysis process: it first generates a temporary, secure access key (a SAS URL) for the newly uploaded receipt file stored in \textbf{Azure Blob Storage}. It then calls the \textbf{Azure AI Document Intelligence} service, providing this SAS URL.
+
+Using the SAS URL, the Azure AI service directly and securely retrieves the receipt file from Blob Storage for processing and returns the extracted data in JSON format. The Azure Function receives the extracted data from the AI service and updates the corresponding record in Azure SQL Database. 
+
+After successfully updating the database, the Function's final responsibility is to notify the user in real time. It sends a message to \textbf{Azure SignalR Service}, which instantly pushes a notification to the user's web browser, allowing the UI to update automatically and reflect that the expense has been processed. This event-driven design fully decouples the initial user action from the complex background workflow.

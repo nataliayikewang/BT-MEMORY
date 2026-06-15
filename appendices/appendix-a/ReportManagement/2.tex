@@ -1,0 +1,75 @@
+\subsubsection{\textbf{Use Case: Create New Report}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user wants to create a new report.
+
+\textbf{Preconditions:} The user is successfully authenticated and viewing the Reports page.
+
+\textbf{Postconditions:} The system creates a new report.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The user initiates the creation of a new report.
+\item The system prompts the user to provide the required information.
+\item The user enters the required information.
+\item The system validates that all required fields have been provided.
+\item The system enables the report creation action.
+\item The user confirms the report creation.
+\item The system generates the report using the provided information.
+\item The system restores the standard view of the Report page (including the recently created report).
+\end{enumerate}
+
+\vspace{1.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+    \item \textbf{3a. Associate Expenses to the New Report:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3a1. The user enters the required information and activates the Expense Assignment mode to include expenses in the new report.
+        \item 3a2. The system displays a list of available reportable expenses.
+        \item 3a3. The user selects the expenses to include in the new report.
+        \item 3a4. The system validates that all mandatory information has been provided.
+        \item 3a5. The system enables the report creation action.
+        \item 3a6. The user confirms the report creation.
+        \item 3a7. The system creates a new report using the provided information and includes the selected expenses.
+        \item 3a8. The system restores the standard view of the Report page.
+    \end{itemize}
+
+    \item \textbf{3a2a. No Expenses Available:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 1. The system detects that no expenses are available for reporting.
+        \item 2. The system displays an empty list of expenses and notifies the user that no expenses are available.
+        \item 3. The flow returns to step 4 of the main success scenario.
+    \end{itemize}
+
+    \item \textbf{3a2-3a5a. Deselect Expenses or Deactivate Mode:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 1. The user deselects all items or deactivates the Expense Assignment Mode.
+        \item 2. The system clears the selection; the flow returns to step 4 of the main success scenario.
+    \end{itemize}
+
+    \item \textbf{3b. Missing Required Fields:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3b1. The user has not provided all required fields.
+        \item 3b2. The system detects missing required fields, disables the report creation action, and restricts the interaction to either canceling the operation or continuing to enter the required information.
+        \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+            \item \textbf{Scenario A (Action Cancelled):} The system returns the user to the standard Reports page view without preserving the entered information.
+            \item \textbf{Scenario B (Continue with the Process):} The flow returns to step 2 of the main success scenario.
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{G1. Report Creation Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item G1.1. An error occurs during the report creation due to a database connection error or an internal error.
+        \item G1.2. The system notifies the user of the error and returns the user to the standard Reports page view without creating the report.
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

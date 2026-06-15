@@ -1,0 +1,92 @@
+\subsubsection{\textbf{Use Case: Report Multiple Expenses}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user activates the bulk reporting mode.
+
+\textbf{Preconditions:} The user is successfully authenticated and viewing the Expenses page, and at least one expense is displayed in the list.
+
+\textbf{Postconditions:} The selected expenses are included in a report.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+    \item The user activates bulk reporting mode.
+    \item The system filters the list of expenses with a ``Completed'' status (indicating that the information has been entered manually or AI-extracted and reviewed by the user).
+    \item The user selects one or more expense records from the list.
+    \item The system presents two options: ``Create New Report'' and ``Assign to Existing Report''.
+    \item The user selects ``Create New Report''.
+    \item The system prompts the user to provide the required information to create a new report.
+    \item The user enters the required information.
+    \item The system validates that all required fields have been provided.
+    \item The system enables the report creation action.
+    \item The user confirms the new report creation.
+    \item The system generates the report using the provided information and associates the selected expenses with it.
+    \item The system returns the user to the standard Expenses page view and updates the expenses list to exclude the assigned expenses.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Alternative Flows:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+    \item \textbf{5a. Assign to Existing Report:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 5a1. The user selects ``Assign to Existing Report''.
+        \item 5a2. The system retrieves and displays a list of existing unsubmitted reports.
+        \item 5a3. The user selects the target report and confirms the assignment.
+        \item 5a4. The system associates the expenses with the selected report.
+        \item 5a5. The system returns the user to the standard Expenses page view and updates the expenses list to exclude the assigned expenses.
+    \end{itemize}
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+    \item \textbf{7a. Missing Required Fields:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 7a1. The user has not provided all required fields.
+        \item 7a2. The system detects missing required fields, disables the report creation action, and restricts the interaction to either canceling the operation or continuing to enter the required information.
+        \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+           \item \textbf{Scenario A (Action Cancelled):} The system returns the user to the standard Expenses page view without preserving the entered information.
+            \item \textbf{Scenario B (Continue with the Process):} The flow returns to step 6 of the main success scenario.
+        \end{itemize}
+        
+    \end{itemize}
+
+    \item \textbf{5a2a. No Reports Available:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 1. The system detects that no reports meet the criteria for assignment.
+        \item 2. The system notifies the user that no reports are available, disables the assignment functionality, and restricts the interaction to either canceling the operation or exiting the current view.
+        \item 3. The user follows the \textbf{G1. User Cancels During Creation or Assignment} flow to exit.
+    \end{itemize}
+
+    \item \textbf{11a. Report Creation Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 11a1. An error occurs during the report creation due to a database connection error or an internal error.
+        \item 11a2. The system notifies the user of the error and returns the user to the standard Expenses page view without creating the report.
+    \end{itemize}
+
+    \item \textbf{G1. User Cancels or Resets:}
+
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item \textbf{During Creation or Assignment:}
+        \begin{enumerate} [leftmargin=0.75cm, noitemsep]
+            \item The user cancels the operation or exits the current view.
+            \item The system ends the process without saving any changes while preserving the selected expenses.
+            \item The flow returns to step 3 of the main success scenario.
+        \end{enumerate}
+
+        \item \textbf{Before Workflow Selection:}
+        \begin{enumerate} [leftmargin=0.75cm, noitemsep]
+            \item The user deactivates the bulk reporting mode or cancels the operation before selecting a workflow.
+            \item The system clears all active selections and restores the standard Expenses page view.
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}
+
+\vspace{0.3cm}

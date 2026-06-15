@@ -1,0 +1,31 @@
+\subsubsection{Logical Layers}
+
+The application's logical architecture is visually divided into the following main layers:	
+
+\textbf{Presentation layer}
+
+The Presentation layer corresponds to the frontend component and is responsible for handling the user interface, user experience, and API communication. Each navigation state or view in the application corresponds to a distinct page, and each reusable component can be used across multiple pages.
+
+The user interface is built using React with TypeScript. This strategic choice allows developers to leverage React's component-based architecture, enabling the creation of reusable UI blocks (components) that compose larger screens (pages). Although this approach requires a more complex initial implementation effort, it speeds up development and improves code maintainability and extensibility over time. TypeScript also enforces contract definitions, ensuring consistency across the frontend data flow. 
+
+\textbf{API layer}
+
+The API layer exposes the application's use cases to external parties via RESTful HTTP endpoints. Different controllers handle distinct functional areas, with the main controllers dedicated to Expenses and Reports. Controllers receive HTTP requests, validate them, translate them into commands or queries for the Application layer, and return an HTTP response. This layer, along with the subsequent ones, constitutes the backend component and uses the ASP.NET Core platform.
+
+\textbf{Application Layer}
+
+The Application layer contains the application logic and is responsible for handling all use cases. Services in this layer implement the operations accessible to the user and enforce application-level constraints. Even though this layer is independent of web and database concerns, as well as domain business rules, it orchestrates domain entities to execute those rules. 
+
+Additionally, this layer defines Data Transfer Objects (DTOs) and interfaces. DTOs standardize data exchange between components, while interfaces are abstractions that specify how external dependencies are accessed without exposing implementation details.
+
+\textbf{Domain layer}
+
+The Domain layer is the core of the application and represents the business model. It encapsulates entities (e.g., \texttt{Expense}, \texttt{User}), value objects, and the most critical and stable business rules. This is a pure layer, with no dependencies on other layers, and it remains independent of how data is stored or presented to the user. This independence ensures a stable and long-lasting business model.
+
+\textbf{Infrastructure layer}
+
+The Infrastructure layer provides repositories and services that contain the concrete implementations of the interfaces defined in the Application layer. At the same time, it also manages communication with external systems and services. \texttt{ExpenseRepository}, \texttt{BlobStorageService}, and \texttt{DocumentIntelligenceService} are some of the implementations contained in this layer.
+
+This layer is volatile and can be replaced easily. For example, switching from Blob Storage to another storage provider only requires changes within this layer, without affecting the upper layers, which depend on abstractions rather than concrete implementations.
+
+Another key advantage of using the .NET platform is access to Entity Framework Core (EF Core) and Dependency Injection (DI). EF Core enables higher-level interaction with the database, allowing data manipulation, relationship management, and migrations through clear, easy-to-understand C\texttt{\#} code. DI is explained in more detail in the next section.

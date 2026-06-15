@@ -1,0 +1,67 @@
+\textbf{ExtractionPayload}
+
+This class represents the data extracted from an expense using an AI service. An extraction Payload must always correspond to a single, unique expense.
+
+\begin{itemize} [leftmargin=0.75cm, noitemsep, label=\textbullet]
+
+    \item \textbf{extractionPayloadId:} Unique identifier of the extraction payload.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} UUID.
+
+        \item \textbf{constraints:} mandatory, unique, non-null.
+
+    \end{itemize}
+
+    \item \textbf{aiSource:} Identifier of the AI service or model used for extraction.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{confidenceScore:} Confidence level assigned by the AI to the extracted data.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} Real.
+
+        \item \textbf{constraints:} mandatory, non-null, must be between 0 and 1.
+
+    \end{itemize}
+
+    \item \textbf{extractedAt:} Timestamp indicating when the data was extracted.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} DateTime.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{extractedJson:} Raw data extracted by the AI in JSON format.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{changedJson:} Modified version of the extracted data after user adjustments.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} optional.
+
+    \end{itemize}
+
+\end{itemize}

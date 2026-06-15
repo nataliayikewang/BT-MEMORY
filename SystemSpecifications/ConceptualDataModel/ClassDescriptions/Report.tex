@@ -1,0 +1,107 @@
+\textbf{Report}
+
+This class represents a collection of expenses grouped together for submission and review. A report must always belong to the user who created it, and it can only be reviewed by that user's supervisor.
+
+\begin{itemize} [leftmargin=0.75cm, noitemsep, label=\textbullet]
+
+    \item \textbf{reportId:} Unique identifier of the report.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} UUID.
+
+        \item \textbf{constraints:} mandatory, unique, non-null.
+
+    \end{itemize}
+
+    \item \textbf{reportName:} Name assigned to the report.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{businessPurpose:} Business purpose of the report.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} BusinessPurpose Enum (KickOff, Unity, Awards, Other).
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{createdAt:} Timestamp indicating when the report was created.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} DateTime.
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{reportComments:} Additional comments or notes provided by the user.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} optional.
+
+    \end{itemize}
+
+    \item \textbf{status:} Current status of the report.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} ReportStatus Enum (NotSent, Pending, Approved, Rejected).
+
+        \item \textbf{constraints:} mandatory, non-null.
+
+    \end{itemize}
+
+    \item \textbf{submittedAt:} Timestamp indicating when the report was submitted.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} DateTime.
+
+        \item \textbf{constraints:} optional (null if not yet submitted).
+
+    \end{itemize}
+
+    \item \textbf{reviewedAt:} Timestamp indicating when the report was reviewed.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} DateTime.
+
+        \item \textbf{constraints:} optional (null if not yet reviewed).
+
+    \end{itemize}
+
+    \item \textbf{isApproved:} Indicates whether the report has been approved.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} Boolean.
+
+        \item \textbf{constraints:} mandatory, default = false.
+
+    \end{itemize}
+
+    \item \textbf{reviewerComments:} Comments provided by the reviewer during the review process.
+    
+    \begin{itemize} [leftmargin=0.75cm, noitemsep, label=$\circ$]
+
+        \item \textbf{type:} String.
+
+        \item \textbf{constraints:} optional.
+
+    \end{itemize}
+
+\end{itemize}

@@ -1,0 +1,37 @@
+\subsubsection{\textbf{Use Case: List Personal Expenses}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user navigates to the Expenses page.
+
+\textbf{Preconditions:} The user is successfully authenticated.
+
+\textbf{Postconditions:} The system displays a complete list of the user’s expenses that are not attached to any report.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+    \item The user selects the “Expenses” option in the navigation bar or the user has recently authenticated successfully.
+    \item The system redirects the user to the Expenses page.
+    \item The system retrieves and displays all expenses associated with the authenticated user that are not attached to any report.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+    \item \textbf{3a. No Expenses Found:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3a1. The user has no registered expenses or all existing expense records are already associated with other reports.
+        \item 3a2. The system displays a drag-and-drop zone and an upload button that enable the user to upload new expenses directly.
+    \end{itemize}
+
+    \item \textbf{3b. Database Connection Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3b1. The system notifies the user of the error.
+        \item 3b2. The system prompts the user to refresh the page.
+    \end{itemize}
+\end{itemize}

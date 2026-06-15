@@ -1,0 +1,45 @@
+\subsection{Future Work and Recommendations}
+
+Although the current version of the application fulfills all high-priority requirements and delivers substantial value, the development process has revealed several opportunities for further enhancement. This section outlines recommendations for future iterations aimed at improving functionality, robustness, and operational efficiency.
+
+\begin{enumerate} [leftmargin=0.75cm, label=\textbf{\arabic*.}]
+
+    \item \textbf{Implement a Full CI/CD Pipeline (High Priority)}
+
+    A key next step is the implementation of a complete Continuous Integration and Continuous Delivery (CI/CD) pipeline, as initially defined in Task Dev3. Automating build, testing, and deployment processes, using tools such as GitHub Actions, would provide multiple benefits:
+
+    \begin{itemize} [leftmargin=0.75cm, label=$\bullet$]
+
+        \item \textbf{Increased Reliability}: Automated execution of unit and integration tests for each code change would significantly reduce the risk of regressions. 
+
+        \item \textbf{Faster Delivery}: Automated deployment to Azure would eliminate manual and error-prone steps, enabling more frequent and reliable releases for new feature implementations and bug fixes. 
+
+        \item \textbf{Improved Code Quality}: Integration of static code analysis within the pipeline would enforce code quality standards consistently.
+
+    \end{itemize}
+
+    \item \textbf{Enhance Monitoring and Logging (High Priority)}
+
+    The implementation of Task Dev4 (Logging and Monitoring) is another high-priority recommendation. While Azure provides basic monitoring metrics, integrating Azure Application Insights into the application code would enable deeper visibility into system performance and user behavior. This includes:
+
+    \begin{itemize} [leftmargin=0.75cm, label=$\bullet$]
+
+        \item \textbf{Structured logging}: Enabling advanced diagnostics for identifying errors and performance bottlenecks through queryable logs.
+
+        \item \textbf{Structured logging}: Supporting proactive monitoring of application health and early detection of issues, such as high failure rates in AI processing tasks.
+
+    \end{itemize}
+
+    \item \textbf{Develop \textit{Could Have} Features}
+
+    With core functionalities completed, future work may focus on implementing deferred features categorized as \textit{Could have} requirements. The remaining tasks include FD2 (Advanced Report Search) and UA4 (Employee Spending Limits), both of which would enhance usability and control.
+
+    \item \textbf{Improve User Onboarding and Support}
+
+    To facilitate user adoption and reduce support requirements, the existing user manual (Task FPD1) could be extended into an interactive, in-application guidance system. Features such as guided tours and context-sensitive help would reduce the learning curve and improve overall user experience.
+
+    \item \textbf{Explore Data Archiving and Retention Policies}
+
+    As the application evolves, data volume in Azure SQL Database and Blob Storage will increase. However, long-term retention of receipt data may not always be necessary, leading to inefficient storage usage and increased costs. Implementing data retention and archiving policies would allow older data to be migrated to lower-cost storage tiers or removed when no longer required, thereby optimizing resource utilization. 
+
+\end{enumerate}

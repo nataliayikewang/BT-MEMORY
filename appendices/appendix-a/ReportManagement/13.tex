@@ -1,0 +1,57 @@
+\subsubsection{\textbf{Use Case: Update Attached Expense Information}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user wants to update the data of the current expense.
+
+\textbf{Preconditions:} The user is authenticated, and the system displays a form containing the expense metadata along with the original receipt image or file.
+
+\textbf{Postconditions:} The system saves the updated expense data.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The user edits the necessary fields.
+\item The user submits the changes.
+\item The system validates and saves the updated information.
+\item The system notifies the user of the success and keeps the user on the current expense information view.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+    \item \textbf{3a. Missing Required Information or Invalid Input:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3a1. The system detects missing required information or invalid input.
+        \item 3a2. The system notifies the user that the information cannot be saved and outlines the specific fields that are missing or invalid.
+        \item 3a3. The flow returns to step 2 of the main success scenario.
+    \end{itemize}
+
+    \item \textbf{3b. Expense Update Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3b1. An error occurs during the expense update due to a database connection error or an internal error.
+        \item 3b2. The system notifies the user of the error and keeps the user on the report's detailed information view.
+    \end{itemize}
+
+    \item \textbf{1-2a. User Cancels / Navigates Back:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 1-2a1. The user navigates back to the previous page or cancels the current editing session.
+        \item 1-2a2. The system checks whether there are any unsaved changes:
+        \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+            \item \textbf{Scenario A (No Unsaved Changes):} The system terminates the session and returns the user to the previous page.
+            \item \textbf{Scenario B (Unsaved Changes Detected):} The system prompts the user to confirm before proceeding:
+            \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+                \item \textbf{B1 (Discard):} The user confirms the exit. The system discards changes and returns the user to the previous page.
+                \item \textbf{B2 (Stay):} The user declines the confirmation. The system preserves the current form state, and the user remains on the current form page.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

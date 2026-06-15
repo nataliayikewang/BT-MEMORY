@@ -8,13 +8,14 @@
 
 \clearpage
 \pagenumbering{gobble} % removes page numbering completely
-
+ 
 % Table of contents 
 \tableofcontents    
 \clearpage
   
 %List of figures
-\listoffigures 
+\listoffigures     
+\clearpage
 
 %List of tables
 \listoftables
@@ -41,30 +42,86 @@
 %Temporal planning
 \input{TemporalPlanning/main.tex}
   
-% Budget and sustainability
-\input{BudgetandSustainability/main.tex}
+% Budget 
+\input{Budget/main.tex}
 
-%Project monitoring
-\input{ProjectMonitoring/main.tex}
+\newpage 
 
-\newpage
+%System Specifications
+\input{SystemSpecifications/main.tex} 
 
+\newpage 
+ 
 %Alternative analysis
 \input{AlternativeAnalysis/main.tex}
 
-\newpage 
+\newpage  
 
-%Knowledge integration
-\input{KnowledgeIntegration/main.tex}
+%Technical Design
+\input{TechnicalDesign/main.tex}
+ 
+\newpage
 
-\newpage 
+%Implementation
+\input{Implementation/main.tex}
+
+\newpage
+
+%Validation Methods
+
+\input{ValidationMethods/main.tex}
+  
+\newpage
+
+%Deployment
+\input{Deployment/main.tex}
+
+\newpage
+
+%Project Management Results
+\input{ProjectManagementResults/main.tex}
+
+\newpage
 
 %Regulatory identification
 \input{RegulatoryIdentification/main.tex}
 
 \newpage
 
-%References 
+%Sustainability 
+\input{Sustainability/main.tex}
+
+\newpage
+
+%Conclusions
+\input{Conclusions/main.tex}
+
+\newpage
+
+% References 
 \printbibliography[heading=bibintoc]
+
+\clearpage
+
+\appendix
+\renewcommand{\thesection}{\Alph{section}}
+
+\part*{Appendices}
+\addcontentsline{toc}{part}{Appendices}
+
+\input{appendices/appendix-a}
+
+\newpage
  
-\end{document}  
+\input{appendices/appendix-b}
+
+\newpage
+ 
+\input{appendices/appendix-c}
+
+\newpage
+ 
+\input{appendices/appendix-d}
+
+
+\end{document}

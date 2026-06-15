@@ -1,0 +1,227 @@
+\subsubsection{Non-Functional Requirements}
+\label{sec:non-functional-requirements-validation}
+
+For each non-functional requirement (NFR), the testing method is adapted according to the established criteria. The following table summarizes the previously defined acceptance criteria for each non-functional requirement before specifying the employed strategies.
+
+
+\vspace{20pt}
+    \pagestyle{fancy}
+    \small
+
+    \setlength{\tabcolsep}{2pt}
+    \setlength{\arrayrulewidth}{0.1pt}
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\LTpre}{0pt}
+    \setlength{\LTpost}{0pt}
+
+    % CENTRADO HORIZONTAL REAL
+    \setlength{\LTleft}{\fill}
+    \setlength{\LTright}{\fill}
+
+    \begin{longtable}{>{\centering\arraybackslash}p{0.1\textwidth} p{0.9\textwidth}}
+
+    \rowcolor{gray!20}
+    \textbf{NFR} & \textbf{Acceptance Criteria} \\
+    \addlinespace[0pt]
+    \endfirsthead
+
+    \noalign{\vskip -15pt}
+    \multicolumn{2}{l}{\textit{(Continued from previous page)}} \\
+    \rowcolor{gray!20}
+    \textbf{NFR} & \textbf{Acceptance Criteria} \\
+    \addlinespace[0pt]
+    \endhead
+
+    \hline 
+    \multicolumn{2}{r}{\textit{(Continued on next page)}} \\
+    \noalign{\vskip -12pt} 
+    \endfoot
+
+    \caption[Summary table of non-functional requirements and their acceptance criteria]
+    {Summary table of non-functional requirements and their acceptance criteria. [Own creation]} 
+    \label{table:summary-of-non-functional-requirements-and-their-acceptance-criteria} 
+    \endlastfoot
+
+    \rowcolor{gray!05}
+    NFR1 & The UI must update expense statuses in less than \textbf{1 second} once the AI-driven data extraction is completed. \\
+    \rowcolor{gray!05}
+    NFR2 & The UI must be \textbf{responsive}, adapting to any device or screen size, and \textbf{intuitive}, allowing new users to upload, review, and save an expense within \textbf{3 minutes}.\\
+    \rowcolor{gray!05}
+    NFR3 & The application must load previously uploaded expenses within \textbf{3 seconds}. Other basic user interactions (e.g., saving expense information, deleting expenses) must complete under \textbf{500 ms}. Additionally, the application must be available \textbf{24 hours a day, 365 days a year}. \\
+    \rowcolor{gray!05}
+    NFR4 & The application's architecture must employ a \textbf{hybrid approach} that separates \textbf{synchronous} and \textbf{asynchronous} workflows.
+
+    The application's resources must be \textbf{deployed} on a \textbf{cloud computing platform} that \textbf{supports automatic horizontal scaling}. \\
+    \rowcolor{gray!05}
+    NFR5 & The acceptance criteria for this specific requirement are justified in \textbf{Section \ref{regulatory-section}}. \\
+    \rowcolor{gray!05}
+    NFR6 & By using the application, the full expense report workflow is optimized from the current 20 minutes to \textbf{5 minutes} for both employees and finance staff. \\
+    \rowcolor{gray!05}
+    NFR7 & The application's code implementation must use \textbf{interfaces} for external services and adopt the \textbf{Dependency Inversion Principle}. \\
+    \rowcolor{gray!05}
+    NFR8 & The application's \textbf{business logic} code implementation must be \textbf{isolated} from the technical code implementation. \\
+
+    \end{longtable}
+    \normalsize
+
+\textbf{Browser Development Tool}
+
+The satisfaction of NFR3 is verified using the performance metrics obtained from the browser development tools. The results are reported in the subsequent Table \ref{table:nfr3-performance-evaluation}.
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\arrayrulewidth}{0.8pt}
+
+    \begin{tabularx}{\textwidth}{
+        >{\centering\arraybackslash}p{2cm}
+        >{\centering\arraybackslash}p{8cm}
+        >{\centering\arraybackslash}p{3cm}
+        >{\centering\arraybackslash}p{3cm}
+    }
+        \rowcolor{gray!20}
+        \textbf{NFR} &
+        \textbf{Performance Metric} &
+        \textbf{Expected Time} &
+        \textbf{Resulting Time} \\
+
+        \rowcolor{gray!05}
+        NFR3 &
+        Loading time of previously uploaded expenses &
+        3 s &
+        0.128 s \\
+
+        \rowcolor{gray!05}
+        NFR3 &
+        Execution time of basic user interactions &
+        500 ms &
+        32 ms \\
+    \end{tabularx}
+
+    \caption[Performance evaluation of NFR3]
+    {Performance evaluation of NFR3. [Own creation]}
+    \vspace{-1em}
+    \label{table:nfr3-performance-evaluation}
+\end{table}
+
+\textbf{Manual Time Measurement}
+
+For the remaining non-functional requirements (NFRs) that rely on time-based acceptance criteria, measurements were conducted manually. For NFR1, the elapsed time was calculated as the difference between timestamps recorded in the browser console. These timestamps correspond to the moment when the AI completes the expense processing and the moment when the expense status is updated in the user interface. They were generated through lightweight instrumentation code placed at the start and end of the status update process.
+
+For NFR2 and NFR6, execution time was also measured manually. The reported values represent the average results obtained from 10 company employees who tested the application for the first time. For NFR2, the measured time corresponds to the difference between the first and second execution of the complete expense report workflow by the same user, thereby capturing the time required to learn how to use the application. In contrast, NFR6 reflects the execution time recorded during the second attempt, excluding the initial learning phase. The results are summarized in Table \ref{table:nfr1-nfr2-nfr6-performance-evaluation}.
+
+During user testing, some cases exceeded the expected time thresholds due to a higher number of uploaded expenses or the execution of additional actions not previously performed. Uploading more expenses increased the time required to review and verify AI-extracted data. Similarly, users who explored additional functionalities during the second attempt demonstrated higher engagement with the application. Although these scenarios can be interpreted positively in terms of user adoption, they introduced variability in the measurements and were therefore excluded from the final results.
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\arrayrulewidth}{0.8pt}
+
+    \begin{tabularx}{\textwidth}{
+        >{\centering\arraybackslash}p{2cm}
+        >{\centering\arraybackslash}p{8cm}
+        >{\centering\arraybackslash}p{3cm}
+        >{\centering\arraybackslash}p{3cm}
+    }
+        \rowcolor{gray!20}
+        \textbf{NFR} &
+        \textbf{Performance Metric} &
+        \textbf{Expected Time} &
+        \textbf{Resulting Time} \\
+
+        \rowcolor{gray!05}
+        NFR1 &
+        Real-time updating of expense processing status &
+        1 s &
+        0. 478 s \\
+
+        \rowcolor{gray!05}
+        NFR2 &
+        Learning curve for application usage &
+        3 min &
+        2 min 24 s \\
+
+        \rowcolor{gray!05}
+        NFR6 &
+        Completion time of the full expense workflow &
+        5 min &
+        2 min 42 s \\
+    \end{tabularx}
+
+    \caption[Performance evaluation of NFR1, NFR2, and NFR6]
+    {Performance evaluation of NFR1, NFR2, and NFR6. [Own creation]}
+    \vspace{-1em}
+    \label{table:nfr1-nfr2-nfr6-performance-evaluation}
+\end{table}
+
+\vspace{-10pt}
+
+The measured time for the ''Completion time of the full expense workflow'' corresponds to an 86.5\% efficiency gain compared to the 20 minutes previously required for manual expense data entry by employees. This result demonstrates that NFR6 has been successfully fulfilled, exceeding the initial target of a 75\% efficiency gain. 
+
+\textbf{Other NFR Acceptance Criteria Justification}
+
+Unlike the previous NFRs, which are demonstrated from an objective perspective, the remaining NFRs are indirectly verified. The summary table \ref{table:other-nfr-justification} specifies the strategy employed to demonstrate the fulfillment of each requirement.
+
+
+\begin{table}[H]
+    \centering
+    \footnotesize
+    \renewcommand{\arraystretch}{1.5}
+    \setlength{\arrayrulewidth}{0.8pt}
+
+    \begin{tabularx}{\textwidth}{
+        >{\centering\arraybackslash}p{2cm}
+        >{\arraybackslash}p{14cm}
+    }
+        \rowcolor{gray!20}
+        \textbf{NFR} &
+        \textbf{Fulfillment Justification} \\
+
+       
+        \rowcolor{gray!05}
+        NFR2 &
+        During manual acceptance testing, in which the time required by employees to complete the full expense-report workflow was measured, most users relied on the user manual for guidance.
+
+        After uploading a receipt, the process proved ambiguous, as users were not aware that only manually reviewed AI-extracted expenses with the status ``Completed'' could be added to a report. In addition, most users did not know how to submit the uploaded expenses for approval, since the application requires the creation of an expense report containing multiple expenses before it can be sent to the reviewer.
+
+        To address this issue, a detailed user guide pop-up was added to the user interface. As no further ambiguities were identified, this adjustment improved the usability of the workflow and made the interface more intuitive for users.
+
+        Additionally, the application's user interface is responsive and adapts to any device or screen size, this characteristic has been tested manually. \\
+
+        \rowcolor{gray!05}
+        NFR3 &
+        The application's resources are deployed through the Azure platform, which means they are hosted on the cloud. This implies that the application is available 24 hours a day, 365 days a year. The deployment details are provided in the next section. \\
+
+        \rowcolor{gray!05}
+        NFR4 &
+        The application's hybrid architecture is detailed in Section \ref{sec:physical-architecture} and fulfills the defined acceptance criteria.
+        The application's resources are deployed on the Azure platform; therefore, these resources support automatic horizontal scaling. \\
+
+        \rowcolor{gray!05}
+        NFR5 &
+        The fulfillment of this requirement is also justified in Section \ref{regulatory-section}. \\
+
+        \rowcolor{gray!05}
+        NFR7 &
+        The Dependency Inversion Principle and the “Programming to an Interface” pattern are applied in the code implementation and are stated in Section \ref{sec:principles-and-patterns}. \\
+
+        \rowcolor{gray!05}
+        NFR8 &
+        The application's business logic code is implemented in a dedicated Domain layer following Domain-Driven Design; both concepts are explained in Section \ref{sec:principles-and-patterns}. \\
+    \end{tabularx}
+
+    \caption[Justification for other NFRs]
+    {Justification for other NFRs. [Own creation]}
+    \vspace{-1em}
+    \label{table:other-nfr-justification}
+\end{table}
+
+\vspace{-10pt}
+
+
+Fortunately, all specified requirements, both functional and non-functional, have been successfully satisfied, confirming that the application meets its intended goals and quality standards.
+
+
+

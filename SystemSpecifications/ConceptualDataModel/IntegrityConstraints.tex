@@ -1,0 +1,41 @@
+\subsubsection{Integrity Constraints}
+
+To ensure a valid and consistent data conceptual schema, the following integrity constraints must be applied:
+
+\textbf{Primary keys:} (User, userId), (Expense, expenseId), (CommandLine, commandLineId), (ExtractionPayload, extractionPayloadId), (Report, reportId).
+
+\textbf{RT2:} A user is classified as either an Employee or an Admin, depending on their assigned role.
+
+\textbf{RT3:} An administrator can only review reports submitted by employees under their supervision.
+
+\textbf{RT4:} The expense amount and tax must be greater than 0.
+
+\textbf{RT5:} The expense currency must be a valid international currency.
+
+\textbf{RT6:} The user's email must be a valid email address.
+
+\textbf{RT7:} The expense date must be earlier than the current date.
+
+\textbf{RT8:} The expenseDate timestamp must be earlier than the uploadedAt timestamp of the same expense.
+
+\textbf{RT9:} The expense payment method must be either “cash” or “credit card”.
+
+\textbf{RT10:} The command line price must be greater than or equal to 0.
+
+\textbf{RT11:} The command line quantity must be greater than or equal to 1.
+
+\textbf{RT12:} The extraction payload confidence score must be between 0 and 1.
+
+\textbf{RT13:} The report submittedAt timestamp must not be null if the report status is “Pending”, “Approved”, or “Rejected”.
+
+\textbf{RT14:} The report reviewedAt timestamp must not be null if the report status is “Approved” or “Rejected”.
+
+\textbf{RT15:} The report's createdAt timestamp must be earlier than the submittedAt timestamp (if the latter is not null).
+
+\textbf{RT16:} The report's submittedAt timestamp must be earlier than the reviewedAt timestamp (if both are not null).
+
+\textbf{RT17:} An expense can be attached to a report only if the report is created by the same user who uploaded the expense.
+
+\textbf{RT18:} A report status may transition from “NotSent” to “Submitted”, and from “Submitted” to “Approved” or “Rejected”.
+
+\textbf{RT19:} A report without attached expenses is not allowed to transition to any status other than “NotSent”.

@@ -1,0 +1,54 @@
+\textbf{Amortization}
+\vspace{-5pt}
+
+The amortization cost corresponds to the proportion of hardware resource usage time relative to their total usable lifespan. Hence, this cost is formulated as:
+
+\vspace{-10pt}
+\small
+\[
+\text{Amortization (\texteuro) }= \frac{\text{Resource Price}}{\text{Total Depreciation Hours}} \times \text{Project Usage Hours}
+\]
+
+\normalsize
+
+The usage hours equal the project execution time, since hardware resources are used throughout the project. Assuming a four-year depreciation period and the same annual working hours from PC (260 working days * 7.5 working hours/day), which is a total of 1950 hours, the following equation is applied for each hardware resource in Table \ref{table:amortization-cost-of-hardware-resources}: 
+
+\small
+
+\vspace{-5pt}
+\[
+\text{Amortization (\texteuro)} = \text{Resource price} \times 
+\dfrac{1}{4 \text{ years}} \times 
+\dfrac{1 \text{ year}}{1950 \text{ working hours}} \times 
+\text{hours used}
+\]
+\normalsize
+
+\vspace{-10pt}
+
+%Table of amortization cost of hardware resources
+\begin{table}[H]
+    \renewcommand{\arraystretch}{1}
+    \centering
+    \footnotesize 
+    \setlength{\tabcolsep}{2.5pt} 
+    \makebox[\textwidth][c]{% 
+    \resizebox{0.78\paperwidth}{!}{%
+    \begin{tabular}{@{}l r r r r r@{}}
+    \textbf{Hardware Resources} & \textbf{Price (\texteuro)} & \textbf{Quantity} & \textbf{Total Price (\texteuro)} & \textbf{Usage Time (h)} & \textbf{Amortization (\texteuro)} \\
+    \hline 
+    PC Dell 16 Pro \cite{dell-16-pro} & 1,193.53 & 1 & 1,193.53 & 513 & 78.50 \\
+    Wireless Mouse \cite{logitech-m171} & 11.99 & 1 & 16.99 & 513 & 1.12 \\
+    Dell Monitor \cite{dell-pro-24-plus} & 171.82 & 2 & 343.64 & 513 & 22.60 \\
+    Keyboard \cite{logitech-k120} & 19.99 & 1 & 19.99 & 513 & 1.31 \\
+    \hline
+    \textbf{Total} &&&&& \textbf{102.22} \\
+    \end{tabular}%
+    }}
+    \normalsize 
+    \caption[ Amortization cost]
+    {Amortization cost. [Own creation]} 
+    \vspace{-1em}
+    \label{table:amortization-cost-of-hardware-resources} 
+\end{table}
+

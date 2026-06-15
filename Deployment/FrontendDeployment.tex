@@ -1,0 +1,12 @@
+\subsection{Frontend Deployment}
+
+The React frontend was deployed to the Azure Static Web Apps service. This service is specifically designed for modern web applications. The deployment process involved the following steps:
+
+\begin {enumerate} [leftmargin=0.75cm]
+    \item \textbf{Creating a Production Build}: The application was first built locally using the Node Package Manager (npm) command: \texttt{npm run build}. This command converts the TypeScript code into JavaScript, bundles all JavaScript modules, and optimizes assets such as CSS and images into an efficient build folder.
+
+    \item \textbf{Deploying to Azure}: Once the production-ready build folder was created, it was then deployed directly to the Azure Static Web Apps resource. This was performed using the Static Web Apps (SWA) Command-Line Interface (CLI) tool, which simplifies the deployment of static assets to the platform.
+
+\end{enumerate}
+
+Although the first deployment was completed manually, the architecture’s decoupled nature and the use of PaaS services are well-suited for seamless integration with Continuous Integration and Continuous Delivery (CI/CD) pipelines in future development cycles.

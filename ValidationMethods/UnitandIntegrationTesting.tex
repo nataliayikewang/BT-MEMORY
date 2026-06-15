@@ -1,0 +1,20 @@
+\subsection{Unit and Integration Testing}
+\label{sec:unit-and-integration-testing}
+
+A separate logical layer was created in the backend to execute automated tests. By running the \texttt{dotnet test} command, all test codes are executed, enabling repeated verification of the application. This test layer includes two types of automated tests: unit tests and integration tests.
+
+Unit tests check the functionality of single, small, and isolated components. Thanks to the decoupled nature of Clean Architecture, component dependencies rely on abstract interfaces, which can be easily replaced with mock implementations, facilitating the development of unit tests.
+
+Integration tests verify that multiple components of the system work correctly when interacting with each other. These automated tests ensure that functionality spanning different architectural layers operates as expected and that communication between those layers is performed correctly. 
+
+To demonstrate the effectiveness of automated testing, a code coverage report was generated. As shown in Figure \ref{fig:code-coverage}, a line coverage of 78\% was achieved.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Images/ValidationMethods/CodeCoverage.png}
+    \caption[Code coverage report for automated tests]
+    {Code coverage report for automated tests. [Own creation]}
+    \label{fig:code-coverage}
+\end{figure}

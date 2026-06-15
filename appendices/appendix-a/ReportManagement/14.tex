@@ -1,0 +1,45 @@
+\newpage
+
+\subsubsection{\textbf{Use Case: Detach Current Expense from Report}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user wants to remove the current expense from its report.
+
+\textbf{Preconditions:} The user is authenticated, and the system displays a form containing the expense metadata along with the original receipt image or file.
+
+\textbf{Postconditions:} The system detaches the expense from the belonging report.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The user requests to exclude the current expense from the belonging report.
+\item The system prompts the user to confirm the detachment.
+\item The user confirms the detachment.
+\item The system detaches the currently displayed expense from its report and updates the report’s information accordingly, such as the total amount or expense count.
+\item The system returns the user to the report information page, displaying the updated information.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+    \item \textbf{3a. Detachment Confirmation Rejected:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 3a1. The user declines or closes the confirmation dialog.
+        \item 3a2. The system closes the confirmation dialog and preserves the current expense information view without detaching it from its report.
+    \end{itemize}
+
+    \item \textbf{4a. Expense Detachment Error:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 4a1. An error occurs during the expense detachment due to a database connection error or an internal error.
+        \item 4a2. The system notifies the user of the error and keeps the user on the current expense information view.
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

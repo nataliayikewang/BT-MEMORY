@@ -1,0 +1,39 @@
+\subsubsection{\textbf{Use Case: Search Expenses by Name}}
+
+\textbf{Primary Actor:} User
+
+\textbf{Trigger:} The user wants to search for a specific expense by name.
+
+\textbf{Preconditions:} The user is successfully authenticated and viewing the Expenses page.
+
+\textbf{Postconditions:} The system filters a list of expenses whose names match the search string.
+
+\vspace{1.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The user enters a keyword into the search field.
+\item The system filters and displays a list of expenses whose names match the search string.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+\item \textbf{2a. No Matches Found:}
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+    \item 2a1. The system cannot find any match for the searched string.
+    \item 2a2. The system displays an empty list and informs the user that no expenses were found.
+    \item 2a3. The user decides how to proceed:
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item \textbf{Scenario A (Reset Filter):} The user clears the search input; the system restores the standard Expenses page view.
+        \item \textbf{Scenario B (New Search):} The user modifies the keyword; the flow returns to step 2.
+    \end{itemize}
+\end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

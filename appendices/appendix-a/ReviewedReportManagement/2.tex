@@ -1,0 +1,36 @@
+\subsubsection{\textbf{Use Case: Consult Reviewed Report Details}}
+
+\textbf{Primary Actor:} Administrator
+
+\textbf{Trigger:} The administrator requests detailed information for a specific report they have reviewed.
+
+\textbf{Preconditions:} The administrator is authenticated and is on the Reviewed Reports page.
+
+\textbf{Postconditions:} The system displays the detailed report information along with its associated expenses.
+
+\vspace{0.5cm}
+
+\textbf{Main Success Scenario:}
+
+\begin{enumerate} [leftmargin=0.75cm, noitemsep]
+\item The administrator selects a report record from the list.
+\item The system retrieves the record and its full metadata from the database using the unique Report ID.
+\item The system retrieves the associated expenses.
+\item The system displays the report metadata along with a list of associated expenses.
+\end{enumerate}
+
+\vspace{0.3cm}
+
+\textbf{Extensions:}
+
+\begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+
+    \item \textbf{2a. Report Not Found:}
+    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
+        \item 2a1. The system cannot find the report record with the provided ID.
+        \item 2a2. The system displays a 404 ``Report Not Found'' error message and prompts the administrator to return to the previous page.
+    \end{itemize}
+
+\end{itemize}
+
+\vspace{0.3cm}

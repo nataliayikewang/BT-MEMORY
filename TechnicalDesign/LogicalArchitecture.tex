@@ -1,0 +1,18 @@
+\subsection{Logical Architecture}
+\label{sec:logical-architecture}
+ 
+The logical architecture is a high-level view of the application. It describes the technical organization of the code into layers and the software-level data flow across the entire infrastructure. 
+
+The application's logical architecture is designed according to \textbf{Clean Architecture} principles. Its core objective is to separate the responsibilities of each layer. The result is a clean code structure in which business logic and domain rules are independent of external service implementations. As a consequence, the system is highly maintainable, testable, and extensible. Figure \ref{fig:logical-architecture-diagram} depicts the application's logical architecture.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{Images/LogicalArchitecture.png}
+    \caption[Logical architecture diagram]
+    {Logical architecture diagram. [Own creation]}
+    \label{fig:logical-architecture-diagram}
+\end{figure}
+
+
+\input{TechnicalDesign/LogicalArchitecture/LogicalLayers.tex}
+\input{TechnicalDesign/LogicalArchitecture/GuidingPrinciplesandDesignPatterns.tex}
