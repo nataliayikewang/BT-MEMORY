@@ -10,11 +10,14 @@ The user interface is built using React with TypeScript. This strategic choice a
 
 \textbf{API layer}
 
-The API layer exposes the application's use cases to external parties via RESTful HTTP endpoints. Different controllers handle distinct functional areas, with the main controllers dedicated to Expenses and Reports. Controllers receive HTTP requests, validate them, translate them into commands or queries for the Application layer, and return an HTTP response. This layer, along with the subsequent ones, constitutes the backend component and uses the ASP.NET Core platform.
+The API layer exposes the application's use cases to external parties via RESTful HTTP endpoints. Different controllers handle distinct functional areas (set of use cases), with the main controllers dedicated to Expenses and Reports. Controllers receive HTTP requests, validate them, translate them into commands or queries for the Application layer, and return an HTTP response. This layer, along with the subsequent ones, constitutes the backend component and uses the ASP.NET Core platform.
+
+\vspace{1cm}
 
 \textbf{Application Layer}
 
-The Application layer contains the application logic and is responsible for handling all use cases. Services in this layer implement the operations accessible to the user and enforce application-level constraints. Even though this layer is independent of web and database concerns, as well as domain business rules, it orchestrates domain entities to execute those rules. 
+The Application layer contains the application logic and is responsible for handling all use cases. This layer orchestrates domain entities to execute business rules and interacts with repository abstractions to retrieve and persist data. The concrete implementations of these repositories are provided by the Infrastructure layer.
+
 
 Additionally, this layer defines Data Transfer Objects (DTOs) and interfaces. DTOs standardize data exchange between components, while interfaces are abstractions that specify how external dependencies are accessed without exposing implementation details.
 
@@ -24,8 +27,8 @@ The Domain layer is the core of the application and represents the business mode
 
 \textbf{Infrastructure layer}
 
-The Infrastructure layer provides repositories and services that contain the concrete implementations of the interfaces defined in the Application layer. At the same time, it also manages communication with external systems and services. \texttt{ExpenseRepository}, \texttt{BlobStorageService}, and \texttt{DocumentIntelligenceService} are some of the implementations contained in this layer.
+While the Application layer depends on abstractions to perform data access and communicate with external services, the Infrastructure layer provides the corresponding concrete implementations. It is responsible for handling communication with external systems and services. \texttt{ExpenseRepository}, \texttt{BlobStorageService}, and \texttt{DocumentIntelligenceService} are some of the implementations contained in this layer.
 
-This layer is volatile and can be replaced easily. For example, switching from Blob Storage to another storage provider only requires changes within this layer, without affecting the upper layers, which depend on abstractions rather than concrete implementations.
+This layer is expected to evolve as external technologies and infrastructure requirements change. For example, switching from Blob Storage to another storage provider only requires changes within this layer, without affecting the upper layers, which depend on abstractions rather than concrete implementations.
 
-Another key advantage of using the .NET platform is access to Entity Framework Core (EF Core) and Dependency Injection (DI). EF Core enables higher-level interaction with the database, allowing data manipulation, relationship management, and migrations through clear, easy-to-understand C\texttt{\#} code. DI is explained in more detail in the next section.
+Another key advantage of using the .NET platform is availability of Entity Framework Core (EF Core) and the built-in Dependency Injection (DI) container. EF Core enables higher-level interaction with the database, allowing data manipulation, relationship management, and migrations through clear, easy-to-understand C\texttt{\#} code. DI is explained in more detail in the next section.

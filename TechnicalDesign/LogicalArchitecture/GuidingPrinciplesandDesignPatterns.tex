@@ -7,6 +7,8 @@ The structure described above is not arbitrary; it is intentionally crafted base
 
 The SOLID principles are a set of five foundational guidelines that help developers create maintainable and flexible software solutions. This application's architecture adheres to them as follows:
 
+\vspace{2cm}
+
 \begin{enumerate} [leftmargin=0.75cm]
     
     \item \textbf{Single Responsibility Principle}
@@ -26,7 +28,7 @@ The SOLID principles are a set of five foundational guidelines that help develop
 
     The system is open for extension but closed for modification. Thanks to the interfaces defined in the Application layer, introducing new functionality requires only the implementation of new classes in the Infrastructure layer. The existing, tested code in the Application layer remains unchanged.
 
-    Currently, the \texttt{RepositoryService} in the Application layer depends on the \texttt{IEmailNoti- ficationService}. If, in the future, clients require SMS notifications in addition to email notifications, it is sufficient to introduce a new \texttt{SMSNotificationService} class in the Infrastructure layer that implements a common \texttt{INotificationService} interface. The \texttt{RepositoryService} does not require any modification.
+    Currently, the \texttt{ReportService} in the Application layer depends on the \texttt{INotifi- cationService}. If, in the future, clients require SMS notifications in addition to email notifications, it is sufficient to introduce a new \texttt{SMSNotificationService} class in the Infrastructure layer that implements the same interface. The Application layer does not require any modification.
 
     \item \textbf{Liskov Substitution Principle}
 
@@ -38,7 +40,7 @@ The SOLID principles are a set of five foundational guidelines that help develop
 
     \item \textbf{Dependency Inversion Principle}
 
-    This is the key principle that holds Clean Architecture together. High-level modules should not depend on low-level modules. For example, the Application layer does not depend on the Infrastructure layer; instead, both depend on abstractions (interfaces). Consequently, as illustrated in Figure \ref{fig:logical-architecture-diagram}, the Infrastructure layer points inward toward the Application layer, resulting in a core business logic that is independent of external concerns.
+    This is the key principle that holds Clean Architecture together. High-level modules should not depend on low-level modules; instead, both should depend on abstractions. For example, the Application layer does not depend directly on the Infrastructure layer, even though it relies on services implemented there. Rather, both layers depend on interfaces that define the required behavior.  
 
 \end{enumerate}
 
@@ -62,7 +64,7 @@ Several well-known design patterns are used throughout the source code to suppor
 
     \item \textbf{Domain-Driven Design (DDD)}
 
-    The Domain layer is structured according to Domain-Driven Design principles. It encapsulates the core business logic within a pure, isolated layer.
+    The Domain layer is structured according to Domain-Driven Design principles. It encapsulates the core business logic within a pure, isolated layer. As illustrated in Figure \ref{fig:logical-architecture-diagram}, all dependencies point inward toward the Domain layer, ensuring that the core business logic remains independent of external technologies and implementation details.
 
     \item \textbf{Repository Pattern}
 

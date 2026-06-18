@@ -29,7 +29,7 @@
     \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
         \item 3a1. The system detects missing required information or invalid input.
         \item 3a2. The system notifies the user that the information cannot be saved and outlines the specific fields that are missing or invalid.
-        \item 3a3. The flow returns to step 2 of the main success scenario.
+        \item 3a3. The flow returns to step 1 of the main success scenario.
     \end{itemize}
 
     \item \textbf{3b. Expense Update Error:}
@@ -43,7 +43,7 @@
         \item 1-2a1. The user navigates back to the previous page or cancels the current editing session.
         \item 1-2a2. The system checks whether there are any unsaved changes:
         \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
-            \item \textbf{Scenario A (No Unsaved Changes):} The system terminates the session and returns the user to the Expenses page.
+            \item \textbf{Scenario A (No Changes Detected):} The system terminates the session and returns the user to the Expenses page.
             \item \textbf{Scenario B (Unsaved Changes Detected):} The system prompts the user to confirm before proceeding:
             \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
                 \item \textbf{B1 (Discard):} The user confirms the exit. The system discards changes and returns the user to the Expenses page.

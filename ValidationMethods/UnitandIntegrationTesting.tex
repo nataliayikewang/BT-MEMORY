@@ -1,9 +1,9 @@
 \subsection{Unit and Integration Testing}
 \label{sec:unit-and-integration-testing}
 
-A separate logical layer was created in the backend to execute automated tests. By running the \texttt{dotnet test} command, all test codes are executed, enabling repeated verification of the application. This test layer includes two types of automated tests: unit tests and integration tests.
+A separate logical layer was created in the backend to execute automated tests. By running the \texttt{dotnet test} command, all test codes are executed, enabling continuous verification of the application. This test layer includes two types of automated tests: unit tests and integration tests.
 
-Unit tests check the functionality of single, small, and isolated components. Thanks to the decoupled nature of Clean Architecture, component dependencies rely on abstract interfaces, which can be easily replaced with mock implementations, facilitating the development of unit tests.
+Unit tests check the functionality of single, small, and isolated components. Due to the decoupled nature of Clean Architecture, component dependencies are defined through abstract interfaces. This characteristic significantly facilitates the development and execution of unit tests.
 
 Integration tests verify that multiple components of the system work correctly when interacting with each other. These automated tests ensure that functionality spanning different architectural layers operates as expected and that communication between those layers is performed correctly. 
 

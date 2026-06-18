@@ -8,6 +8,8 @@ During project execution, several critical decisions were made to allocate resou
 
 The omitted tasks were UA4 (Employee Spending Limit Configuration), FD2 (Reports Search), and Dev3 (CI/CD Pipeline Implementation). This exclusion generated cost savings of €356.59 (extracted from the costs indicated in Table \ref{table:actual-personnel-cost-breakdown-total}), which proved essential in keeping the project within the initial budget.
 
+\newpage
+
 \textbf{Regarding PPP: Is the expected cost similar to the final cost? Have you justified any differences (lessons learnt)?}
 
 The final project cost remains close to the initially estimated cost. The estimated cost was €14,592.78, while the final actual cost was €14,309.00, resulting in a deviation of €283.78 below the initial estimate.
@@ -23,7 +25,7 @@ The operational cost during the application's useful life primarily consists of 
 
 At present, the application operates under the most basic subscription tier. Consequently, further cost reduction is not feasible. Nonetheless, the current strategy leverages several cloud-native advantages.
 
-Currently, the application's resources meet performance and demand requirements while remaining within the most cost-effective pricing tier. Additionally, the asynchronous processing pipeline described in the physical architecture (Section \ref{sec:physical-architecture}) is serverless and incurs costs only when executed. This characteristic of Azure Functions makes it particularly suitable for asynchronous workflows.
+Currently, the application's resources meet performance and demand requirements while remaining within the most cost-effective pricing tier. Additionally, the asynchronous processing pipeline described in the physical architecture (Section \ref{sec:physical-architecture}) is serverless and incurs costs only when executed. This characteristic of Azure Functions converts it particularly suitable for asynchronous workflows.
 
 \textbf{Regarding Exploitation: Have you considered the cost of adaptations, updates, and repairs during the project's useful life?}
 
@@ -31,6 +33,7 @@ Future maintenance, including adaptations, updates, and repairs, was a primary c
 
 The application's core business logic resides in a dedicated Domain layer, isolated from technical implementation details. Interactions with external systems are defined through abstract interfaces, with their implementations located in the Infrastructure layer.
 
+\newpage
 A representative scenario illustrating the benefits of this approach is a change in the email notification service or database system. In such cases, only the Infrastructure layer components implementing the relevant interfaces need to be modified or replaced, while the remaining layers remain unaffected. Additional design patterns that further support maintainability are discussed in Section \ref{sec:principles-and-patterns}.   
 
 \textbf{Regarding Risks: Could situations occur that are detrimental to the project's viability?}

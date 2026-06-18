@@ -26,22 +26,16 @@
 
 \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
 
-    \item \textbf{3a. No Expenses Attached:}
+    \item \textbf{3a. Detachment Confirmation Rejected:}
     \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
-        \item 3a1. No expenses are associated with the report; the system displays an empty list.
-        \item 3a2. The user cannot detach any expense.
+        \item 3a1. The user declines or closes the confirmation dialog.
+        \item 3a2. The system closes the confirmation dialog and preserves the current Report Information page view.
     \end{itemize}
 
-    \item \textbf{6a. Detachment Confirmation Rejected:}
+    \item \textbf{4a. Expense Detachment Error:}
     \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
-        \item 6a1. The user declines or closes the confirmation dialog.
-        \item 6a2. The system closes the confirmation dialog and preserves the current Report Information page view.
-    \end{itemize}
-
-    \item \textbf{7a. Expense Detachment Error:}
-    \begin{itemize} [label={}, leftmargin=0.75cm, noitemsep]
-        \item 7a1. An error occurs during the expense detachment due to a database connection error or an internal error.
-        \item 7a2. The system notifies the user of the error and restores the detailed information view of the report.
+        \item 4a1. An error occurs during the expense detachment due to a database connection error or an internal error.
+        \item 4a2. The system notifies the user of the error and restores the detailed information view of the report.
     \end{itemize}
 
 \end{itemize}
