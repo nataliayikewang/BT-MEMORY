@@ -4,11 +4,17 @@
 \begin{document}
 
 % Cover page
-\input{Cover/main.tex}
+%\input{Cover/main.tex}
+
+\includepdf[pages=1]{portada.pdf} % Include the cover page PDF
 
 \clearpage
 \pagenumbering{gobble} % removes page numbering completely
  
+\input{Acknowledgements/main.tex} 
+
+\input{abstract/main.tex} 
+
 % Table of contents 
 \tableofcontents    
 \clearpage
@@ -114,6 +120,10 @@
 \newpage
  
 \input{appendices/appendix-b}
+
+\newpage
+
+\input{appendices/appendix-e}
 
 \newpage
  

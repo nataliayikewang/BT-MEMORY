@@ -13,4 +13,4 @@ The first step in the deployment process was to provision all necessary cloud in
 
 \end{itemize}
 
-By creating these resources, the application settings and secrets (e.g., database connection string and Azure AD application IDs) were securely configured. Instead of being stored in the source code, these values were added to the “Configuration” section of the Azure App Service and Azure Functions. This is a security best practice that allows sensitive information to be managed independently of the application code.
+After creating these resources in Azure, the application settings and secrets (e.g., database connection string and Azure AD application IDs) were securely configured. This sensitive information is not managed within the source code; instead, it was configured in the “Configuration” section of Azure App Service and Azure Functions. The overall process was straightforward thanks to the Azure Portal's intuitive interface.

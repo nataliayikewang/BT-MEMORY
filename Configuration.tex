@@ -91,6 +91,8 @@
 %Bold section titles
 \usepackage{tocloft}
 
+\usepackage{pdfpages}
+
 \setlength{\cftfignumwidth}{3em} % List of Figures
 \setlength{\cfttabnumwidth}{3em} % List of Tables
 
@@ -136,7 +138,7 @@
 \fancyhf{} % clear all header and footer fields
 
 % HEADER
-\fancyhead[C]{\small Expenses Reporting Tool for an IT Consultancy}
+\fancyhead[C]{\small Expense Management Tool for an IT Consultancy Company}
 
 % FOOTER
 \fancyfoot[C]{\thepage}
@@ -148,7 +150,7 @@
 % Custom page style for landscape pages with rotated header/footer
 \fancypagestyle{landscapestyle}{%
   \fancyhf{} % clear all header and footer fields
-  \fancyhead[R]{\rotatebox{90}{\small Expenses Reporting Tool for an IT Consultancy}}
+  \fancyhead[R]{\rotatebox{90}{\small Expense Management Tool for an IT Consultancy Company}}
   \fancyfoot[R]{\rotatebox{90}{\thepage}}
   \renewcommand{\headrulewidth}{0pt}
   \renewcommand{\footrulewidth}{0pt}
