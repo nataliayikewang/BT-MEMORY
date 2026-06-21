@@ -6,7 +6,7 @@ The logical database design is a direct translation of the entities defined in t
 
     \item \textbf{Users}: Store user identity information, including the user’s role, which determines whether they have a supervisor or supervise others.
 
-    \item \textbf{Expenses}: Contain details of each individual uploaded expense, including AI-extracted metadata, the command lines appearing on the receipt, and a foreign key linking to a User.
+    \item \textbf{Expenses}: Contain details of each individual expense uploaded by a user, including AI-extracted metadata, the command lines appearing on the receipt, and a foreign key linking to a User.
 
     \item \textbf{Reports}: Represent a collection of Expenses that are manually reviewed by the user and are intended to be submitted to obtain the corresponding reimbursement. This entity has a one-to-many relationship with the Expenses table, belongs to the user who created it, and can be reviewed by the creator’s supervisor.
 

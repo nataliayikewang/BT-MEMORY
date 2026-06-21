@@ -2,14 +2,16 @@
 
 \textbf{Security and Identity Management}
 
+During the task definition phase, specifically in Task BD7, the authentication and authorization resource was referred to by its former name, Microsoft Entra ID''. Since 2023, this service has been renamed Azure Active Directory (Azure AD)''. This change does not affect the functionality or implementation of the resource, which continues to serve as the application's identity management system.
+
 The application's security is built upon \textbf{Azure Active Directory (Azure AD)}. Azure AD is an identity management system that acts as a central \textbf{Identity Provider (IdP)}. It not only handles user authentication but also serves as the authority for token issuance. The architecture implements a modern OAuth 2.0 and OpenID Connect flow. 
 
 OAuth 2.0 is used for authorization, allowing applications to access resources on behalf of a user without knowing their password, while OpenID Connect is used for authentication and provides information about the user's identity.
 
-The client side handles user interaction for signing in to the application and uses the Microsoft Authentication Library (MSAL) for orchestrating login popups and redirects against Azure AD. After the user successfully logs in, MSAL obtains a JWT access token and stores it securely in session storage. For this reason, the diagram illustrates a two-way communication between the \textbf{browser} and \textbf{Azure AD} during this process.
+The client side handles user interaction for signing in to the application and uses the Microsoft Authentication Library (MSAL) for orchestrating login popups and redirects against Azure AD. After the user successfully logs in, MSAL obtains a JWT access token and stores it securely in session storage. For this reason, the diagram illustrates a two-way communication between the \textbf{browser} and \textbf{Azure AD} during this process. 
 
-All further communication with the backend, including \textbf{REST API} calls and real-time \textbf{SignalR} connections, is secured using this JWT token. On the client side, the token is automatically added to the Authorization header as a Bearer token to communicate with the backend API. The backend API, hosted on \textbf{Azure App Service}, is protected using Microsoft.Identity.Web library. This middleware intercepts each incoming request, validates the JWT signature, claims against Azure AD's OpenID Connect metadata endpoints, and establishes the user identity.
+All further communication with the backend, including \textbf{REST API} calls and real-time \textbf{SignalR} connections, is secured using this JWT token. On the client side, the token is automatically added to the Authorization header as a Bearer token to communicate with the backend API. 
+
+Once the request reaches the backend API hosted on \textbf{Azure App Service}, the API is protected using Microsoft.Identity.Web library. This middleware intercepts each incoming request, validates the JWT signature, claims against Azure AD's OpenID Connect metadata endpoints, and establishes the user identity.
 
 This validation step is shown in the diagram as a one-way communication from the \textbf{App Service} to \textbf{Azure AD}. After successful validation, controllers and SignalR hubs enforce access control using the \texttt{[Authorize]} attribute. The application also maps the token's object identifier claim to a specific user, allowing it to perform authorized actions.
-
-Note that in Task BD7, the resource is referred to by its former name, ``Microsoft Entra ID''. Since 2023, this service has been renamed to ``Azure Active Directory (Azure AD)''. This change does not affect the functionality or implementation of the resource, which continues to serve as the application's identity management system.

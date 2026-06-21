@@ -16,7 +16,7 @@ The API layer exposes the application's use cases to external parties via RESTfu
 
 \textbf{Application Layer}
 
-The Application layer contains the application logic and is responsible for handling all use cases. This layer orchestrates domain entities to execute business rules and interacts with repository abstractions to retrieve and persist data. The concrete implementations of these repositories are provided by the Infrastructure layer.
+The Application layer contains the application logic and is responsible for handling all use cases. This layer orchestrates entities defined in the Domain layer to execute business rules and interacts with repository abstractions (interfaces) to retrieve and persist data. The concrete implementations of these repositories are provided by the Infrastructure layer.
 
 
 Additionally, this layer defines Data Transfer Objects (DTOs) and interfaces. DTOs standardize data exchange between components, while interfaces are abstractions that specify how external dependencies are accessed without exposing implementation details.

@@ -34,7 +34,7 @@ Figure \ref{fig:expense-synchronous-sequence-diagram} provides a comprehensive v
 
 The \texttt{ExpenseService} first calls the \texttt{BlobStorageService} to upload the expense receipt file to Azure Blob Storage. After the upload is completed, the \texttt{BlobStorageService} returns the generated blob URL. 
 
-With this URL in hand, the \texttt{Expense- Service} creates a new \texttt{Expense} entity and passes it to the \texttt{ExpenseRepository}. The repository is responsible for persisting the entity by interacting with the \texttt{ApplicationDb- Context} through Entity Framework Core (EF Core), which ultimately stores the expense metadata in the SQL database.
+With this URL in hand, the \texttt{ExpenseService} creates a new \texttt{Expense} entity and passes it to the \texttt{ExpenseRepository}. The repository is responsible for persisting the entity by interacting with the \texttt{ApplicationDbContext} through Entity Framework Core (EF Core), which ultimately stores the expense metadata in the SQL database.
 
 Once the expense has been successfully persisted, the controller returns a 201 Created response to the client (UI) while the asynchronous expense-processing pipeline continues independently.
 
@@ -83,4 +83,6 @@ Once a report has been approved, the \texttt{ReportService} also performs severa
 
 \vspace{2cm}
 
-Next, the service retrieves the detailed information for all expenses associated with the report and composes a complete \texttt{ReportWithExpenseDetailsDto}. This DTO is then published through the \texttt{ReportQueuePublisher}, which sends the message to an external service bus queue. The purpose of this final step is to provide data for training an internal AI model.
+Next, the service retrieves the detailed information for all expenses associated with the report and composes a complete \texttt{ReportWithExpenseDetailsDto}. This DTO is then published through the \texttt{ReportQueuePublisher}, which sends the message to an external service bus queue. 
+
+The purpose of this final step is to provide data for training an internal AI model. Although this process falls outside the project scope and is therefore not detailed further, it is included in the sequence diagram to provide a complete picture of the workflow.

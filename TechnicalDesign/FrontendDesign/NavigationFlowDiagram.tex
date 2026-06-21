@@ -27,13 +27,13 @@ The application's main screens are defined as follows:
 
     \item \textbf{PendingReportsPage}: Accessible only to Admin users; displays all reports submitted to the Admin that are pending review.
 
-    \item \textbf{ReviewerReportsPage}: Accessible only to Admin users; displays all reports that have been submitted to and reviewed by the Admin.
+    \item \textbf{ReviewedReportsPage}: Accessible only to Admin users; displays all reports that have been submitted to and reviewed by the Admin.
 
 \end{itemize}
 
 From any main screen, users can select an expense or report and navigate to the corresponding \textbf{ExpenseInfoPage or ReportInfoPage} to view detailed information. Within the ReportInfoPage, a list of associated expenses is presented, allowing users to further navigate to the respective \textbf{ExpenseInfoPage} screen.
  
-Both \textbf{ReportInfoPage} and \textbf{ExpenseInfoPage} enable users to view detailed information and, when permitted, edit the displayed data. These pages remain editable only until the report and attached expenses are submitted for review. When accessed from \textbf{SubmittedReportsPage}, \textbf{PendingReportsPage}, or \textbf{ReviewerReportsPage}, both pages are presented in a read-only state.
+Both \textbf{ReportInfoPage} and \textbf{ExpenseInfoPage} enable users to view detailed information and, when permitted, edit the displayed data. These pages remain editable only until the report and attached expenses are submitted for review. When accessed from \textbf{SubmittedReportsPage}, \textbf{PendingReportsPage}, or \textbf{ReviewedReportsPage}, both pages are presented in a read-only state.
 
 As described in Section \ref{sec:logical-architecture}, the user interface follows a component-based architecture, where each component is built from reusable elements. This approach enables consistent and simplified navigation. Most components of ExpensesPage are reused across other main report-related screens, which also share the same ReportInfoPage. Similarly, components from ExpenseInfoPage are reused within ReportInfoPage.
 
